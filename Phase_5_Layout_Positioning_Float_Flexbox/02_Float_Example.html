@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Float Example</title>
+    <style>
+      .container {
+        width: 600px;
+        margin: 20px auto;
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+      }
+
+      img {
+        /* float: right; จัดรูปไปทางซ้าย */
+        margin: 0 15px 15px 0; /* เว้นระยะรอบๆ */
+        width: 200px;
+        border-radius: 8px;
+      }
+
+      .clearfix::after {
+        content: '';
+        display: block;
+        clear: both; /* กัน layout พัง หลัง float */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container clearfix">
+      <img src="https://picsum.photos/200/150" alt="Sample" />
+      <p>
+        นี่คือตัวอย่างการใช้
+        <code>float: left;</code> ภาพจะลอยอยู่ทางซ้ายของข้อความ
+        ข้อความจะไหลไปอยู่รอบๆ รูปภาพตามธรรมชาติ
+        เหมือนเวลาอ่านหนังสือพิมพ์ที่มีรูปกับบทความ เทคนิคนี้เคยนิยมใช้จัด
+        layout แต่ปัจจุบันนิยมใช้ Flexbox หรือ CSS Grid แทน
+      </p>
+      <p>
+        แต่ <code>float</code> ก็ยังมีประโยชน์ในบางกรณี เช่น
+        จัดรูปประกอบในบทความ หรือทำปุ่มลอยข้างๆ บทความให้ผู้ใช้คลิกได้สะดวก
+      </p>
+    </div>
+  </body>
+</html>
