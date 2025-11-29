@@ -1,13 +1,263 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <title>Document</title>
+    <title>CSS Color & Background Examples</title>
   </head>
   <body>
-    <h1>Hello, World!</h1>
-    <p>This is a sample document.</p>
+    <div class="container">
+      <header class="header">
+        <h1 class="gradient-text">CSS Color & Background Properties</h1>
+        <p class="subtitle">ตัวอย่างการใช้งาน Color และ Background แบบละเอียด</p>
+      </header>
+
+      <!-- Color Examples Section -->
+      <section class="section">
+        <h2 class="section-title">1. Color Properties</h2>
+        
+        <div class="examples-grid">
+          <div class="example-card">
+            <h3>Named Colors</h3>
+            <p class="color-red">Red Color</p>
+            <p class="color-blue">Blue Color</p>
+            <p class="color-green">Green Color</p>
+          </div>
+
+          <div class="example-card">
+            <h3>Hexadecimal Colors</h3>
+            <p class="color-hex-1">#3b82f6</p>
+            <p class="color-hex-2">#ef4444</p>
+            <p class="color-hex-3">#10b981</p>
+          </div>
+
+          <div class="example-card">
+            <h3>RGB/RGBA Colors</h3>
+            <p class="color-rgb">RGB Color</p>
+            <p class="color-rgba-1">RGBA 80% opacity</p>
+            <p class="color-rgba-2">RGBA 50% opacity</p>
+          </div>
+
+          <div class="example-card">
+            <h3>HSL/HSLA Colors</h3>
+            <p class="color-hsl">HSL Color</p>
+            <p class="color-hsla-1">HSLA 80% opacity</p>
+            <p class="color-hsla-2">HSLA 50% opacity</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Background Color Section -->
+      <section class="section">
+        <h2 class="section-title">2. Background Colors</h2>
+        
+        <div class="examples-grid">
+          <div class="bg-primary">Primary Background</div>
+          <div class="bg-secondary">Secondary Background</div>
+          <div class="bg-success">Success Background</div>
+          <div class="bg-danger">Danger Background</div>
+          <div class="bg-warning">Warning Background</div>
+          <div class="bg-info">Info Background</div>
+          <div class="bg-light">Light Background</div>
+          <div class="bg-dark">Dark Background</div>
+        </div>
+
+        <div class="transparency-demo">
+          <div class="overlay-dark">Dark Overlay 50%</div>
+          <div class="overlay-light">Light Overlay 80%</div>
+          <div class="overlay-colored">Blue Overlay 10%</div>
+        </div>
+      </section>
+
+      <!-- Linear Gradients Section -->
+      <section class="section">
+        <h2 class="section-title">3. Linear Gradients</h2>
+        
+        <div class="examples-grid">
+          <div class="gradient-box gradient-basic">
+            <p>Basic Gradient</p>
+          </div>
+          <div class="gradient-box gradient-diagonal">
+            <p>Diagonal Gradient</p>
+          </div>
+          <div class="gradient-box gradient-three-colors">
+            <p>Three Colors</p>
+          </div>
+          <div class="gradient-box gradient-rainbow">
+            <p>Rainbow</p>
+          </div>
+          <div class="gradient-box gradient-sunset">
+            <p>Sunset</p>
+          </div>
+          <div class="gradient-box gradient-ocean">
+            <p>Ocean</p>
+          </div>
+          <div class="gradient-box gradient-stripes">
+            <p>Stripes Pattern</p>
+          </div>
+          <div class="gradient-box gradient-animated">
+            <p>Animated Gradient</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Radial Gradients Section -->
+      <section class="section">
+        <h2 class="section-title">4. Radial Gradients</h2>
+        
+        <div class="examples-grid">
+          <div class="gradient-box radial-basic">
+            <p>Basic Radial</p>
+          </div>
+          <div class="gradient-box radial-ellipse">
+            <p>Ellipse</p>
+          </div>
+          <div class="gradient-box radial-position">
+            <p>Positioned</p>
+          </div>
+          <div class="gradient-box radial-spotlight">
+            <p>Spotlight</p>
+          </div>
+          <div class="gradient-box radial-circles">
+            <p>Circles Pattern</p>
+          </div>
+          <div class="gradient-box radial-glow">
+            <p>Glow Effect</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Conic Gradients Section -->
+      <section class="section">
+        <h2 class="section-title">5. Conic Gradients</h2>
+        
+        <div class="examples-grid">
+          <div class="gradient-box conic-basic">
+            <p>Basic Conic</p>
+          </div>
+          <div class="gradient-box conic-color-wheel">
+            <p>Color Wheel</p>
+          </div>
+          <div class="gradient-box conic-pie-chart">
+            <p>Pie Chart</p>
+          </div>
+          <div class="gradient-box conic-checkered">
+            <p>Checkered</p>
+          </div>
+        </div>
+
+        <div class="special-demos">
+          <div class="conic-spinner"></div>
+          <div class="conic-progress">
+            <span class="progress-text">75%</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Background Images Section -->
+      <section class="section">
+        <h2 class="section-title">6. Background Images & Properties</h2>
+        
+        <div class="examples-grid">
+          <div class="bg-image-box bg-cover">
+            <p>background-size: cover</p>
+          </div>
+          <div class="bg-image-box bg-contain">
+            <p>background-size: contain</p>
+          </div>
+          <div class="bg-image-box bg-repeat">
+            <p>background-repeat: repeat</p>
+          </div>
+          <div class="bg-image-box bg-no-repeat">
+            <p>background-repeat: no-repeat</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Background Clip Text Section -->
+      <section class="section bg-clip-section">
+        <h2 class="section-title">7. Background Clip - Text Effects</h2>
+        
+        <h1 class="gradient-text-large">Gradient Text Effect</h1>
+        <h1 class="animated-gradient-text-large">Animated Gradient Text</h1>
+        
+        <div class="examples-grid">
+          <h2 class="gradient-text-1">Purple Gradient</h2>
+          <h2 class="gradient-text-2">Blue Gradient</h2>
+          <h2 class="gradient-text-3">Pink Gradient</h2>
+          <h2 class="gradient-text-4">Rainbow Gradient</h2>
+        </div>
+      </section>
+
+      <!-- Multiple Backgrounds Section -->
+      <section class="section">
+        <h2 class="section-title">8. Multiple Background Layers</h2>
+        
+        <div class="examples-grid">
+          <div class="multi-bg-box multi-bg-overlay">
+            <p>Gradient + Image</p>
+          </div>
+          <div class="multi-bg-box multi-bg-pattern">
+            <p>Pattern + Gradient</p>
+          </div>
+          <div class="multi-bg-box multi-bg-decorative">
+            <p>Decorative Corners</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Interactive Examples Section -->
+      <section class="section">
+        <h2 class="section-title">9. Interactive States</h2>
+        
+        <div class="interactive-grid">
+          <button class="btn btn-primary">Primary Button</button>
+          <button class="btn btn-success">Success Button</button>
+          <button class="btn btn-danger">Danger Button</button>
+          <button class="btn btn-gradient">Gradient Button</button>
+        </div>
+
+        <div class="card-demo">
+          <div class="interactive-card">
+            <h3>Hover Card 1</h3>
+            <p>Hover เพื่อดู effect</p>
+          </div>
+          <div class="interactive-card">
+            <h3>Hover Card 2</h3>
+            <p>Background เปลี่ยนเมื่อ hover</p>
+          </div>
+          <div class="interactive-card">
+            <h3>Hover Card 3</h3>
+            <p>มี transition effect</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Accessibility Section -->
+      <section class="section">
+        <h2 class="section-title">10. Accessibility & Contrast</h2>
+        
+        <div class="examples-grid">
+          <div class="contrast-demo wcag-aa">
+            <p>WCAG AA Compliant</p>
+            <small>Contrast ratio: 4.5:1</small>
+          </div>
+          <div class="contrast-demo wcag-aaa">
+            <p>WCAG AAA Compliant</p>
+            <small>Contrast ratio: 7:1</small>
+          </div>
+          <div class="contrast-demo dark-theme">
+            <p>Dark Theme</p>
+            <small>High contrast</small>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <p>CSS Color & Background Properties - Complete Examples</p>
+        <p>Phase 3: Typography, Color & Units</p>
+      </footer>
+    </div>
   </body>
 </html>
