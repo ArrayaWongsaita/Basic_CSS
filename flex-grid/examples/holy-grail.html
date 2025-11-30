@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Holy Grail Layout</title>
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .holy-grail {
+      display: grid;
+      grid-template-columns: 200px 1fr 200px;
+      grid-template-rows: auto 1fr auto;
+      grid-template-areas:
+        "header header header"
+        "nav main aside"
+        "footer footer footer";
+      gap: 10px;
+      min-height: 500px;
+    }
+    .holy-grail > * {
+      padding: 20px;
+      border: 2px solid #333;
+    }
+    .hg-header {
+      grid-area: header;
+      background-color: lightblue;
+    }
+    .hg-nav {
+      grid-area: nav;
+      background-color: lightcoral;
+    }
+    .hg-main {
+      grid-area: main;
+      background-color: lightgreen;
+    }
+    .hg-aside {
+      grid-area: aside;
+      background-color: lightyellow;
+    }
+    .hg-footer {
+      grid-area: footer;
+      background-color: lightpink;
+    }
+  </style>
+</head>
+<body>
+  <a href="../examples.html" class="back-btn">← กลับ</a>
+  <h1>Holy Grail Layout</h1>
+  
+  <div class="holy-grail">
+    <header class="hg-header">Header</header>
+    <nav class="hg-nav">Navigation</nav>
+    <main class="hg-main">
+      <h2>Main Content</h2>
+      <p>The classic holy grail layout</p>
+    </main>
+    <aside class="hg-aside">Sidebar</aside>
+    <footer class="hg-footer">Footer</footer>
+  </div>
+</body>
+</html>

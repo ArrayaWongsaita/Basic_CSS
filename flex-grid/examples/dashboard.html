@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .dashboard {
+      display: grid;
+      grid-template-columns: 250px 1fr;
+      grid-template-rows: 60px 1fr 40px;
+      grid-template-areas:
+        "sidebar header"
+        "sidebar content"
+        "sidebar footer";
+      gap: 10px;
+      height: 500px;
+    }
+    .dash-header {
+      grid-area: header;
+      background-color: #333;
+      color: white;
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+    }
+    .dash-sidebar {
+      grid-area: sidebar;
+      background-color: #f4f4f4;
+      padding: 20px;
+    }
+    .dash-content {
+      grid-area: content;
+      background-color: white;
+      padding: 20px;
+      border: 2px solid #ddd;
+    }
+    .dash-footer {
+      grid-area: footer;
+      background-color: #f4f4f4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+  <a href="../examples.html" class="back-btn">← กลับ</a>
+  <h1>Dashboard Layout</h1>
+  
+  <div class="dashboard">
+    <header class="dash-header">Dashboard</header>
+    <aside class="dash-sidebar">
+      <h3>Menu</h3>
+      <ul style="list-style: none; padding: 0;">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+      </ul>
+    </aside>
+    <main class="dash-content">
+      <h2>Content</h2>
+      <p>Dashboard content</p>
+    </main>
+    <footer class="dash-footer">Footer</footer>
+  </div>
+</body>
+</html>

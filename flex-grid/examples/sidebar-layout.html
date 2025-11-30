@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sidebar Layout</title>
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .layout {
+      display: flex;
+      min-height: 400px;
+      gap: 10px;
+    }
+    .sidebar {
+      width: 200px;
+      background-color: #f4f4f4;
+      padding: 20px;
+    }
+    .main-content {
+      flex: 1;
+      background-color: white;
+      padding: 20px;
+      border: 2px solid #ddd;
+    }
+  </style>
+</head>
+<body>
+  <a href="../examples.html" class="back-btn">← กลับ</a>
+  <h1>Sidebar Layout</h1>
+  
+  <div class="layout">
+    <aside class="sidebar">
+      <h3>Sidebar</h3>
+      <ul style="list-style: none; padding: 0;">
+        <li>Menu 1</li>
+        <li>Menu 2</li>
+        <li>Menu 3</li>
+      </ul>
+    </aside>
+    <main class="main-content">
+      <h2>Main Content</h2>
+      <p>This is the main content area.</p>
+    </main>
+  </div>
+</body>
+</html>

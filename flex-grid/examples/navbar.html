@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navigation Bar</title>
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background-color: #333;
+    }
+    .logo {
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .nav-menu {
+      display: flex;
+      gap: 20px;
+    }
+    .nav-menu a {
+      color: white;
+      text-decoration: none;
+    }
+    .nav-menu a:hover {
+      color: #ddd;
+    }
+  </style>
+</head>
+<body>
+  <a href="../examples.html" class="back-btn">← กลับ</a>
+  <h1>Navigation Bar</h1>
+  
+  <nav class="navbar">
+    <div class="logo">LOGO</div>
+    <div class="nav-menu">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </div>
+  </nav>
+</body>
+</html>

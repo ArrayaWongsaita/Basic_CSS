@@ -1,0 +1,14 @@
+.grid {
+  display: grid;
+  grid-template-columns: 100px 100px 100px;
+  grid-template-rows: 100px 100px;
+  gap: 10px;
+  background-color: #f0f0f0;
+  padding: 10px;
+}
+
+.grid .item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

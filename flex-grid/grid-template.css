@@ -1,0 +1,32 @@
+.grid {
+  display: grid;
+  gap: 10px;
+  background-color: #f0f0f0;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.grid .item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid-fixed {
+  grid-template-columns: 100px 150px 200px;
+  grid-template-rows: 80px 100px;
+}
+
+.grid-fr {
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 100px;
+}
+
+.grid-repeat {
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: repeat(2, 80px);
+}
+
+.grid-auto {
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}

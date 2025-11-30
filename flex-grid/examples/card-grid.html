@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Card Grid</title>
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background-color: white;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+    }
+    .card h3 {
+      margin-top: 0;
+    }
+  </style>
+</head>
+<body>
+  <a href="../examples.html" class="back-btn">← กลับ</a>
+  <h1>Card Grid</h1>
+  
+  <div class="card-grid">
+    <div class="card">
+      <h3>Card 1</h3>
+      <p>Responsive grid layout</p>
+    </div>
+    <div class="card">
+      <h3>Card 2</h3>
+      <p>Auto-fit columns</p>
+    </div>
+    <div class="card">
+      <h3>Card 3</h3>
+      <p>Flexible design</p>
+    </div>
+    <div class="card">
+      <h3>Card 4</h3>
+      <p>Easy to customize</p>
+    </div>
+  </div>
+</body>
+</html>

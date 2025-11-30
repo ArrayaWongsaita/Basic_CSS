@@ -1,0 +1,7 @@
+.container { height: 150px; }
+.demo1 .item:nth-child(2) { flex-grow: 1; background-color: orange; }
+.demo2 .item { width: 200px; }
+.demo2 .item:nth-child(2) { flex-shrink: 0; background-color: orange; }
+.demo3 .item:nth-child(1) { flex: 1; }
+.demo3 .item:nth-child(2) { flex: 2; background-color: orange; }
+.demo3 .item:nth-child(3) { flex: 1; }

@@ -1,0 +1,17 @@
+.comparison {
+  background-color: white;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 8px;
+  border: 2px solid #ddd;
+}
+
+.comparison h3 {
+  color: #333;
+  margin-top: 20px;
+}
+
+.comparison ul {
+  line-height: 1.8;
+  margin-left: 20px;
+}
