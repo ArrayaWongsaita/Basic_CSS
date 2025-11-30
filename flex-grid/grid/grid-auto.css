@@ -1,0 +1,31 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: 20px 0;
+}
+
+/* auto-rows examples */
+.auto-rows {
+  grid-auto-rows: 80px;
+}
+
+.auto-rows-minmax {
+  grid-auto-rows: minmax(60px, auto);
+}
+
+.auto-rows-pattern {
+  grid-auto-rows: 50px 100px;
+}
+
+/* auto-columns example */
+.auto-cols {
+  grid-template-columns: 100px;
+  grid-auto-flow: column;
+  grid-auto-columns: 100px;
+}
+
+.col1 { grid-column: 1; }
+.col2 { grid-column: 2; }
+.col3 { grid-column: 3; }
+.col4 { grid-column: 4; }

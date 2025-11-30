@@ -1,0 +1,17 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 300px;
+  margin: 20px 0;
+}
+
+.no-gap { gap: 0; }
+.with-gap { gap: 10px; }
+.row-only { row-gap: 20px; }
+.col-only { column-gap: 30px; }
+.both-gap { gap: 15px 30px; }
+.old-gap { grid-gap: 20px; } /* ชื่อเก่า แต่ยังใช้ได้ */
+
+.item {
+  height: 60px;
+}

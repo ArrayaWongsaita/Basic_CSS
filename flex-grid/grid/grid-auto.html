@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid Auto Columns/Rows</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="grid-auto.css">
+</head>
+<body>
+  <a href="../index.html" class="back-btn">← กลับหน้าหลัก</a>
+  <h1>grid-auto-columns / grid-auto-rows</h1>
+  <p>กำหนดขนาด track ที่สร้างอัตโนมัติ</p>
+
+  <h3>grid-auto-rows: 80px</h3>
+  <div class="grid auto-rows">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
+    <div class="item">6</div>
+  </div>
+
+  <h3>grid-auto-rows: minmax(60px, auto)</h3>
+  <div class="grid auto-rows-minmax">
+    <div class="item">1</div>
+    <div class="item">2<br>มีเนื้อหา<br>หลายบรรทัด<br>ขยายได้</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+  </div>
+
+  <h3>grid-auto-columns: 100px</h3>
+  <div class="grid auto-cols">
+    <div class="item col1">1</div>
+    <div class="item col2">2</div>
+    <div class="item col3">3</div>
+    <div class="item col4">4</div>
+  </div>
+
+  <h3>grid-auto-rows: 50px 100px (pattern)</h3>
+  <div class="grid auto-rows-pattern">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
+    <div class="item">6</div>
+  </div>
+</body>
+</html>

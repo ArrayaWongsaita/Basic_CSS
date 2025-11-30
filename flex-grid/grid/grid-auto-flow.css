@@ -1,0 +1,26 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.flow-row { grid-auto-flow: row; }
+.flow-column { 
+  grid-auto-flow: column;
+  grid-template-rows: repeat(3, 60px);
+}
+.flow-dense { grid-auto-flow: dense; }
+.flow-row-dense { grid-auto-flow: row dense; }
+
+.item {
+  height: 60px;
+}
+
+.wide {
+  grid-column: span 2;
+}
+
+.tall {
+  grid-row: span 2;
+}

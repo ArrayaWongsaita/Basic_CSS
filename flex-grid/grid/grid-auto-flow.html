@@ -3,50 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Grid Alignment</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="grid-alignment.css">
+  <title>Grid Auto Flow</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="grid-auto-flow.css">
 </head>
 <body>
-  <a href="index.html" class="back-btn">← กลับหน้าหลัก</a>
-  <h1>Grid Alignment</h1>
-  
-  <h3>justify-items: center</h3>
-  <div class="grid justify-items">
+  <a href="../index.html" class="back-btn">← กลับหน้าหลัก</a>
+  <h1>grid-auto-flow</h1>
+  <p>ควบคุมการวาง item อัตโนมัติ</p>
+
+  <h3>row (default)</h3>
+  <div class="grid flow-row">
     <div class="item">1</div>
     <div class="item">2</div>
     <div class="item">3</div>
     <div class="item">4</div>
     <div class="item">5</div>
-    <div class="item">6</div>
   </div>
 
-  <h3>align-items: center</h3>
-  <div class="grid align-items">
+  <h3>column</h3>
+  <div class="grid flow-column">
     <div class="item">1</div>
     <div class="item">2</div>
     <div class="item">3</div>
     <div class="item">4</div>
     <div class="item">5</div>
-    <div class="item">6</div>
   </div>
 
-  <h3>place-items: center</h3>
-  <div class="grid place-items">
-    <div class="item">1</div>
+  <h3>dense (เติมช่องว่าง)</h3>
+  <div class="grid flow-dense">
+    <div class="item wide">1</div>
     <div class="item">2</div>
     <div class="item">3</div>
-    <div class="item">4</div>
+    <div class="item tall">4</div>
     <div class="item">5</div>
     <div class="item">6</div>
   </div>
 
-  <h3>place-content: center</h3>
-  <div class="grid place-content">
-    <div class="item">1</div>
+  <h3>row dense</h3>
+  <div class="grid flow-row-dense">
+    <div class="item wide">1</div>
     <div class="item">2</div>
     <div class="item">3</div>
-    <div class="item">4</div>
+    <div class="item tall">4</div>
     <div class="item">5</div>
     <div class="item">6</div>
   </div>

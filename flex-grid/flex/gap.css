@@ -1,0 +1,16 @@
+/* Flexbox Examples */
+.container {
+  flex-wrap: wrap;
+  width: 300px;
+}
+
+.no-gap { gap: 0; }
+.with-gap { gap: 10px; }
+.row-only { row-gap: 20px; }
+.col-only { column-gap: 30px; }
+.both { gap: 10px 30px; }
+
+.item {
+  width: 80px;
+  height: 60px;
+}

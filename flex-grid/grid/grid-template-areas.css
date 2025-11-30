@@ -1,0 +1,98 @@
+/* Simple Layout */
+.layout1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "header header"
+    "main sidebar"
+    "footer footer";
+  gap: 10px;
+}
+.layout1 .header {
+  grid-area: header;
+  border: 1px solid #999;
+}
+.layout1 .main {
+    grid-area: main;
+    border: 1px solid #999;
+}
+.layout1 .sidebar {
+    grid-area: sidebar;
+    border: 1px solid #999;
+}
+.layout1 .footer {
+    grid-area: footer;
+    border: 1px solid #999;
+    
+}
+
+/* With Empty Space */
+.layout2 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+    "box1 box2 ."
+    ". box3 box4";
+    gap: 10px;
+    margin: 20px 0;
+}
+.layout2 .box1 {
+    grid-area: box1;
+    border: 1px solid #999;
+}
+.layout2 .box2 {
+    grid-area: box2;
+    border: 1px solid #999;
+}
+.layout2 .box3 {
+    grid-area: box3;
+    border: 1px solid #999;
+}
+.layout2 .box4 {
+    grid-area: box4;
+    border: 1px solid #999;
+}
+
+/* Complex Layout */
+.layout3 {
+  display: grid;
+  grid-template-columns: 150px 1fr 150px;
+  grid-template-rows: 60px 1fr 40px;
+  grid-template-areas:
+    "logo nav search"
+    "sidebar2 content ads"
+    "footer2 footer2 footer2";
+  gap: 10px;
+  min-height: 400px;
+}
+.layout3 .logo {
+  grid-area: logo;
+  background-color: #333;
+  color: white;
+}
+.layout3 .nav {
+  grid-area: nav;
+  background-color: #555;
+  color: white;
+}
+.layout3 .search {
+  grid-area: search;
+  background-color: #777;
+  color: white;
+}
+.layout3 .sidebar2 {
+  grid-area: sidebar2;
+  background-color: lightcoral;
+}
+.layout3 .content {
+  grid-area: content;
+  background-color: white;
+}
+.layout3 .ads {
+  grid-area: ads;
+  background-color: lightyellow;
+}
+.layout3 .footer2 {
+  grid-area: footer2;
+  background-color: #ddd;
+}
