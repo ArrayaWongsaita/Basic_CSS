@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>03. Media Queries</title>
+    <link rel="stylesheet" href="../../global.css" />
+    <link rel="stylesheet" href="03-styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>03. Media Queries</h1>
+      <p class="description">เปลี่ยน CSS ตามขนาดหน้าจอ</p>
+
+      <section>
+        <div class="example">
+          <h2>Media Query คืออะไร?</h2>
+          <p>
+            คือการเขียน CSS ที่ทำงานเฉพาะเมื่อตรงกับเงื่อนไข (เช่น ขนาดหน้าจอ)
+          </p>
+          <code>
+            @media (max-width: 768px) { /* CSS สำหรับหน้าจอเล็กกว่า 768px */
+            .box { width: 100%; } }
+          </code>
+        </div>
+
+        <div class="example">
+          <h2>ตัวอย่างการใช้งาน</h2>
+          <div class="responsive-box">
+            <h3>ลองย่อ-ขยายหน้าต่าง!</h3>
+            <p class="screen-size"></p>
+          </div>
+          <code>
+            .responsive-box { background: blue; /* หน้าจอใหญ่ */ } @media
+            (max-width: 768px) { .responsive-box { background: red; /*
+            หน้าจอเล็ก ≤ 768px */ } }
+          </code>
+        </div>
+
+        <div class="example">
+          <h2>Breakpoints ที่นิยมใช้</h2>
+          <div class="breakpoints">
+            <div class="bp mobile">
+              <h3>📱 Mobile</h3>
+              <p>0 - 576px</p>
+            </div>
+            <div class="bp tablet">
+              <h3>📱 Tablet</h3>
+              <p>577 - 768px</p>
+            </div>
+            <div class="bp laptop">
+              <h3>💻 Laptop</h3>
+              <p>769 - 1024px</p>
+            </div>
+            <div class="bp desktop">
+              <h3>🖥️ Desktop</h3>
+              <p>1025px+</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="example">
+          <h2>max-width vs min-width</h2>
+          <code>
+            /* max-width: ใช้เมื่อหน้าจอเล็กกว่าหรือเท่ากับ */ @media
+            (max-width: 768px) { /* หน้าจอ ≤ 768px */ } /* min-width:
+            ใช้เมื่อหน้าจอใหญ่กว่าหรือเท่ากับ */ @media (min-width: 769px) { /*
+            หน้าจอ ≥ 769px */ }
+          </code>
+        </div>
+
+        <div class="example">
+          <h2>กำหนดช่วง (range)</h2>
+          <code>
+            /* ใช้ได้ระหว่าง 768px - 1024px */ @media (min-width: 768px) and
+            (max-width: 1024px) { .box { width: 50%; } }
+          </code>
+        </div>
+
+        <div class="example">
+          <h2>ตัวอย่าง: Responsive Grid</h2>
+          <div class="responsive-grid">
+            <div class="card">Card 1</div>
+            <div class="card">Card 2</div>
+            <div class="card">Card 3</div>
+            <div class="card">Card 4</div>
+          </div>
+          <pre>
+            <code>
+/* Desktop: 4 columns */
+.responsive-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+/* Tablet: 2 columns */
+@media (max-width: 768px) {
+  .responsive-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile: 1 column */
+@media (max-width: 576px) {
+  .responsive-grid {
+    grid-template-columns: 1fr;
+  }
+}
+        </code>
+</pre>
+        </div>
+      </section>
+
+      <div class="note">
+        <h3>📝 สรุป Media Queries</h3>
+        <ul>
+          <li>
+            <strong>@media (max-width)</strong> - หน้าจอเล็กกว่าหรือเท่ากับ
+          </li>
+          <li>
+            <strong>@media (min-width)</strong> - หน้าจอใหญ่กว่าหรือเท่ากับ
+          </li>
+          <li><strong>and</strong> - รวมหลายเงื่อนไข</li>
+          <li>Breakpoints: 576px (mobile), 768px (tablet), 1024px (desktop)</li>
+        </ul>
+      </div>
+
+      <div class="navigation">
+        <a href="02-responsive-units.html" class="back-link"
+          >← ก่อนหน้า: Units</a
+        >
+        <a href="04-mobile-first.html" class="next-link"
+          >ถัดไป: Mobile First →</a
+        >
+      </div>
+    </div>
+
+    <script>
+      // แสดงขนาดหน้าจอ
+      function updateScreenSize() {
+        const size = document.querySelector(".screen-size");
+        if (size) {
+          size.textContent = `ความกว้างหน้าจอ: ${window.innerWidth}px`;
+        }
+      }
+      updateScreenSize();
+      window.addEventListener("resize", updateScreenSize);
+    </script>
+  </body>
+</html>

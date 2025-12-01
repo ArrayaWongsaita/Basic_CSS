@@ -1,0 +1,20 @@
+/* Typography - Specific Styles */
+
+.font-demo { padding: 20px; margin: 15px 0; border: 2px solid #ddd; }
+.serif { font-family: Georgia, "Times New Roman", serif; }
+.sans-serif { font-family: Arial, Helvetica, sans-serif; }
+.monospace { font-family: "Courier New", Courier, monospace; }
+.font-weight-demo { margin: 10px 0; }
+.weight-300 { font-weight: 300; }
+.weight-400 { font-weight: 400; }
+.weight-700 { font-weight: 700; }
+.weight-900 { font-weight: 900; }
+.text-align-demo p { padding: 15px; background: #f0f0f0; margin: 10px 0; }
+.align-left { text-align: left; }
+.align-center { text-align: center; }
+.align-right { text-align: right; }
+.align-justify { text-align: justify; }
+.decoration-demo { margin: 10px 0; font-size: 1.2rem; }
+.underline { text-decoration: underline; }
+.overline { text-decoration: overline; }
+.line-through { text-decoration: line-through; }

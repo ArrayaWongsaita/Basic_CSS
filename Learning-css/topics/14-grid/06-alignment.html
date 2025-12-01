@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>06. Grid Alignment</title>
+  <link rel="stylesheet" href="../../global.css">
+  <link rel="stylesheet" href="06-styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>06. Grid Alignment</h1>
+    <p class="description">จัดตำแหน่ง items และ content ใน Grid</p>
+
+    <section>
+      <div class="example">
+        <h2>justify-items (แนวนอน)</h2>
+        <h3>justify-items: start</h3>
+        <div class="grid-box justify-start">
+          <div class="item">1</div>
+          <div class="item">2</div>
+          <div class="item">3</div>
+        </div>
+        <h3>justify-items: center</h3>
+        <div class="grid-box justify-center">
+          <div class="item">1</div>
+          <div class="item">2</div>
+          <div class="item">3</div>
+        </div>
+        <code>justify-items: start | center | end | stretch</code>
+      </div>
+
+      <div class="example">
+        <h2>align-items (แนวตั้ง)</h2>
+        <h3>align-items: start</h3>
+        <div class="grid-box tall align-start">
+          <div class="item">1</div>
+          <div class="item">2</div>
+          <div class="item">3</div>
+        </div>
+        <h3>align-items: center</h3>
+        <div class="grid-box tall align-center">
+          <div class="item">1</div>
+          <div class="item">2</div>
+          <div class="item">3</div>
+        </div>
+        <code>align-items: start | center | end | stretch</code>
+      </div>
+
+      <div class="example">
+        <h2>justify-content (จัด grid ทั้งหมดแนวนอน)</h2>
+        <div class="grid-box-wrapper justify-content-center">
+          <div class="grid-small">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+          </div>
+        </div>
+        <code>
+.grid-small {
+  width: auto; /* ไม่เต็ม */
+  justify-content: center;
+}
+        </code>
+      </div>
+
+      <div class="example">
+        <h2>align-content (จัด grid ทั้งหมดแนวตั้ง)</h2>
+        <div class="grid-box-tall align-content-center">
+          <div class="item">1</div>
+          <div class="item">2</div>
+          <div class="item">3</div>
+        </div>
+        <code>
+.grid {
+  height: 300px;
+  align-content: center;
+}
+        </code>
+      </div>
+
+      <div class="example">
+        <h2>place-items (shorthand)</h2>
+        <div class="grid-box tall place-center">
+          <div class="item">1</div>
+          <div class="item">2</div>
+          <div class="item">3</div>
+        </div>
+        <code>
+place-items: center; 
+/* = align-items: center; justify-items: center; */
+        </code>
+      </div>
+    </section>
+
+    <div class="note">
+      <h3>📝 สรุป Grid Alignment</h3>
+      <ul>
+        <li><strong>justify-items</strong> - จัด items แนวนอน</li>
+        <li><strong>align-items</strong> - จัด items แนวตั้ง</li>
+        <li><strong>justify-content</strong> - จัด grid container แนวนอน</li>
+        <li><strong>align-content</strong> - จัด grid container แนวตั้ง</li>
+        <li><strong>place-items</strong> - shorthand (align + justify)</li>
+      </ul>
+    </div>
+
+    <div class="navigation">
+      <a href="05-grid-areas.html" class="back-link">← ก่อนหน้า: Grid Areas</a>
+      <a href="07-auto-flow.html" class="next-link">ถัดไป: Auto Flow →</a>
+    </div>
+  </div>
+</body>
+</html>

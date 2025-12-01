@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>05. Grid Template Areas</title>
+  <link rel="stylesheet" href="../../global.css">
+  <link rel="stylesheet" href="05-styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>05. Grid Template Areas</h1>
+    <p class="description">ตั้งชื่อพื้นที่และวาง layout ด้วยชื่อ</p>
+
+    <section>
+      <div class="example">
+        <h2>grid-template-areas: วาง layout ด้วยชื่อ</h2>
+        <div class="layout-areas">
+          <div class="header">Header</div>
+          <div class="sidebar">Sidebar</div>
+          <div class="content">Content</div>
+          <div class="footer">Footer</div>
+        </div>
+        <code>
+.layout-areas {
+  grid-template-areas:
+    "header header"
+    "sidebar content"
+    "footer footer";
+}
+.header { grid-area: header; }
+.sidebar { grid-area: sidebar; }
+        </code>
+      </div>
+
+      <div class="example">
+        <h2>Layout แบบ 3 คอลัมน์</h2>
+        <div class="three-col">
+          <div class="header">Header</div>
+          <div class="sidebar">Sidebar</div>
+          <div class="content">Content</div>
+          <div class="ads">Ads</div>
+          <div class="footer">Footer</div>
+        </div>
+        <code>
+grid-template-areas:
+  "header header header"
+  "sidebar content ads"
+  "footer footer footer";
+        </code>
+      </div>
+
+      <div class="example">
+        <h2>ใช้ . สำหรับช่องว่าง</h2>
+        <div class="with-empty">
+          <div class="box1">Box 1</div>
+          <div class="box2">Box 2</div>
+        </div>
+        <code>
+grid-template-areas:
+  "box1 box1 ."
+  ". box2 box2";
+/* . = ช่องว่าง ไม่มี item */
+        </code>
+      </div>
+
+      <div class="example">
+        <h2>Dashboard Layout</h2>
+        <div class="dashboard">
+          <div class="nav">Nav</div>
+          <div class="main">Main</div>
+          <div class="sidebar-right">Info</div>
+          <div class="stats">Stats</div>
+        </div>
+        <code>
+grid-template-areas:
+  "nav main main info"
+  "nav main main info"
+  "nav stats stats stats";
+        </code>
+      </div>
+    </section>
+
+    <div class="note">
+      <h3>📝 สรุป Grid Template Areas</h3>
+      <ul>
+        <li><strong>grid-template-areas</strong> - วาด layout ด้วยชื่อ</li>
+        <li><strong>grid-area: name</strong> - ตั้งชื่อให้ item</li>
+        <li><strong>"header header"</strong> - ชื่อซ้ำ = ช่องเดียวกัน</li>
+        <li><strong>"."</strong> - ช่องว่าง ไม่มี item</li>
+      </ul>
+    </div>
+
+    <div class="navigation">
+      <a href="04-grid-lines.html" class="back-link">← ก่อนหน้า: Grid Lines</a>
+      <a href="06-alignment.html" class="next-link">ถัดไป: Alignment →</a>
+    </div>
+  </div>
+</body>
+</html>

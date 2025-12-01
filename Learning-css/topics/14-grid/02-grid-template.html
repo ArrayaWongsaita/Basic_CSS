@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>02. Grid Template</title>
+  <link rel="stylesheet" href="../../global.css">
+  <link rel="stylesheet" href="02-styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>02. Grid Template</h1>
+    <p class="description">กำหนดจำนวนและขนาดของ columns & rows</p>
+
+    <section>
+      <div class="example">
+        <h2>grid-template-columns: ขนาดเท่ากัน</h2>
+        <div class="grid-box equal">
+          <div class="item">1</div>
+          <div class="item">2</div>
+          <div class="item">3</div>
+        </div>
+        <code>grid-template-columns: 1fr 1fr 1fr; /* 3 คอลัมน์เท่ากัน */</code>
+      </div>
+
+      <div class="example">
+        <h2>grid-template-columns: ขนาดต่างกัน</h2>
+        <div class="grid-box different">
+          <div class="item">1</div>
+          <div class="item">2</div>
+          <div class="item">3</div>
+        </div>
+        <code>grid-template-columns: 2fr 1fr 1fr; /* คอลัมน์แรกใหญ่กว่า */</code>
+      </div>
+
+      <div class="example">
+        <h2>grid-template-columns: px และ fr ผสม</h2>
+        <div class="grid-box mixed">
+          <div class="item">Sidebar<br>200px</div>
+          <div class="item">Content<br>1fr</div>
+        </div>
+        <code>grid-template-columns: 200px 1fr; /* ขนาดคงที่ + ยืดหยุ่น */</code>
+      </div>
+
+      <div class="example">
+        <h2>repeat() - เขียนสั้นลง</h2>
+        <div class="grid-box repeat-demo">
+          <div class="item">1</div>
+          <div class="item">2</div>
+          <div class="item">3</div>
+          <div class="item">4</div>
+          <div class="item">5</div>
+        </div>
+        <code>
+grid-template-columns: repeat(5, 1fr);
+/* เหมือนกับ: 1fr 1fr 1fr 1fr 1fr */
+        </code>
+      </div>
+
+      <div class="example">
+        <h2>grid-template-rows</h2>
+        <div class="grid-box rows-demo">
+          <div class="item">1</div>
+          <div class="item">2</div>
+          <div class="item">3</div>
+          <div class="item">4</div>
+        </div>
+        <code>
+grid-template-columns: 1fr 1fr;
+grid-template-rows: 100px 150px; /* กำหนดความสูงแต่ละแถว */
+        </code>
+      </div>
+
+      <div class="example">
+        <h2>minmax() - ขนาดขั้นต่ำและสูงสุด</h2>
+        <div class="grid-box minmax-demo">
+          <div class="item">Item 1</div>
+          <div class="item">Item with more content here</div>
+          <div class="item">Item 3</div>
+        </div>
+        <code>
+grid-template-columns: repeat(3, minmax(100px, 1fr));
+/* ขั้นต่ำ 100px, สูงสุดยืดตาม 1fr */
+        </code>
+      </div>
+    </section>
+
+    <div class="note">
+      <h3>📝 สรุป Grid Template</h3>
+      <ul>
+        <li><strong>fr</strong> - fraction ส่วนที่เหลือ (1fr = 1 ส่วน)</li>
+        <li><strong>px, %</strong> - ขนาดคงที่</li>
+        <li><strong>repeat()</strong> - ทำซ้ำ pattern</li>
+        <li><strong>minmax()</strong> - กำหนดขนาดขั้นต่ำและสูงสุด</li>
+      </ul>
+    </div>
+
+    <div class="navigation">
+      <a href="01-grid-basics.html" class="back-link">← ก่อนหน้า: Grid Basics</a>
+      <a href="03-gap.html" class="next-link">ถัดไป: Gap →</a>
+    </div>
+  </div>
+</body>
+</html>

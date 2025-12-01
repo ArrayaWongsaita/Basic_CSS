@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>01. Viewport Meta Tag</title>
+  <link rel="stylesheet" href="../../global.css">
+  <link rel="stylesheet" href="01-styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>01. Viewport Meta Tag</h1>
+    <p class="description">ตั้งค่า viewport สำหรับ responsive design</p>
+
+    <section>
+      <div class="example">
+        <h2>Viewport Meta Tag คืออะไร?</h2>
+        <p>เป็น HTML tag ที่บอก browser ว่าจะแสดงผลหน้าเว็บอย่างไรบน mobile</p>
+        <div class="note">
+          <p><strong>ไม่มี viewport:</strong> หน้าเว็บจะถูกย่อให้เล็กมาก อ่านยาก</p>
+          <p><strong>มี viewport:</strong> หน้าเว็บจะปรับขนาดให้พอดีกับหน้าจอ</p>
+        </div>
+      </div>
+
+      <div class="example">
+        <h2>วิธีใช้ Viewport Meta Tag</h2>
+        <code>
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+        </code>
+        <p class="note">วางใน &lt;head&gt; ของ HTML ทุกหน้า</p>
+      </div>
+
+      <div class="example">
+        <h2>ความหมายของแต่ละส่วน</h2>
+        <div class="explanation">
+          <div class="explain-item">
+            <h3>width=device-width</h3>
+            <p>กำหนดความกว้างของ viewport ให้เท่ากับความกว้างของหน้าจออุปกรณ์</p>
+          </div>
+          <div class="explain-item">
+            <h3>initial-scale=1.0</h3>
+            <p>กำหนดระดับ zoom เริ่มต้นเป็น 1 (100%)</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="example">
+        <h2>ตัวอย่างการแสดงผล</h2>
+        <div class="demo-boxes">
+          <div class="demo-box without">
+            <h3>❌ ไม่มี viewport</h3>
+            <p>เว็บถูกย่อเล็กมาก<br>ข้อความอ่านยาก<br>ต้อง zoom in</p>
+          </div>
+          <div class="demo-box with">
+            <h3>✅ มี viewport</h3>
+            <p>เว็บพอดีหน้าจอ<br>อ่านง่าย<br>ใช้งานสะดวก</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="example">
+        <h2>การตั้งค่าเพิ่มเติม (ไม่แนะนำ)</h2>
+        <code>
+&lt;!-- ห้าม user zoom (ไม่ควรใช้) --&gt;
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0, 
+      maximum-scale=1.0, user-scalable=no"&gt;
+        </code>
+        <div class="note">
+          <p>⚠️ <strong>ไม่แนะนำ:</strong> การปิด zoom ทำให้ผู้ใช้ที่มีปัญหาการมองเห็นใช้งานยาก</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="note">
+      <h3>📝 สรุป Viewport Meta Tag</h3>
+      <ul>
+        <li>ใส่ทุกหน้าใน &lt;head&gt;</li>
+        <li><strong>width=device-width</strong> - ความกว้างตามอุปกรณ์</li>
+        <li><strong>initial-scale=1.0</strong> - zoom 100%</li>
+        <li>ไม่ควรปิด user-scalable</li>
+      </ul>
+    </div>
+
+    <div class="navigation">
+      <a href="index.html" class="back-link">← กลับไปหน้า Responsive</a>
+      <a href="02-responsive-units.html" class="next-link">ถัดไป: Responsive Units →</a>
+    </div>
+  </div>
+</body>
+</html>

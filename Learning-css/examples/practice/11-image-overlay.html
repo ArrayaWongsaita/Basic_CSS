@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>11. Image Overlay - Practice</title>
+  <link rel="stylesheet" href="../../global.css">
+  <style>
+    /* Image Card with Overlay */
+    .image-card {
+      position: relative;
+      width: 400px;
+      height: 300px;
+      margin: 20px;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .image-placeholder {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 3rem;
+    }
+
+    .overlay-text {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 20px;
+      background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+      color: white;
+    }
+
+    .overlay-text h3 {
+      margin: 0 0 5px 0;
+      color: white;
+    }
+
+    .overlay-text p {
+      margin: 0;
+      font-size: 0.9rem;
+    }
+
+    /* Center Overlay */
+    .image-card-center {
+      position: relative;
+      width: 400px;
+      height: 300px;
+      margin: 20px;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .overlay-center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 30px 40px;
+      border-radius: 8px;
+    }
+
+    .overlay-center h3 {
+      margin: 0 0 10px 0;
+      color: white;
+    }
+
+    /* Hover Overlay */
+    .image-card-hover {
+      position: relative;
+      width: 400px;
+      height: 300px;
+      margin: 20px;
+      border-radius: 12px;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .overlay-hover {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(33, 150, 243, 0.9);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .image-card-hover:hover .overlay-hover {
+      opacity: 1;
+    }
+
+    .overlay-hover h3 {
+      color: white;
+      margin: 0 0 10px 0;
+    }
+
+    /* Exercise */
+    .image-exercise {
+      position: relative;
+      width: 400px;
+      height: 300px;
+      margin: 20px;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .overlay-exercise {
+      /* TODO: ทำ overlay ด้วย position absolute */
+      padding: 20px;
+      background: rgba(76, 175, 80, 0.8);
+      color: white;
+    }
+
+    .overlay-exercise h3 {
+      margin: 0;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>11. Image Overlay</h1>
+    <p class="description">ฝึกวางข้อความทับรูปภาพด้วย position: absolute</p>
+
+    <section>
+      <div class="example">
+        <h2>✅ Overlay ด้านล่าง</h2>
+        <div class="image-card">
+          <div class="image-placeholder">🏔️</div>
+          <div class="overlay-text">
+            <h3>Mountain View</h3>
+            <p>Beautiful landscape photography</p>
+          </div>
+        </div>
+
+        <code>
+.image-card {
+  position: relative;
+  overflow: hidden;  /* ซ่อนส่วนเกิน */
+}
+
+.overlay-text {
+  position: absolute;
+  bottom: 0;      /* ชิดด้านล่าง */
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  color: white;
+}
+        </code>
+      </div>
+
+      <div class="example">
+        <h2>✅ Overlay ตรงกลาง</h2>
+        <div class="image-card-center">
+          <div class="image-placeholder">🌅</div>
+          <div class="overlay-center">
+            <h3>Sunset Beach</h3>
+            <p>Golden hour magic</p>
+          </div>
+        </div>
+
+        <code>
+.overlay-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);  /* จัดกลางแนวตั้งและนอน */
+  text-align: center;
+}
+        </code>
+        <p class="note"><strong>transform: translate(-50%, -50%)</strong> จัดให้อยู่กลางพอดี</p>
+      </div>
+
+      <div class="example">
+        <h2>✅ Overlay แสดงตอน Hover</h2>
+        <div class="image-card-hover">
+          <div class="image-placeholder">🏖️</div>
+          <div class="overlay-hover">
+            <h3>Beach Paradise</h3>
+            <p>Hover to see details</p>
+          </div>
+        </div>
+        <p class="note">ลองเอา mouse ไปวางบนรูป</p>
+
+        <code>
+.overlay-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;       /* ซ่อนไว้ */
+  transition: opacity 0.3s;
+}
+
+.image-card-hover:hover .overlay-hover {
+  opacity: 1;       /* แสดงตอน hover */
+}
+        </code>
+      </div>
+
+      <div class="example">
+        <h2>📝 แบบฝึกหัด: ทำ Overlay</h2>
+        <div class="image-exercise">
+          <div class="image-placeholder" style="background: linear-gradient(135deg, #4CAF50, #2E7D32);">🌲</div>
+          <div class="overlay-exercise">
+            <h3>Forest Path</h3>
+          </div>
+        </div>
+
+        <div class="note">
+          <p><strong>โจทย์:</strong></p>
+          <ul>
+            <li>ให้ overlay-exercise เป็น position: absolute</li>
+            <li>ให้ bottom: 0, left: 0, right: 0</li>
+            <li>ลองเปลี่ยนเป็น overlay ตรงกลาง</li>
+            <li>ลองทำ hover effect</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="example">
+        <h2>🎯 Challenge</h2>
+        <div class="note">
+          <p><strong>ลองทำเพิ่ม:</strong></p>
+          <ul>
+            <li>Overlay slide จากด้านข้าง</li>
+            <li>Overlay มีปุ่ม "View More"</li>
+            <li>Multiple overlays (มุมต่างๆ)</li>
+            <li>Overlay แบบ zoom in/out</li>
+            <li>Overlay พร้อม icon และ rating</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="note">
+      <h3>📚 Image Overlay Techniques</h3>
+      <ul>
+        <li><strong>position: relative</strong> - บน parent (image container)</li>
+        <li><strong>position: absolute</strong> - บน overlay</li>
+        <li><strong>top/bottom/left/right</strong> - กำหนดตำแหน่ง</li>
+        <li><strong>transform: translate(-50%, -50%)</strong> - จัดกลางพอดี</li>
+        <li><strong>opacity + transition</strong> - hover effect นุ่มนวล</li>
+      </ul>
+    </div>
+
+    <a href="index.html" class="back-link">← กลับหน้า Practice</a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>09. Badge Notification - Practice</title>
+  <link rel="stylesheet" href="../../global.css">
+  <style>
+    /* Button with Badge */
+    .btn-container {
+      position: relative;
+      display: inline-block;
+      margin: 30px;
+    }
+
+    .btn-with-badge {
+      padding: 12px 24px;
+      background: #2196F3;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .badge {
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      width: 24px;
+      height: 24px;
+      background: #f44336;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: bold;
+    }
+
+    /* Icon with Badge */
+    .icon-container {
+      position: relative;
+      display: inline-block;
+      margin: 30px;
+    }
+
+    .icon {
+      width: 50px;
+      height: 50px;
+      background: #333;
+      color: white;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+    }
+
+    .badge-small {
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      width: 18px;
+      height: 18px;
+      background: #FF9800;
+      border-radius: 50%;
+      border: 2px solid white;
+    }
+
+    /* Exercise */
+    .exercise-container {
+      position: relative;
+      display: inline-block;
+      margin: 30px;
+    }
+
+    .exercise-btn {
+      padding: 12px 24px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+
+    .exercise-badge {
+      /* TODO: ทำ badge ด้วย position absolute */
+      background: #f44336;
+      color: white;
+      border-radius: 50%;
+      font-size: 0.75rem;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>09. Badge Notification</h1>
+    <p class="description">ฝึกใช้ position: relative และ absolute</p>
+
+    <section>
+      <div class="example">
+        <h2>✅ Button พร้อม Badge</h2>
+        <div class="btn-container">
+          <button class="btn-with-badge">Messages</button>
+          <span class="badge">5</span>
+        </div>
+        <div class="btn-container">
+          <button class="btn-with-badge">Notifications</button>
+          <span class="badge">12</span>
+        </div>
+
+        <code>
+/* Parent - ต้องเป็น relative */
+.btn-container {
+  position: relative;
+  display: inline-block;
+}
+
+/* Badge - วางทับด้วย absolute */
+.badge {
+  position: absolute;
+  top: -8px;      /* ขยับขึ้น */
+  right: -8px;    /* ขยับขวา */
+  width: 24px;
+  height: 24px;
+  background: #f44336;
+  border-radius: 50%;  /* วงกลม */
+}
+        </code>
+      </div>
+
+      <div class="example">
+        <h2>✅ Icon พร้อม Badge เล็ก</h2>
+        <div class="icon-container">
+          <div class="icon">🔔</div>
+          <span class="badge-small"></span>
+        </div>
+        <div class="icon-container">
+          <div class="icon">📧</div>
+          <span class="badge-small"></span>
+        </div>
+        <div class="icon-container">
+          <div class="icon">💬</div>
+          <span class="badge-small"></span>
+        </div>
+
+        <code>
+.badge-small {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  width: 18px;
+  height: 18px;
+  background: #FF9800;
+  border-radius: 50%;
+  border: 2px solid white;  /* ขอบขาว */
+}
+        </code>
+      </div>
+
+      <div class="example">
+        <h2>📝 แบบฝึกหัด: ทำ Badge</h2>
+        <div class="exercise-container">
+          <button class="exercise-btn">Cart</button>
+          <span class="exercise-badge">3</span>
+        </div>
+
+        <div class="note">
+          <p><strong>โจทย์:</strong></p>
+          <ul>
+            <li>ให้ exercise-badge เป็น position: absolute</li>
+            <li>ให้ top: -8px, right: -8px</li>
+            <li>ให้ width: 24px, height: 24px</li>
+            <li>ให้ display: flex, จัดกลาง</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="example">
+        <h2>🎯 Challenge: Badge แบบต่างๆ</h2>
+        <div class="note">
+          <p><strong>ลองทำ:</strong></p>
+          <ul>
+            <li>Badge แสดงข้อความยาวๆ (New!)</li>
+            <li>Badge วางมุมซ้ายบน</li>
+            <li>Badge มี animation pulse</li>
+            <li>Multiple badges บนปุ่มเดียว</li>
+            <li>Badge แบบ pill (รูปขนมเยลลี่)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="note">
+      <h3>📚 Position: Relative & Absolute</h3>
+      <ul>
+        <li><strong>position: relative</strong> - parent element (ไม่เคลื่อนที่)</li>
+        <li><strong>position: absolute</strong> - child element (วางทับ)</li>
+        <li><strong>top, right, bottom, left</strong> - กำหนดตำแหน่ง</li>
+        <li>ค่าติดลบ (-) = เลื่อนออกนอก parent</li>
+        <li>Parent ต้อง relative, child ต้อง absolute</li>
+      </ul>
+    </div>
+
+    <a href="index.html" class="back-link">← กลับหน้า Practice</a>
+  </div>
+</body>
+</html>

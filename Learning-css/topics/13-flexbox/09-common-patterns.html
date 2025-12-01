@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>09. Common Patterns</title>
+  <link rel="stylesheet" href="../../global.css">
+  <link rel="stylesheet" href="09-styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>09. Common Patterns</h1>
+    <p class="description">รูปแบบการใช้ Flexbox ที่พบบ่อย</p>
+
+    <section>
+      <div class="example">
+        <h2>1. Center แนวนอนและแนวตั้ง</h2>
+        <div class="center-box">
+          <div class="content">ตรงกลางพอดี</div>
+        </div>
+        <code>
+.center-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+}
+        </code>
+      </div>
+
+      <div class="example">
+        <h2>2. Navigation Bar</h2>
+        <nav class="navbar">
+          <div class="logo">Logo</div>
+          <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+          </div>
+        </nav>
+        <code>
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+        </code>
+      </div>
+
+      <div class="example">
+        <h2>3. Card Grid (Responsive)</h2>
+        <div class="card-grid">
+          <div class="card">Card 1</div>
+          <div class="card">Card 2</div>
+          <div class="card">Card 3</div>
+        </div>
+        <code>
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.card {
+  flex: 1 1 250px; /* ขยาย หด ขนาดเริ่มต้น */
+}
+        </code>
+      </div>
+
+      <div class="example">
+        <h2>4. Sticky Footer</h2>
+        <div class="page-layout">
+          <header class="header">Header</header>
+          <main class="main">Main Content</main>
+          <footer class="footer">Footer</footer>
+        </div>
+        <code>
+.page-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 400px;
+}
+.main {
+  flex: 1; /* ขยายเต็มพื้นที่ */
+}
+        </code>
+      </div>
+
+      <div class="example">
+        <h2>5. Equal Height Columns</h2>
+        <div class="columns">
+          <div class="column">
+            <h3>Column 1</h3>
+            <p>Short content</p>
+          </div>
+          <div class="column">
+            <h3>Column 2</h3>
+            <p>This column has more content but all columns have equal height automatically with flexbox.</p>
+          </div>
+          <div class="column">
+            <h3>Column 3</h3>
+            <p>Medium content here</p>
+          </div>
+        </div>
+        <code>
+.columns {
+  display: flex;
+  gap: 20px;
+}
+.column {
+  flex: 1; /* ทุก column เท่ากัน */
+}
+        </code>
+      </div>
+    </section>
+
+    <div class="note">
+      <h3>🎉 เย้! เรียนจบ Flexbox แล้ว</h3>
+      <p>ตอนนี้คุณรู้จัก:</p>
+      <ul>
+        <li>✅ Flexbox Basics & Axes</li>
+        <li>✅ Flex Direction & Wrap</li>
+        <li>✅ Justify Content & Align Items</li>
+        <li>✅ Gap & Flex Items Properties</li>
+        <li>✅ Common Patterns ที่ใช้บ่อย</li>
+      </ul>
+      <p><strong>ขั้นตอนต่อไป:</strong> ลองนำไปใช้ในโปรเจคของคุณเอง!</p>
+    </div>
+
+    <div class="navigation">
+      <a href="08-flex-items.html" class="back-link">← ก่อนหน้า: Flex Items</a>
+      <a href="index.html" class="next-link">กลับไปหน้า Flexbox →</a>
+    </div>
+  </div>
+</body>
+</html>

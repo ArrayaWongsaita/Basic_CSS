@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>06. Responsive Typography</title>
+  <link rel="stylesheet" href="../../global.css">
+  <link rel="stylesheet" href="06-styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>06. Responsive Typography</h1>
+    <p class="description">ขนาดตัวอักษรที่ปรับตามหน้าจอ</p>
+
+    <section>
+      <div class="example">
+        <h2>rem - ตามขนาด root</h2>
+        <div class="rem-demo">
+          <h3>Heading (2rem)</h3>
+          <p>Paragraph (1rem)</p>
+          <small>Small text (0.875rem)</small>
+        </div>
+        <code>
+html { font-size: 16px; } /* base */
+
+h3 { font-size: 2rem; }      /* 32px */
+p { font-size: 1rem; }       /* 16px */
+small { font-size: 0.875rem; } /* 14px */
+
+/* Tablet */
+@media (min-width: 768px) {
+  html { font-size: 18px; } /* ขึ้น base */
+}
+        </code>
+        <p class="note">เปลี่ยน html font-size ที่เดียว ทุกอย่างปรับตาม</p>
+      </div>
+
+      <div class="example">
+        <h2>vw - ตามความกว้างหน้าจอ</h2>
+        <div class="vw-demo">
+          <h3>ขนาดตัวอักษรเปลี่ยนตามหน้าจอ</h3>
+        </div>
+        <code>
+h3 {
+  font-size: 4vw; /* 4% ของความกว้างหน้าจอ */
+}
+        </code>
+        <p class="note">⚠️ อาจเล็ก/ใหญ่เกินไปในบางหน้าจอ → ใช้ clamp()</p>
+      </div>
+
+      <div class="example">
+        <h2>clamp() - กำหนดขนาดขั้นต่ำ-สูงสุด</h2>
+        <div class="clamp-demo">
+          <h3>Heading ที่ปรับขนาดอย่างมีขีดจำกัด</h3>
+          <p>ลองย่อ-ขยายหน้าต่างดู</p>
+        </div>
+        <code>
+h3 {
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  /*         ขั้นต่ำ   ค่าที่ต้องการ  ขั้นสูงสุด */
+}
+        </code>
+        <div class="note">
+          <p><strong>clamp(min, preferred, max)</strong></p>
+          <ul>
+            <li>Mobile เล็ก → ใช้ min (1.5rem)</li>
+            <li>ขนาดกลาง → ใช้ 4vw (ปรับตามหน้าจอ)</li>
+            <li>หน้าจอใหญ่ → ใช้ max (3rem)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="example">
+        <h2>Scale system แบบ Mobile First</h2>
+        <div class="scale-demo">
+          <h1>Heading 1</h1>
+          <h2>Heading 2</h2>
+          <h3>Heading 3</h3>
+          <p>Paragraph text</p>
+        </div>
+        <code>
+/* Mobile */
+html { font-size: 14px; }
+h1 { font-size: 2rem; }    /* 28px */
+h2 { font-size: 1.5rem; }  /* 21px */
+h3 { font-size: 1.25rem; } /* 17.5px */
+p { font-size: 1rem; }     /* 14px */
+
+/* Tablet */
+@media (min-width: 768px) {
+  html { font-size: 16px; }
+  /* h1 = 32px, h2 = 24px, h3 = 20px, p = 16px */
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  html { font-size: 18px; }
+  /* h1 = 36px, h2 = 27px, h3 = 22.5px, p = 18px */
+}
+        </code>
+      </div>
+
+      <div class="example">
+        <h2>line-height - ระยะบรรทัด</h2>
+        <div class="line-height-demo">
+          <p class="tight">line-height: 1.2 - แน่นเกินไป อ่านยาก</p>
+          <p class="normal">line-height: 1.5 - พอดี อ่านง่าย</p>
+          <p class="loose">line-height: 2 - โปร่งเกินไป</p>
+        </div>
+        <code>
+p {
+  line-height: 1.5; /* แนะนำ 1.5-1.6 */
+}
+
+@media (min-width: 768px) {
+  p {
+    line-height: 1.6;
+  }
+}
+        </code>
+      </div>
+
+      <div class="example">
+        <h2>ตัวอย่าง: Responsive Article</h2>
+        <div class="article">
+          <h3>บทความตัวอย่าง</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+        <code>
+.article {
+  max-width: 65ch; /* ไม่เกิน 65 ตัวอักษร */
+}
+
+.article h3 {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  line-height: 1.2;
+}
+
+.article p {
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  line-height: 1.6;
+}
+        </code>
+      </div>
+    </section>
+
+    <div class="note">
+      <h3>📝 สรุป Responsive Typography</h3>
+      <ul>
+        <li><strong>rem</strong> - แนะนำสำหรับขนาดตัวอักษร</li>
+        <li><strong>clamp()</strong> - ขนาดที่ปรับตามหน้าจอแต่มีขีดจำกัด</li>
+        <li><strong>line-height</strong> - 1.5-1.6 สำหรับ body text</li>
+        <li><strong>max-width</strong> - จำกัดความกว้างบรรทัด (45-75 ตัวอักษร)</li>
+      </ul>
+    </div>
+
+    <div class="navigation">
+      <a href="05-responsive-images.html" class="back-link">← ก่อนหน้า: Images</a>
+      <a href="07-container-queries.html" class="next-link">ถัดไป: Container Queries →</a>
+    </div>
+  </div>
+</body>
+</html>

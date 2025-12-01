@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>10. Sticky Header - Practice</title>
+  <link rel="stylesheet" href="../../global.css">
+  <style>
+    /* Demo Container */
+    .demo-scroll {
+      height: 500px;
+      overflow-y: scroll;
+      border: 3px solid #333;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+
+    /* Sticky Header */
+    .header-sticky {
+      position: sticky;
+      top: 0;
+      background: #2196F3;
+      color: white;
+      padding: 20px;
+      z-index: 100;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .header-sticky h2 {
+      margin: 0;
+      color: white;
+    }
+
+    .content-area {
+      padding: 30px;
+      background: white;
+    }
+
+    .content-section {
+      margin-bottom: 30px;
+      padding: 20px;
+      background: #f0f0f0;
+      border-left: 4px solid #2196F3;
+    }
+
+    /* Sticky Navigation */
+    .nav-sticky {
+      position: sticky;
+      top: 0;
+      background: #333;
+      padding: 15px;
+      z-index: 100;
+    }
+
+    .nav-menu {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-menu a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .nav-menu a:hover {
+      color: #4CAF50;
+    }
+
+    /* Exercise */
+    .header-exercise {
+      /* TODO: เพิ่ม position sticky */
+      background: #4CAF50;
+      color: white;
+      padding: 20px;
+      z-index: 100;
+    }
+
+    .header-exercise h2 {
+      margin: 0;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>10. Sticky Header</h1>
+    <p class="description">ฝึกใช้ position: sticky ให้ header ติดด้านบน</p>
+
+    <section>
+      <div class="example">
+        <h2>✅ Sticky Header พื้นฐาน</h2>
+        <div class="demo-scroll">
+          <header class="header-sticky">
+            <h2>📌 Sticky Header</h2>
+            <p style="margin: 5px 0 0 0;">Scroll down to see the effect!</p>
+          </header>
+          <div class="content-area">
+            <div class="content-section">
+              <h3>Section 1</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            <div class="content-section">
+              <h3>Section 2</h3>
+              <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+            <div class="content-section">
+              <h3>Section 3</h3>
+              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            </div>
+            <div class="content-section">
+              <h3>Section 4</h3>
+              <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+            <div class="content-section">
+              <h3>Section 5</h3>
+              <p>Scroll back up to see the header stick at the top!</p>
+            </div>
+          </div>
+        </div>
+
+        <code>
+.header-sticky {
+  position: sticky;
+  top: 0;           /* ติดที่ top: 0 */
+  background: #2196F3;
+  z-index: 100;     /* อยู่ด้านบน */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+        </code>
+      </div>
+
+      <div class="example">
+        <h2>✅ Sticky Navigation</h2>
+        <div class="demo-scroll">
+          <nav class="nav-sticky">
+            <ul class="nav-menu">
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </nav>
+          <div class="content-area">
+            <div class="content-section">
+              <h3>Home Section</h3>
+              <p>Welcome to our website. The navigation bar will stick to the top as you scroll.</p>
+            </div>
+            <div class="content-section">
+              <h3>About Section</h3>
+              <p>Learn more about our company and what we do.</p>
+            </div>
+            <div class="content-section">
+              <h3>Services Section</h3>
+              <p>Check out our amazing services and offerings.</p>
+            </div>
+            <div class="content-section">
+              <h3>Contact Section</h3>
+              <p>Get in touch with us for more information.</p>
+            </div>
+          </div>
+        </div>
+
+        <code>
+.nav-sticky {
+  position: sticky;
+  top: 0;
+  background: #333;
+  z-index: 100;
+}
+        </code>
+      </div>
+
+      <div class="example">
+        <h2>📝 แบบฝึกหัด: ทำ Sticky Header</h2>
+        <div class="demo-scroll">
+          <header class="header-exercise">
+            <h2>Exercise Header</h2>
+            <p style="margin: 5px 0 0 0;">Make me sticky!</p>
+          </header>
+          <div class="content-area">
+            <div class="content-section">
+              <h3>Content 1</h3>
+              <p>Header should stick at the top when scrolling.</p>
+            </div>
+            <div class="content-section">
+              <h3>Content 2</h3>
+              <p>Keep scrolling to test the sticky effect.</p>
+            </div>
+            <div class="content-section">
+              <h3>Content 3</h3>
+              <p>The header should always be visible.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="note">
+          <p><strong>โจทย์:</strong></p>
+          <ul>
+            <li>เพิ่ม position: sticky ให้ header-exercise</li>
+            <li>เพิ่ม top: 0</li>
+            <li>เพิ่ม box-shadow</li>
+            <li>ลอง scroll ดูผลลัพธ์</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="example">
+        <h2>🎯 Challenge</h2>
+        <div class="note">
+          <p><strong>ลองทำเพิ่ม:</strong></p>
+          <ul>
+            <li>Sticky header ที่เปลี่ยนสีเมื่อ scroll</li>
+            <li>Multiple sticky headers (หลายชั้น)</li>
+            <li>Sticky sidebar ข้างๆ content</li>
+            <li>Sticky footer ด้านล่าง</li>
+            <li>เพิ่ม animation เมื่อ header ติด</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="note">
+      <h3>📚 Position: Sticky</h3>
+      <ul>
+        <li><strong>position: sticky</strong> - ติดเมื่อ scroll ถึงตำแหน่ง</li>
+        <li><strong>top: 0</strong> - ติดที่ตำแหน่งบนสุด</li>
+        <li><strong>z-index</strong> - ควรสูงกว่า element อื่น</li>
+        <li>ใช้กับ header, navigation, sidebar</li>
+        <li>Parent ต้องมี overflow: scroll หรือ auto</li>
+      </ul>
+    </div>
+
+    <a href="index.html" class="back-link">← กลับหน้า Practice</a>
+  </div>
+</body>
+</html>

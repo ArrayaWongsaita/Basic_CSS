@@ -1,0 +1,67 @@
+/* 04. Align Items - Specific Styles */
+
+.flex-box {
+  display: flex;
+  padding: 20px;
+  background: #f0f0f0;
+  border: 2px solid #333;
+  margin: 15px 0;
+  min-height: 150px;
+}
+
+.stretch {
+  align-items: stretch;
+}
+
+.flex-start {
+  align-items: flex-start;
+}
+
+.center {
+  align-items: center;
+}
+
+.flex-end {
+  align-items: flex-end;
+}
+
+.baseline {
+  align-items: baseline;
+}
+
+.item {
+  padding: 20px;
+  background: #9C27B0;
+  color: white;
+  border-radius: 4px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  min-width: 80px;
+  margin: 0 10px;
+}
+
+.tall {
+  padding: 40px 20px;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 2px solid #ddd;
+}
+
+.next-link {
+  color: #333;
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 2px solid #333;
+  border-radius: 4px;
+}
+
+.next-link:hover {
+  background: #333;
+  color: white;
+}

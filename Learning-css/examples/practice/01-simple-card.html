@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>01. Simple Card - Practice</title>
+  <link rel="stylesheet" href="../../global.css">
+  <style>
+    /* ตัวอย่าง: Card พื้นฐาน */
+    .card {
+      width: 300px;
+      padding: 20px;
+      margin: 20px;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      background: white;
+    }
+
+    .card h3 {
+      margin: 0 0 10px 0;
+      color: #333;
+    }
+
+    .card p {
+      margin: 0;
+      color: #666;
+      line-height: 1.5;
+    }
+
+    /* แบบฝึกหัด: ลองทำเอง */
+    .card-exercise {
+      /* TODO: เพิ่ม width, padding, margin */
+      border: 2px solid #4CAF50;
+      border-radius: 12px;
+      background: #f0f0f0;
+    }
+
+    .card-exercise h3 {
+      margin-bottom: 15px;
+      color: #4CAF50;
+    }
+
+    /* Challenge: ทำ card ที่สวยกว่า */
+    .card-challenge {
+      width: 320px;
+      padding: 25px;
+      margin: 20px;
+      border: 3px solid #2196F3;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #E3F2FD, white);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-challenge h3 {
+      margin: 0 0 15px 0;
+      color: #2196F3;
+      font-size: 1.5rem;
+    }
+
+    .card-challenge p {
+      margin: 0 0 10px 0;
+      line-height: 1.6;
+    }
+
+    .card-challenge .tag {
+      display: inline-block;
+      padding: 4px 12px;
+      background: #2196F3;
+      color: white;
+      border-radius: 12px;
+      font-size: 0.85rem;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>01. Simple Card</h1>
+    <p class="description">ฝึกใช้ padding, margin, border, border-radius</p>
+
+    <section>
+      <div class="example">
+        <h2>✅ ตัวอย่าง: Card พื้นฐาน</h2>
+        <div class="card">
+          <h3>Card Title</h3>
+          <p>This is a simple card with basic styling. It has padding, margin, border, and border-radius.</p>
+        </div>
+        <code>
+.card {
+  width: 300px;
+  padding: 20px;       /* พื้นที่ด้านใน */
+  margin: 20px;        /* ระยะห่างด้านนอก */
+  border: 2px solid #ddd;
+  border-radius: 8px;  /* มุมโค้ง */
+  background: white;
+}
+        </code>
+      </div>
+
+      <div class="example">
+        <h2>📝 แบบฝึกหัด: ทำ Card ด้วยตัวเอง</h2>
+        <div class="card-exercise">
+          <h3>Exercise Card</h3>
+          <p>ลองเพิ่ม width, padding, margin ให้ card นี้</p>
+        </div>
+        <div class="note">
+          <p><strong>โจทย์:</strong></p>
+          <ul>
+            <li>ให้ width: 300px</li>
+            <li>ให้ padding: 20px</li>
+            <li>ให้ margin: 20px</li>
+            <li>ลองเปลี่ยน border-radius เป็น 16px</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="example">
+        <h2>🎯 Challenge: Card ที่สวยขึ้น</h2>
+        <div class="card-challenge">
+          <h3>Premium Card</h3>
+          <p>This card has gradient background, shadow, and tag badge.</p>
+          <span class="tag">Featured</span>
+        </div>
+        <code>
+.card-challenge {
+  width: 320px;
+  padding: 25px;
+  margin: 20px;
+  border: 3px solid #2196F3;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #E3F2FD, white);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+        </code>
+        <div class="note">
+          <p><strong>ลองทำ:</strong></p>
+          <ul>
+            <li>เปลี่ยนสี gradient</li>
+            <li>ปรับขนาด box-shadow</li>
+            <li>เพิ่ม hover effect</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="note">
+      <h3>📚 สรุป Box Model Properties</h3>
+      <ul>
+        <li><strong>padding</strong> - พื้นที่ด้านในระหว่าง content กับ border</li>
+        <li><strong>margin</strong> - ระยะห่างด้านนอกระหว่าง element</li>
+        <li><strong>border</strong> - เส้นขอบ (ความหนา, รูปแบบ, สี)</li>
+        <li><strong>border-radius</strong> - ทำมุมโค้ง (ยิ่งมากยิ่งโค้ง)</li>
+      </ul>
+    </div>
+
+    <a href="index.html" class="back-link">← กลับหน้า Practice</a>
+  </div>
+</body>
+</html>

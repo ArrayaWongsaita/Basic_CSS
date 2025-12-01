@@ -1,0 +1,66 @@
+/* 03. Justify Content - Specific Styles */
+
+.flex-box {
+  display: flex;
+  padding: 20px;
+  background: #f0f0f0;
+  border: 2px solid #333;
+  margin: 15px 0;
+  min-height: 80px;
+}
+
+.flex-start {
+  justify-content: flex-start;
+}
+
+.center {
+  justify-content: center;
+}
+
+.flex-end {
+  justify-content: flex-end;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.space-around {
+  justify-content: space-around;
+}
+
+.space-evenly {
+  justify-content: space-evenly;
+}
+
+.item {
+  padding: 20px;
+  background: #FF9800;
+  color: white;
+  border-radius: 4px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  min-width: 60px;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 2px solid #ddd;
+}
+
+.next-link {
+  color: #333;
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 2px solid #333;
+  border-radius: 4px;
+}
+
+.next-link:hover {
+  background: #333;
+  color: white;
+}

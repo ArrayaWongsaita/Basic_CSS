@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>09. Common Responsive Patterns</title>
+  <link rel="stylesheet" href="../../global.css">
+  <link rel="stylesheet" href="09-styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>09. Common Responsive Patterns</h1>
+    <p class="description">รูปแบบ responsive ที่ใช้บ่อยในการทำเว็บ</p>
+
+    <section>
+      <div class="example">
+        <h2>1. Column Drop - เรียงคอลัมน์ตามหน้าจอ</h2>
+        <div class="column-drop">
+          <div class="col main">Main Content</div>
+          <div class="col sidebar">Sidebar</div>
+          <div class="col extra">Extra</div>
+        </div>
+<pre>        <code>
+/* Mobile: 1 column */
+.column-drop {
+  display: grid;
+  gap: 15px;
+}
+
+/* Tablet: 2 columns */
+@media (min-width: 768px) {
+  .column-drop {
+    grid-template-columns: 2fr 1fr;
+  }
+  .extra { grid-column: 1 / -1; }
+}
+
+/* Desktop: 3 columns */
+@media (min-width: 1024px) {
+  .column-drop {
+    grid-template-columns: 2fr 1fr 1fr;
+  }
+  .extra { grid-column: auto; }
+}
+        </code></pre>
+      </div>
+
+      <div class="example">
+        <h2>2. Mostly Fluid - Layout ยืดหยุ่น</h2>
+        <div class="mostly-fluid">
+          <div class="fluid-box">1</div>
+          <div class="fluid-box">2</div>
+          <div class="fluid-box">3</div>
+          <div class="fluid-box">4</div>
+          <div class="fluid-box">5</div>
+        </div>
+        <code>
+.mostly-fluid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+        </code>
+        <p class="note">ใช้ auto-fit + minmax() ปรับคอลัมน์อัตโนมัติ</p>
+      </div>
+
+      <div class="example">
+        <h2>3. Layout Shifter - เปลี่ยนตำแหน่ง</h2>
+        <div class="layout-shifter">
+          <header class="ls-header">Header</header>
+          <aside class="ls-sidebar">Sidebar</aside>
+          <main class="ls-main">Main Content</main>
+          <footer class="ls-footer">Footer</footer>
+        </div>
+        <code>
+/* Mobile: แนวตั้ง */
+.layout-shifter {
+  display: grid;
+  gap: 15px;
+}
+
+/* Desktop: Sidebar ซ้าย */
+@media (min-width: 768px) {
+  .layout-shifter {
+    grid-template-columns: 200px 1fr;
+    grid-template-areas:
+      "header header"
+      "sidebar main"
+      "footer footer";
+  }
+  .ls-header { grid-area: header; }
+  .ls-sidebar { grid-area: sidebar; }
+  .ls-main { grid-area: main; }
+  .ls-footer { grid-area: footer; }
+}
+        </code>
+      </div>
+
+      <div class="example">
+        <h2>4. Off Canvas - เมนูซ่อนข้างหน้าจอ</h2>
+        <div class="off-canvas-container">
+          <button class="toggle-btn" onclick="document.querySelector('.off-canvas-nav').classList.toggle('open')">☰ Menu</button>
+          <nav class="off-canvas-nav">
+            <button class="close-btn" onclick="document.querySelector('.off-canvas-nav').classList.remove('open')">✕</button>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </nav>
+          <div class="off-canvas-content">
+            <h3>Main Content</h3>
+            <p>คลิกปุ่ม Menu เพื่อเปิดเมนูด้านซ้าย</p>
+          </div>
+        </div>
+        <code>
+.off-canvas-nav {
+  position: fixed;
+  left: -250px;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  background: #333;
+  transition: 0.3s;
+}
+
+.off-canvas-nav.open {
+  left: 0;
+}
+
+/* Desktop: แสดงเมนูเสมอ */
+@media (min-width: 768px) {
+  .off-canvas-nav {
+    position: static;
+    width: auto;
+  }
+}
+        </code>
+      </div>
+
+      <div class="example">
+        <h2>5. Card Grid - Grid ปรับตามหน้าจอ</h2>
+        <div class="card-grid">
+          <div class="pattern-card">
+            <h4>Card 1</h4>
+            <p>Responsive card layout</p>
+          </div>
+          <div class="pattern-card">
+            <h4>Card 2</h4>
+            <p>Auto columns</p>
+          </div>
+          <div class="pattern-card">
+            <h4>Card 3</h4>
+            <p>Flexible sizing</p>
+          </div>
+          <div class="pattern-card">
+            <h4>Card 4</h4>
+            <p>Gap spacing</p>
+          </div>
+          <div class="pattern-card">
+            <h4>Card 5</h4>
+            <p>Min-max width</p>
+          </div>
+          <div class="pattern-card">
+            <h4>Card 6</h4>
+            <p>Equal height</p>
+          </div>
+        </div>
+        <code>
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.pattern-card {
+  padding: 30px;
+  background: white;
+  border: 2px solid #333;
+  border-radius: 8px;
+}
+        </code>
+      </div>
+
+      <div class="example">
+        <h2>6. Hero Section - Full viewport height</h2>
+        <div class="hero">
+          <h2>Hero Section</h2>
+          <p>เต็มความสูงหน้าจอ</p>
+          <button class="hero-btn">Get Started</button>
+        </div>
+        <code>
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+}
+        </code>
+      </div>
+    </section>
+
+    <div class="note">
+      <h3>📝 สรุป Common Patterns</h3>
+      <ul>
+        <li><strong>Column Drop</strong> - คอลัมน์ drop ลงมาตามหน้าจอ</li>
+        <li><strong>Mostly Fluid</strong> - Grid ยืดหยุ่นด้วย auto-fit/minmax</li>
+        <li><strong>Layout Shifter</strong> - เปลี่ยนตำแหน่งด้วย Grid Areas</li>
+        <li><strong>Off Canvas</strong> - เมนูซ่อนข้างหน้าจอ</li>
+        <li><strong>Card Grid</strong> - Grid ปรับคอลัมน์อัตโนมัติ</li>
+        <li><strong>Hero Section</strong> - Full height ด้วย 100vh</li>
+      </ul>
+    </div>
+
+    <div class="navigation">
+      <a href="08-responsive-navigation.html" class="back-link">← ก่อนหน้า: Navigation</a>
+      <a href="index.html" class="next-link">กลับไปหน้า Responsive →</a>
+    </div>
+  </div>
+</body>
+</html>

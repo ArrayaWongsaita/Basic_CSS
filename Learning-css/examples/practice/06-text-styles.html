@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>06. Text Styles - Practice</title>
+  <link rel="stylesheet" href="../../global.css">
+  <style>
+    .text-demo {
+      padding: 30px;
+      background: white;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+
+    .text-left {
+      text-align: left;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .text-right {
+      text-align: right;
+    }
+
+    .text-underline {
+      text-decoration: underline;
+    }
+
+    .text-line-through {
+      text-decoration: line-through;
+    }
+
+    .text-uppercase {
+      text-transform: uppercase;
+    }
+
+    .text-lowercase {
+      text-transform: lowercase;
+    }
+
+    .text-capitalize {
+      text-transform: capitalize;
+    }
+
+    .text-indent {
+      text-indent: 40px;
+    }
+
+    .text-spacing {
+      letter-spacing: 3px;
+    }
+
+    .text-word-spacing {
+      word-spacing: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>06. Text Styles</h1>
+    <p class="description">ฝึกใช้ text properties ต่างๆ</p>
+
+    <section>
+      <div class="example">
+        <h2>✅ Text Alignment</h2>
+        <div class="text-demo">
+          <p class="text-left">Text aligned to the left</p>
+          <p class="text-center">Text aligned to the center</p>
+          <p class="text-right">Text aligned to the right</p>
+        </div>
+        <code>
+text-align: left;
+text-align: center;
+text-align: right;
+        </code>
+      </div>
+
+      <div class="example">
+        <h2>✅ Text Decoration</h2>
+        <div class="text-demo">
+          <p class="text-underline">Underlined text</p>
+          <p class="text-line-through">Strike-through text</p>
+          <p><a href="#" style="text-decoration: none;">Link without underline</a></p>
+        </div>
+        <code>
+text-decoration: underline;
+text-decoration: line-through;
+text-decoration: none;
+        </code>
+      </div>
+
+      <div class="example">
+        <h2>✅ Text Transform</h2>
+        <div class="text-demo">
+          <p class="text-uppercase">all uppercase text</p>
+          <p class="text-lowercase">ALL LOWERCASE TEXT</p>
+          <p class="text-capitalize">capitalize each word</p>
+        </div>
+        <code>
+text-transform: uppercase;
+text-transform: lowercase;
+text-transform: capitalize;
+        </code>
+      </div>
+
+      <div class="example">
+        <h2>✅ Text Spacing</h2>
+        <div class="text-demo">
+          <p class="text-indent">This paragraph has text-indent. The first line is indented 40px from the left margin.</p>
+          <p class="text-spacing">L E T T E R   S P A C I N G</p>
+          <p class="text-word-spacing">Word spacing increased by 10px</p>
+        </div>
+        <code>
+text-indent: 40px;       /* เยื้องบรรทัดแรก */
+letter-spacing: 3px;     /* ระยะห่างตัวอักษร */
+word-spacing: 10px;      /* ระยะห่างคำ */
+        </code>
+      </div>
+    </section>
+
+    <div class="note">
+      <h3>📚 Text Properties</h3>
+      <ul>
+        <li><strong>text-align</strong> - จัดตำแหน่งข้อความ</li>
+        <li><strong>text-decoration</strong> - ขีดเส้นใต้/ทับ</li>
+        <li><strong>text-transform</strong> - เปลี่ยนตัวพิมพ์</li>
+        <li><strong>text-indent</strong> - เยื้องบรรทัดแรก</li>
+        <li><strong>letter-spacing</strong> - ระยะห่างตัวอักษร</li>
+      </ul>
+    </div>
+
+    <a href="index.html" class="back-link">← กลับหน้า Practice</a>
+  </div>
+</body>
+</html>

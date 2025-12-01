@@ -1,0 +1,71 @@
+/* 07. Auto Flow - Specific Styles */
+
+.grid-box {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding: 20px;
+  background: #f0f0f0;
+  border: 2px solid #333;
+  margin: 15px 0;
+}
+
+.flow-row {
+  grid-auto-flow: row;
+}
+
+.flow-column {
+  grid-auto-flow: column;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 80px);
+}
+
+.no-dense {
+  grid-auto-flow: row;
+}
+
+.with-dense {
+  grid-auto-flow: dense;
+}
+
+.auto-rows {
+  grid-auto-rows: 100px;
+}
+
+.item {
+  padding: 20px;
+  background: #00BCD4;
+  color: white;
+  border-radius: 4px;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wide {
+  grid-column: span 2;
+  background: #FF5722;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 2px solid #ddd;
+}
+
+.next-link {
+  color: #333;
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 2px solid #333;
+  border-radius: 4px;
+}
+
+.next-link:hover {
+  background: #333;
+  color: white;
+}

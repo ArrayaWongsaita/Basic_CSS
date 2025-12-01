@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>12. Modal Popup - Practice</title>
+  <link rel="stylesheet" href="../../global.css">
+  <style>
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal {
+      position: relative;
+      width: 90%;
+      max-width: 500px;
+      padding: 40px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      width: 35px;
+      height: 35px;
+      background: #f0f0f0;
+      border: none;
+      border-radius: 50%;
+      font-size: 1.5rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
+    }
+
+    .modal-close:hover {
+      background: #ff5722;
+      color: white;
+    }
+
+    .modal h2 {
+      margin: 0 0 15px 0;
+      color: #333;
+    }
+
+    .modal p {
+      margin: 0 0 25px 0;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    .modal-btn {
+      width: 100%;
+      padding: 12px;
+      background: #2196F3;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .open-modal-btn {
+      padding: 12px 24px;
+      background: #2196F3;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      margin: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>12. Modal Popup</h1>
+    <p class="description">ฝึกใช้ position: fixed สำหรับ popup</p>
+
+    <section>
+      <div class="example">
+        <h2>✅ Modal Popup</h2>
+        <button class="open-modal-btn" onclick="document.getElementById('modal1').classList.add('active')">
+          Open Modal
+        </button>
+
+        <div id="modal1" class="modal-overlay" onclick="if(event.target === this) this.classList.remove('active')">
+          <div class="modal">
+            <button class="modal-close" onclick="document.getElementById('modal1').classList.remove('active')">
+              ×
+            </button>
+            <h2>Welcome!</h2>
+            <p>This is a modal popup centered on the screen. Click the X button or click outside to close.</p>
+            <button class="modal-btn" onclick="document.getElementById('modal1').classList.remove('active')">
+              Got it!
+            </button>
+          </div>
+        </div>
+
+        <code>
+/* Overlay - เต็มหน้าจอ */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Modal - อยู่กลางหน้าจอ */
+.modal {
+  position: relative;
+  max-width: 500px;
+  padding: 40px;
+  background: white;
+  border-radius: 12px;
+}
+
+/* Close Button - มุมบนขวา */
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  border-radius: 50%;
+}
+        </code>
+      </div>
+
+      <div class="example">
+        <h2>✅ Modal ตัวอย่างที่ 2</h2>
+        <button class="open-modal-btn" style="background: #4CAF50;" onclick="document.getElementById('modal2').classList.add('active')">
+          Open Success Modal
+        </button>
+
+        <div id="modal2" class="modal-overlay" onclick="if(event.target === this) this.classList.remove('active')">
+          <div class="modal" style="text-align: center;">
+            <button class="modal-close" onclick="document.getElementById('modal2').classList.remove('active')">
+              ×
+            </button>
+            <div style="font-size: 4rem; margin-bottom: 20px;">✓</div>
+            <h2>Success!</h2>
+            <p>Your action has been completed successfully.</p>
+            <button class="modal-btn" style="background: #4CAF50;" onclick="document.getElementById('modal2').classList.remove('active')">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="example">
+        <h2>📝 แบบฝึกหัด</h2>
+        <div class="note">
+          <p><strong>โจทย์:</strong></p>
+          <ul>
+            <li>ทำ modal สำหรับ error message</li>
+            <li>ทำ modal สำหรับ confirmation (Yes/No)</li>
+            <li>เพิ่ม animation เมื่อเปิด/ปิด</li>
+            <li>ทำ modal ที่มีฟอร์ม input</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="example">
+        <h2>🎯 Challenge</h2>
+        <div class="note">
+          <p><strong>ลองทำเพิ่ม:</strong></p>
+          <ul>
+            <li>Modal ที่เลื่อนมาจากด้านข้าง</li>
+            <li>Modal ที่มี backdrop blur</li>
+            <li>Multiple modals (เปิดทับกัน)</li>
+            <li>Modal พร้อม image gallery</li>
+            <li>Modal fullscreen สำหรับ mobile</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="note">
+      <h3>📚 Modal Popup Techniques</h3>
+      <ul>
+        <li><strong>position: fixed</strong> - ติดหน้าจอ</li>
+        <li><strong>top: 0; left: 0; width: 100%; height: 100%</strong> - เต็มหน้าจอ</li>
+        <li><strong>display: flex</strong> - จัดกลาง modal</li>
+        <li><strong>z-index: 1000</strong> - อยู่ด้านบนสุด</li>
+        <li><strong>rgba(0,0,0,0.7)</strong> - พื้นหลังทึบ 70%</li>
+      </ul>
+    </div>
+
+    <a href="index.html" class="back-link">← กลับหน้า Practice</a>
+  </div>
+</body>
+</html>

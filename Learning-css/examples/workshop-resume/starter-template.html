@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Resume - Starter Template</title>
+  <style>
+    /* ========================================
+       TODO: เพิ่ม CSS ของคุณที่นี่
+       ======================================== */
+    
+    /* Reset พื้นฐาน */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f0f0f0;
+      color: #333;
+      line-height: 1.6;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* TODO 1: Style Header
+       - เพิ่มสีพื้นหลัง (ลองใช้ gradient)
+       - จัดข้อความให้อยู่กลาง
+       - เพิ่ม padding
+       - ปรับขนาดตัวอักษร
+       - เพิ่ม border-radius
+       - เพิ่ม box-shadow
+    */
+    header {
+      /* เขียน CSS ที่นี่ */
+    }
+
+    header h1 {
+      /* เขียน CSS ที่นี่ */
+    }
+
+    header .title {
+      /* เขียน CSS ที่นี่ */
+    }
+
+    header .contact {
+      /* เขียน CSS ที่นี่ */
+    }
+
+    /* TODO 2: Style Sections
+       - ใส่พื้นหลังสีขาว
+       - เพิ่ม padding
+       - เพิ่ม margin-bottom
+       - เพิ่ม border-radius
+       - เพิ่ม box-shadow
+    */
+    section {
+      /* เขียน CSS ที่นี่ */
+    }
+
+    section h2 {
+      /* เขียน CSS ที่นี่ */
+      /* ลองใส่ border-bottom ให้สวย */
+    }
+
+    /* TODO 3: Style Skills Section
+       - ทำ progress bar ด้วย div 2 ชั้น
+       - ชั้นนอก: พื้นหลังสีเทา
+       - ชั้นใน: สีน้ำเงิน/ม่วง กำหนด width ตาม %
+       - เพิ่ม border-radius
+    */
+    .skill-item {
+      /* เขียน CSS ที่นี่ */
+    }
+
+    .skill-name {
+      /* เขียน CSS ที่นี่ */
+    }
+
+    .skill-bar {
+      /* เขียน CSS ที่นี่ */
+      /* พื้นหลังสีเทา, height: 10px */
+    }
+
+    .skill-progress {
+      /* เขียน CSS ที่นี่ */
+      /* สี gradient, height: 100% */
+    }
+
+    /* TODO 4: Style Experience & Education
+       - เพิ่ม margin-bottom ระหว่างรายการ
+       - เพิ่ม border-left เป็นสีน้ำเงิน
+       - เพิ่ม padding-left
+    */
+    .experience-item,
+    .education-item {
+      /* เขียน CSS ที่นี่ */
+    }
+
+    .date {
+      /* เขียน CSS ที่นี่ */
+      /* สีเทา, ขนาดเล็กกว่าปกติ */
+    }
+
+    /* TODO 5: Style Contact Section
+       - ใช้ display: flex เรียงข้อมูล
+       - เพิ่ม gap
+       - ทำให้ flexible
+    */
+    .contact-grid {
+      /* เขียน CSS ที่นี่ */
+    }
+
+    .contact-item {
+      /* เขียน CSS ที่นี่ */
+    }
+
+    .contact-item a {
+      /* เขียน CSS ที่นี่ */
+      /* กำหนดสี, ลบขีดเส้นใต้ */
+    }
+
+    .contact-item a:hover {
+      /* เขียน CSS ที่นี่ */
+      /* เพิ่มเส้นใต้เมื่อ hover */
+    }
+
+    /* Back Link */
+    .back-link {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 24px;
+      background: #667eea;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- TODO: เปลี่ยนข้อมูลเป็นของคุณเอง -->
+    
+    <!-- Header -->
+    <header>
+      <h1>ชื่อ - นามสกุล</h1>
+      <div class="title">ตำแหน่งงาน / อาชีพ</div>
+      <div class="contact">
+        <span>📧 email@example.com</span>
+        <span>📱 0xx-xxx-xxxx</span>
+        <span>📍 Location</span>
+      </div>
+    </header>
+
+    <!-- About Me -->
+    <section class="about">
+      <h2>👤 About Me</h2>
+      <p>
+        แนะนำตัวคุณเองสั้นๆ 3-5 บรรทัด 
+        บอกว่าคุณเป็นใคร ทำงานอะไร มีความสนใจในเรื่องอะไร
+        มีความสามารถอะไรบ้าง และสิ่งที่คุณกำลังมองหา
+      </p>
+    </section>
+
+    <!-- Skills -->
+    <section class="skills">
+      <h2>💼 Skills</h2>
+      
+      <!-- Skill 1 -->
+      <div class="skill-item">
+        <div class="skill-name">
+          <span>HTML & CSS</span>
+          <span>90%</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-progress" style="width: 90%;"></div>
+        </div>
+      </div>
+
+      <!-- Skill 2 -->
+      <div class="skill-item">
+        <div class="skill-name">
+          <span>JavaScript</span>
+          <span>80%</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-progress" style="width: 80%;"></div>
+        </div>
+      </div>
+
+      <!-- TODO: เพิ่ม Skills อื่นๆ ของคุณ -->
+      
+    </section>
+
+    <!-- Experience -->
+    <section class="experience">
+      <h2>💼 Work Experience</h2>
+      
+      <!-- Experience 1 -->
+      <div class="experience-item">
+        <h3>ตำแหน่งงาน</h3>
+        <div class="date">บริษัท / สถานที่ทำงาน | ปี พ.ศ. - ปัจจุบัน</div>
+        <ul>
+          <li>รายละเอียดงานที่ทำ 1</li>
+          <li>รายละเอียดงานที่ทำ 2</li>
+          <li>รายละเอียดงานที่ทำ 3</li>
+        </ul>
+      </div>
+
+      <!-- TODO: เพิ่มประสบการณ์อื่นๆ -->
+      
+    </section>
+
+    <!-- Education -->
+    <section class="education">
+      <h2>🎓 Education</h2>
+      
+      <!-- Education 1 -->
+      <div class="education-item">
+        <h3>ระดับการศึกษา / สาขาวิชา</h3>
+        <div class="date">สถาบันการศึกษา | ปี พ.ศ.</div>
+        <ul>
+          <li>เกรดเฉลี่ย: x.xx</li>
+          <li>รายละเอียดเพิ่มเติม (ถ้ามี)</li>
+        </ul>
+      </div>
+
+      <!-- TODO: เพิ่มการศึกษาอื่นๆ -->
+      
+    </section>
+
+    <!-- Contact -->
+    <section class="contact">
+      <h2>📞 Contact</h2>
+      <div class="contact-grid">
+        <div class="contact-item">
+          <strong>Email</strong>
+          <a href="mailto:your@email.com">your@email.com</a>
+        </div>
+        <div class="contact-item">
+          <strong>Phone</strong>
+          0xx-xxx-xxxx
+        </div>
+        <div class="contact-item">
+          <strong>LinkedIn</strong>
+          <a href="#">linkedin.com/in/yourname</a>
+        </div>
+        <div class="contact-item">
+          <strong>GitHub</strong>
+          <a href="#">github.com/yourname</a>
+        </div>
+      </div>
+    </section>
+
+    <a href="index.html" class="back-link">← กลับหน้า Workshop</a>
+  </div>
+
+  <!-- 
+    ========================================
+    💡 เคล็ดลับ:
+    ========================================
+    1. เริ่มจากการ style header ก่อน
+    2. ทีละ section ไม่ต้องรีบ
+    3. ลอง refresh browser บ่อยๆ เพื่อดูผล
+    4. ถ้าติดไปดูตัวอย่างได้
+    5. เปลี่ยนสีให้เป็นของตัวเอง
+    6. สนุกกับการเขียน CSS!
+    ========================================
+  -->
+</body>
+</html>

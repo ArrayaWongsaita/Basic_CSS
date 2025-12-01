@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>16. CSS Animations & Transitions</title>
+  <link rel="stylesheet" href="../../global.css">
+  <style>
+    .topic-nav {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin: 30px 0;
+    }
+
+    .topic-card {
+      padding: 20px;
+      background: white;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      text-decoration: none;
+      color: #333;
+      transition: all 0.3s;
+    }
+
+    .topic-card:hover {
+      border-color: #FF6B6B;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(255, 107, 107, 0.2);
+    }
+
+    .topic-number {
+      display: inline-block;
+      width: 35px;
+      height: 35px;
+      background: #FF6B6B;
+      color: white;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 35px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .topic-card h3 {
+      margin: 10px 0 5px 0;
+      color: #333;
+    }
+
+    .topic-card p {
+      margin: 0;
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    .intro-box {
+      background: linear-gradient(135deg, #FF6B6B, #FF8E53);
+      color: white;
+      padding: 40px;
+      border-radius: 12px;
+      margin-bottom: 40px;
+    }
+
+    .intro-box h1 {
+      margin: 0 0 15px 0;
+    }
+
+    .intro-box p {
+      margin: 0;
+      font-size: 1.1rem;
+      opacity: 0.95;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="intro-box">
+      <h1>16. CSS Animations & Transitions</h1>
+      <p>เรียนรู้การทำ Animation และ Transition ด้วย CSS เพื่อเพิ่มความเคลื่อนไหวให้กับเว็บไซต์</p>
+    </div>
+
+    <div class="note" style="background: #FFF3CD; border-color: #FFE69C;">
+      <h3>📖 เนื้อหาในโมดูลนี้</h3>
+      <p>เรียนรู้ตั้งแต่พื้นฐานของ Transition จนถึง Keyframe Animations ที่ซับซ้อน รวมถึงเทคนิคการทำ Animation ต่างๆ ที่ใช้บ่อยในการพัฒนาเว็บ</p>
+    </div>
+
+    <section>
+      <h2>📚 บทเรียน (เรียงตามลำดับ)</h2>
+      <p class="description">แนะนำให้เรียนตามลำดับจากบนลงล่าง</p>
+
+      <div class="topic-nav">
+        <!-- Lesson 01 -->
+        <a href="01-transition-basics.html" class="topic-card">
+          <div class="topic-number">01</div>
+          <h3>Transition Basics</h3>
+          <p>พื้นฐานการใช้ transition เพื่อทำ smooth animations</p>
+        </a>
+
+        <!-- Lesson 02 -->
+        <a href="02-transition-properties.html" class="topic-card">
+          <div class="topic-number">02</div>
+          <h3>Transition Properties</h3>
+          <p>Property, Duration, Timing Function, Delay</p>
+        </a>
+
+        <!-- Lesson 03 -->
+        <a href="03-timing-functions.html" class="topic-card">
+          <div class="topic-number">03</div>
+          <h3>Timing Functions</h3>
+          <p>ease, linear, ease-in, ease-out, cubic-bezier()</p>
+        </a>
+
+        <!-- Lesson 04 -->
+        <a href="04-transform-basics.html" class="topic-card">
+          <div class="topic-number">04</div>
+          <h3>Transform Basics</h3>
+          <p>translate, scale, rotate, skew</p>
+        </a>
+
+        <!-- Lesson 05 -->
+        <a href="05-transform-3d.html" class="topic-card">
+          <div class="topic-number">05</div>
+          <h3>3D Transforms</h3>
+          <p>rotateX, rotateY, perspective, transform-style</p>
+        </a>
+
+        <!-- Lesson 06 -->
+        <a href="06-keyframes-basics.html" class="topic-card">
+          <div class="topic-number">06</div>
+          <h3>@keyframes Basics</h3>
+          <p>สร้าง animation ด้วย @keyframes</p>
+        </a>
+
+        <!-- Lesson 07 -->
+        <a href="07-animation-properties.html" class="topic-card">
+          <div class="topic-number">07</div>
+          <h3>Animation Properties</h3>
+          <p>duration, delay, iteration-count, direction, fill-mode</p>
+        </a>
+
+        <!-- Lesson 08 -->
+        <a href="08-common-animations.html" class="topic-card">
+          <div class="topic-number">08</div>
+          <h3>Common Animations</h3>
+          <p>Fade, Slide, Bounce, Pulse, Shake</p>
+        </a>
+
+        <!-- Lesson 09 -->
+        <a href="09-loading-spinners.html" class="topic-card">
+          <div class="topic-number">09</div>
+          <h3>Loading Spinners</h3>
+          <p>สร้าง loading animations ต่างๆ</p>
+        </a>
+
+        <!-- Lesson 10 -->
+        <a href="10-animation-performance.html" class="topic-card">
+          <div class="topic-number">10</div>
+          <h3>Performance & Best Practices</h3>
+          <p>เทคนิคเพิ่มประสิทธิภาพ animation</p>
+        </a>
+      </div>
+    </section>
+
+    <div class="note">
+      <h3>💡 Tips สำหรับเรียนรู้</h3>
+      <ul>
+        <li><strong>เริ่มจาก Transition</strong> - ง่ายกว่า animation</li>
+        <li><strong>ฝึกทำตามตัวอย่าง</strong> - แล้วลองปรับแต่งเอง</li>
+        <li><strong>ดู DevTools</strong> - สังเกต animation ใน browser</li>
+        <li><strong>อย่า overuse</strong> - animation มากเกินไปทำให้น่ารำคาญ</li>
+        <li><strong>คำนึงถึง performance</strong> - ใช้ transform และ opacity</li>
+      </ul>
+    </div>
+
+    <a href="../../index.html" class="back-link">← กลับหน้าหลัก</a>
+  </div>
+</body>
+</html>

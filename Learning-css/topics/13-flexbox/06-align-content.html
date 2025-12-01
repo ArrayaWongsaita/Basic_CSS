@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>06. Align Content</title>
+  <link rel="stylesheet" href="../../global.css">
+  <link rel="stylesheet" href="06-styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>06. Align Content</h1>
+    <p class="description">จัดเรียงหลายบรรทัดบน Cross Axis (ใช้กับ flex-wrap)</p>
+
+    <section>
+      <div class="example">
+        <h2>align-content: flex-start</h2>
+        <div class="flex-box flex-start">
+          <div class="item">1</div>
+          <div class="item">2</div>
+          <div class="item">3</div>
+          <div class="item">4</div>
+          <div class="item">5</div>
+          <div class="item">6</div>
+        </div>
+        <code>align-content: flex-start; /* บรรทัดชิดบน */</code>
+      </div>
+
+      <div class="example">
+        <h2>align-content: center</h2>
+        <div class="flex-box center">
+          <div class="item">1</div>
+          <div class="item">2</div>
+          <div class="item">3</div>
+          <div class="item">4</div>
+          <div class="item">5</div>
+          <div class="item">6</div>
+        </div>
+        <code>align-content: center; /* บรรทัดอยู่กลาง */</code>
+      </div>
+
+      <div class="example">
+        <h2>align-content: space-between</h2>
+        <div class="flex-box space-between">
+          <div class="item">1</div>
+          <div class="item">2</div>
+          <div class="item">3</div>
+          <div class="item">4</div>
+          <div class="item">5</div>
+          <div class="item">6</div>
+        </div>
+        <code>align-content: space-between; /* กระจายบรรทัด */</code>
+      </div>
+
+      <div class="example">
+        <h2>align-content: space-around</h2>
+        <div class="flex-box space-around">
+          <div class="item">1</div>
+          <div class="item">2</div>
+          <div class="item">3</div>
+          <div class="item">4</div>
+          <div class="item">5</div>
+          <div class="item">6</div>
+        </div>
+        <code>align-content: space-around; /* มีพื้นที่รอบๆ บรรทัด */</code>
+      </div>
+    </section>
+
+    <div class="note">
+      <h3>📝 สรุป Align Content</h3>
+      <ul>
+        <li>ใช้กับ multi-line flexbox (ต้องมี flex-wrap)</li>
+        <li><strong>flex-start</strong> - บรรทัดชิดบน</li>
+        <li><strong>center</strong> - บรรทัดอยู่กลาง</li>
+        <li><strong>space-between</strong> - กระจายบรรทัด</li>
+        <li><strong>space-around</strong> - มีพื้นที่รอบบรรทัด</li>
+      </ul>
+    </div>
+
+    <div class="navigation">
+      <a href="05-flex-wrap.html" class="back-link">← ก่อนหน้า: Flex Wrap</a>
+      <a href="07-gap.html" class="next-link">ถัดไป: Gap →</a>
+    </div>
+  </div>
+</body>
+</html>

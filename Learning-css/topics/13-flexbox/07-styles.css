@@ -1,0 +1,59 @@
+/* 07. Gap - Specific Styles */
+
+.flex-box {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  background: #f0f0f0;
+  border: 2px solid #333;
+  margin: 15px 0;
+}
+
+.no-gap {
+  gap: 0;
+}
+
+.gap-10 {
+  gap: 10px;
+}
+
+.gap-30 {
+  gap: 30px;
+}
+
+.custom-gap {
+  row-gap: 20px;
+  column-gap: 40px;
+}
+
+.item {
+  padding: 20px;
+  background: #673AB7;
+  color: white;
+  border-radius: 4px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  min-width: 80px;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 2px solid #ddd;
+}
+
+.next-link {
+  color: #333;
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 2px solid #333;
+  border-radius: 4px;
+}
+
+.next-link:hover {
+  background: #333;
+  color: white;
+}

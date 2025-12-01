@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>03. Timing Functions</title>
+  <link rel="stylesheet" href="../../global.css">
+  <style>
+    .race-track {
+      background: #f0f0f0;
+      padding: 40px 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+
+    .racer {
+      width: 60px;
+      height: 60px;
+      background: #3498db;
+      margin: 15px 0;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition-property: transform;
+      transition-duration: 2s;
+    }
+
+    .race-track:hover .racer {
+      transform: translateX(calc(100vw - 200px));
+    }
+
+    .racer-linear {
+      transition-timing-function: linear;
+    }
+
+    .racer-ease {
+      transition-timing-function: ease;
+    }
+
+    .racer-ease-in {
+      transition-timing-function: ease-in;
+    }
+
+    .racer-ease-out {
+      transition-timing-function: ease-out;
+    }
+
+    .racer-ease-in-out {
+      transition-timing-function: ease-in-out;
+    }
+
+    .racer-custom {
+      transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    /* Demo buttons */
+    .demo-buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin: 20px 0;
+    }
+
+    .btn-demo {
+      padding: 12px 24px;
+      background: #3498db;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn-linear {
+      transition-timing-function: linear;
+    }
+
+    .btn-ease {
+      transition-timing-function: ease;
+    }
+
+    .btn-ease-in {
+      transition-timing-function: ease-in;
+    }
+
+    .btn-ease-out {
+      transition-timing-function: ease-out;
+    }
+
+    .btn-ease-in-out {
+      transition-timing-function: ease-in-out;
+    }
+
+    .btn-demo:hover {
+      transform: scale(1.15);
+      background: #2980b9;
+    }
+
+    /* Comparison */
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+      margin: 20px 0;
+    }
+
+    .comparison-item {
+      height: 120px;
+      background: #9b59b6;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.5s;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .comparison-item:hover {
+      transform: translateY(-20px);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>03. Timing Functions</h1>
+    <p class="description">เรียนรู้รูปแบบการเคลื่อนไหวด้วย timing functions</p>
+
+    <section>
+      <h2>🏎️ Timing Functions แข่งกัน!</h2>
+      <p>👆 Hover ที่พื้นที่เทา เพื่อดูการเคลื่อนไหวของแต่ละ timing function</p>
+      
+      <div class="race-track">
+        <div class="racer racer-linear">linear</div>
+        <div class="racer racer-ease">ease</div>
+        <div class="racer racer-ease-in">ease-in</div>
+        <div class="racer racer-ease-out">ease-out</div>
+        <div class="racer racer-ease-in-out">ease-in-out</div>
+        <div class="racer racer-custom">custom</div>
+      </div>
+
+      <div class="note">
+        <p>สังเกตว่าแต่ละ timing function มีลักษณะการเคลื่อนไหวต่างกัน แม้จะใช้เวลาเท่ากัน (2 วินาที)</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>📊 Timing Functions แต่ละแบบ</h2>
+
+      <div class="example">
+        <h3>1. linear</h3>
+        <p>ความเร็วคงที่ตลอด - เหมาะสำหรับสิ่งที่หมุนวนไปเรื่อยๆ</p>
+        <code>
+transition-timing-function: linear;
+/* ความเร็วเท่ากันทุกช่วงเวลา */
+        </code>
+        <div class="note">
+          <p>📈 กราฟ: เส้นตรงจากจุดเริ่มต้นถึงจุดสิ้นสุด</p>
+          <p>✅ ใช้กับ: loading spinners, การหมุน, สิ่งที่เคลื่อนไหวอย่างต่อเนื่อง</p>
+        </div>
+      </div>
+
+      <div class="example">
+        <h3>2. ease (default)</h3>
+        <p>เริ่มช้า → เร็วขึ้น → ช้าลง - ดูธรรมชาติที่สุด</p>
+        <code>
+transition-timing-function: ease;
+/* เริ่มช้า กลางเร็ว จบช้า */
+/* cubic-bezier(0.25, 0.1, 0.25, 1) */
+        </code>
+        <div class="note">
+          <p>📈 กราฟ: โค้งที่เริ่มและจบนุ่มนวล</p>
+          <p>✅ ใช้กับ: ส่วนใหญ่ของ UI animations</p>
+        </div>
+      </div>
+
+      <div class="example">
+        <h3>3. ease-in</h3>
+        <p>เริ่มช้า → เร็วขึ้นเรื่อยๆ</p>
+        <code>
+transition-timing-function: ease-in;
+/* เริ่มช้า ค่อยๆ เร็วขึ้น */
+/* cubic-bezier(0.42, 0, 1, 1) */
+        </code>
+        <div class="note">
+          <p>📈 กราฟ: โค้งที่เริ่มช้า แล้วเร่งความเร็วขึ้น</p>
+          <p>✅ ใช้กับ: element ที่กำลังจะหายไป (fade out)</p>
+        </div>
+      </div>
+
+      <div class="example">
+        <h3>4. ease-out</h3>
+        <p>เริ่มเร็ว → ช้าลงเรื่อยๆ</p>
+        <code>
+transition-timing-function: ease-out;
+/* เริ่มเร็ว ค่อยๆ ช้าลง */
+/* cubic-bezier(0, 0, 0.58, 1) */
+        </code>
+        <div class="note">
+          <p>📈 กราฟ: โค้งที่เริ่มเร็ว แล้วชะลอลง</p>
+          <p>✅ ใช้กับ: element ที่กำลังปรากฏ (fade in), dropdown menus</p>
+          <p>💡 แนะนำมากที่สุดสำหรับ UI!</p>
+        </div>
+      </div>
+
+      <div class="example">
+        <h3>5. ease-in-out</h3>
+        <p>เริ่มช้า → เร็ว → ช้าลง (คล้าย ease แต่นุ่มนวลกว่า)</p>
+        <code>
+transition-timing-function: ease-in-out;
+/* เริ่มช้า กลางเร็ว จบช้า (สมมาตร) */
+/* cubic-bezier(0.42, 0, 0.58, 1) */
+        </code>
+        <div class="note">
+          <p>📈 กราฟ: โค้งสมมาตร เริ่มและจบช้า</p>
+          <p>✅ ใช้กับ: การเปลี่ยนระหว่าง 2 สถานะที่เท่าเทียมกัน</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>👆 ทดสอบ Timing Functions บนปุ่ม</h2>
+      <p>Hover บนปุ่มเพื่อเปรียบเทียบ</p>
+      <div class="demo-buttons">
+        <button class="btn-demo btn-linear">linear</button>
+        <button class="btn-demo btn-ease">ease</button>
+        <button class="btn-demo btn-ease-in">ease-in</button>
+        <button class="btn-demo btn-ease-out">ease-out</button>
+        <button class="btn-demo btn-ease-in-out">ease-in-out</button>
+      </div>
+    </section>
+
+    <section>
+      <h2>🎨 cubic-bezier() - กำหนดเอง</h2>
+      <p>สร้าง timing function ของคุณเองด้วย cubic-bezier</p>
+      
+      <code>
+/* Syntax */
+cubic-bezier(x1, y1, x2, y2)
+
+/* ตัวอย่าง */
+transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+/* Bounce effect */
+
+/* เทียบเท่ากับ ease functions */
+linear:       cubic-bezier(0, 0, 1, 1)
+ease:         cubic-bezier(0.25, 0.1, 0.25, 1)
+ease-in:      cubic-bezier(0.42, 0, 1, 1)
+ease-out:     cubic-bezier(0, 0, 0.58, 1)
+ease-in-out:  cubic-bezier(0.42, 0, 0.58, 1)
+      </code>
+
+      <div class="note">
+        <h4>🔧 Tools สำหรับสร้าง cubic-bezier:</h4>
+        <ul>
+          <li><strong>cubic-bezier.com</strong> - สร้างและทดสอบออนไลน์</li>
+          <li><strong>Chrome DevTools</strong> - มี cubic-bezier editor ในตัว</li>
+          <li><strong>easings.net</strong> - ตัวอย่างและคัดลอก</li>
+        </ul>
+      </div>
+
+      <div class="example">
+        <h3>ตัวอย่าง cubic-bezier ที่นิยม</h3>
+        <code>
+/* Bounce */
+cubic-bezier(0.68, -0.55, 0.265, 1.55)
+
+/* Smooth */
+cubic-bezier(0.4, 0, 0.2, 1)
+
+/* Sharp */
+cubic-bezier(0.4, 0, 0.6, 1)
+
+/* Material Design Easing */
+cubic-bezier(0.4, 0, 0.2, 1)  /* Standard */
+cubic-bezier(0, 0, 0.2, 1)    /* Deceleration */
+cubic-bezier(0.4, 0, 1, 1)    /* Acceleration */
+        </code>
+      </div>
+    </section>
+
+    <section>
+      <h2>🎯 Comparison Grid</h2>
+      <p>👆 Hover ดู timing functions ทำงานพร้อมกัน</p>
+      <div class="comparison-grid">
+        <div class="comparison-item" style="transition-timing-function: linear;">
+          linear
+        </div>
+        <div class="comparison-item" style="transition-timing-function: ease;">
+          ease
+        </div>
+        <div class="comparison-item" style="transition-timing-function: ease-in;">
+          ease-in
+        </div>
+        <div class="comparison-item" style="transition-timing-function: ease-out;">
+          ease-out
+        </div>
+        <div class="comparison-item" style="transition-timing-function: ease-in-out;">
+          ease-in-out
+        </div>
+        <div class="comparison-item" style="transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);">
+          bounce
+        </div>
+      </div>
+    </section>
+
+    <div class="note">
+      <h3>💡 Best Practices</h3>
+      <ul>
+        <li><strong>ease-out</strong> - ใช้บ่อยที่สุดสำหรับ UI (แนะนำ)</li>
+        <li><strong>ease-in</strong> - ใช้เมื่อ element กำลังจะหายไป</li>
+        <li><strong>ease / ease-in-out</strong> - สำหรับการเคลื่อนที่ทั่วไป</li>
+        <li><strong>linear</strong> - loading spinners, continuous animations</li>
+        <li><strong>cubic-bezier()</strong> - เมื่อต้องการ personality เฉพาะ</li>
+      </ul>
+    </div>
+
+    <div class="note" style="background: #E8F5E9;">
+      <h3>🎯 สรุป: เลือก Timing Function ยังไง?</h3>
+      <ul>
+        <li><strong>🎨 UI ทั่วไป:</strong> ease-out</li>
+        <li><strong>📥 Element ปรากฏ:</strong> ease-out</li>
+        <li><strong>📤 Element หายไป:</strong> ease-in</li>
+        <li><strong>🔄 เคลื่อนที่ไปมา:</strong> ease-in-out</li>
+        <li><strong>⚙️ Mechanical/Technical:</strong> linear</li>
+        <li><strong>✨ Playful/Fun:</strong> cubic-bezier (bounce)</li>
+      </ul>
+    </div>
+
+    <div style="margin-top: 40px; display: flex; justify-content: space-between;">
+      <a href="02-transition-properties.html" class="back-link">← บทที่แล้ว</a>
+      <a href="04-transform-basics.html" class="back-link" style="background: #2ecc71;">บทถัดไป: Transform Basics →</a>
+    </div>
+  </div>
+</body>
+</html>

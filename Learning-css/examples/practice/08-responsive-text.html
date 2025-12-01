@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>08. Responsive Text - Practice</title>
+  <link rel="stylesheet" href="../../global.css">
+  <style>
+    .vw-text {
+      font-size: 5vw;
+      font-weight: bold;
+      color: #2196F3;
+      margin: 20px 0;
+    }
+
+    .clamp-text {
+      font-size: clamp(1.5rem, 4vw, 3rem);
+      font-weight: bold;
+      color: #4CAF50;
+      margin: 20px 0;
+    }
+
+    .responsive-heading {
+      font-size: clamp(2rem, 5vw, 4rem);
+      font-weight: 800;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin: 30px 0;
+    }
+
+    .responsive-paragraph {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 20px auto;
+    }
+
+    .size-demo {
+      padding: 30px;
+      background: #f0f0f0;
+      border: 2px solid #333;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>08. Responsive Text</h1>
+    <p class="description">ข้อความที่ปรับขนาดตามหน้าจอด้วย vw, clamp()</p>
+
+    <section>
+      <div class="example">
+        <h2>✅ VW Units - ตามความกว้างหน้าจอ</h2>
+        <div class="size-demo">
+          <div class="vw-text">5vw Text Size</div>
+          <p class="note">ลองย่อ-ขยายหน้าต่าง browser</p>
+        </div>
+        <code>
+font-size: 5vw;  /* 5% ของความกว้างหน้าจอ */
+        </code>
+        <p class="note">⚠️ อาจเล็ก/ใหญ่เกินไปในบางหน้าจอ</p>
+      </div>
+
+      <div class="example">
+        <h2>✅ clamp() - กำหนดขั้นต่ำ-สูงสุด</h2>
+        <div class="size-demo">
+          <div class="clamp-text">clamp(1.5rem, 4vw, 3rem)</div>
+          <p class="note">ขนาดจะไม่เล็กกว่า 1.5rem และไม่ใหญ่กว่า 3rem</p>
+        </div>
+        <code>
+font-size: clamp(1.5rem, 4vw, 3rem);
+/*             min    pref   max */
+        </code>
+        <p class="note">✅ แนะนำ: ควบคุมขนาดได้ดีกว่า vw</p>
+      </div>
+
+      <div class="example">
+        <h2>✅ Responsive Heading</h2>
+        <h2 class="responsive-heading">Responsive Gradient Heading</h2>
+        <code>
+.responsive-heading {
+  font-size: clamp(2rem, 5vw, 4rem);
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+        </code>
+      </div>
+
+      <div class="example">
+        <h2>✅ Responsive Paragraph</h2>
+        <p class="responsive-paragraph">
+          This paragraph uses clamp() to ensure readable font size on all devices. 
+          The text will scale smoothly between 1rem and 1.2rem based on viewport width, 
+          providing optimal readability on mobile, tablet, and desktop screens.
+        </p>
+        <code>
+.responsive-paragraph {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  line-height: 1.6;
+  max-width: 800px;
+}
+        </code>
+      </div>
+
+      <div class="example">
+        <h2>📝 แบบฝึกหัด</h2>
+        <div class="note">
+          <p><strong>โจทย์:</strong></p>
+          <ul>
+            <li>ทำ heading ด้วย clamp(2.5rem, 6vw, 5rem)</li>
+            <li>ทำ subtitle ด้วย clamp(1.2rem, 3vw, 2rem)</li>
+            <li>เทียบ vw กับ clamp() ดูความต่าง</li>
+            <li>ลองใช้กับ article layout</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="note">
+      <h3>📚 Responsive Typography</h3>
+      <ul>
+        <li><strong>vw</strong> - ปรับตามหน้าจอ (ไม่มีขีดจำกัด)</li>
+        <li><strong>clamp(min, preferred, max)</strong> - มีขีดจำกัด (แนะนำ)</li>
+        <li>Mobile: ใช้ min size</li>
+        <li>Desktop: ใช้ max size</li>
+        <li>ระหว่าง: ใช้ preferred size ที่ปรับตาม vw</li>
+      </ul>
+    </div>
+
+    <a href="index.html" class="back-link">← กลับหน้า Practice</a>
+  </div>
+</body>
+</html>

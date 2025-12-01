@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>14. Testimonial Card - Practice</title>
+  <link rel="stylesheet" href="../../global.css">
+  <style>
+    .testimonial-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 30px;
+      margin: 40px 0;
+    }
+
+    .testimonial-card {
+      position: relative;
+      padding: 40px 30px;
+      background: white;
+      border: 2px solid #ddd;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .quote-icon {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 4rem;
+      color: rgba(33, 150, 243, 0.1);
+    }
+
+    .testimonial-text {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: #333;
+      margin: 0 0 25px 0;
+      font-style: italic;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .author-avatar {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .author-info h4 {
+      margin: 0 0 5px 0;
+      font-size: 1.1rem;
+      color: #333;
+    }
+
+    .author-info p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    .rating {
+      margin-bottom: 15px;
+      color: #FF9800;
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>14. Testimonial Card</h1>
+    <p class="description">รวมทุกอย่าง: Box Model + Typography + Positioning</p>
+
+    <section>
+      <div class="example">
+        <h2>✅ Testimonial Cards</h2>
+        <div class="testimonial-container">
+          <div class="testimonial-card">
+            <div class="quote-icon">"</div>
+            <div class="rating">★★★★★</div>
+            <p class="testimonial-text">
+              "This product has completely transformed how we work. The interface is intuitive and the features are exactly what we needed."
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">JS</div>
+              <div class="author-info">
+                <h4>John Smith</h4>
+                <p>CEO, TechCorp</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="quote-icon">"</div>
+            <div class="rating">★★★★★</div>
+            <p class="testimonial-text">
+              "Outstanding support team and amazing product quality. Highly recommend to anyone looking for a reliable solution."
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar" style="background: linear-gradient(135deg, #4CAF50, #2E7D32);">SM</div>
+              <div class="author-info">
+                <h4>Sarah Miller</h4>
+                <p>Marketing Director</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="quote-icon">"</div>
+            <div class="rating">★★★★☆</div>
+            <p class="testimonial-text">
+              "Great value for money. The learning curve was minimal and we saw results within the first week of implementation."
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar" style="background: linear-gradient(135deg, #FF9800, #F57C00);">DL</div>
+              <div class="author-info">
+                <h4>David Lee</h4>
+                <p>Product Manager</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <code>
+.testimonial-card {
+  position: relative;
+  padding: 40px 30px;
+  background: white;
+  border: 2px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.quote-icon {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 4rem;
+  color: rgba(33, 150, 243, 0.1);
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.author-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+        </code>
+      </div>
+
+      <div class="example">
+        <h2>📝 แบบฝึกหัด</h2>
+        <div class="note">
+          <p><strong>โจทย์:</strong></p>
+          <ul>
+            <li>เปลี่ยนสี avatar gradient</li>
+            <li>เพิ่ม hover effect ให้การ์ด</li>
+            <li>ทำ testimonial slider (เลื่อนได้)</li>
+            <li>เพิ่มรูปภาพจริงแทน avatar ตัวอักษร</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="note">
+      <h3>📚 สิ่งที่ใช้</h3>
+      <ul>
+        <li><strong>Grid Layout</strong> - auto-fit, minmax()</li>
+        <li><strong>Position Absolute</strong> - quote icon</li>
+        <li><strong>Flexbox</strong> - author info</li>
+        <li><strong>Border-radius: 50%</strong> - avatar วงกลม</li>
+        <li><strong>Box Shadow</strong> - elevation effect</li>
+      </ul>
+    </div>
+
+    <a href="index.html" class="back-link">← กลับหน้า Practice</a>
+  </div>
+</body>
+</html>

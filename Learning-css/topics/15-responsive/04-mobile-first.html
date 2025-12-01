@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>04. Mobile First Design</title>
+  <link rel="stylesheet" href="../../global.css">
+  <link rel="stylesheet" href="04-styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>04. Mobile First Design</h1>
+    <p class="description">เริ่มออกแบบจาก mobile ก่อน แล้วค่อยขยายเป็น desktop</p>
+
+    <section>
+      <div class="example">
+        <h2>Mobile First คืออะไร?</h2>
+        <p>คือการเขียน CSS สำหรับ mobile เป็นหลัก แล้วใช้ <strong>min-width</strong> เพิ่ม style สำหรับหน้าจอใหญ่</p>
+        <div class="comparison">
+          <div class="method">
+            <h3>❌ Desktop First (เก่า)</h3>
+<pre>
+                <code>
+/* Desktop (ปกติ) */
+.box { width: 25%; }
+
+/* แล้วค่อยแก้สำหรับ mobile */
+@media (max-width: 768px) {
+  .box { width: 100%; }
+}
+            </code>
+</pre>
+          </div>
+          <div class="method">
+            <h3>✅ Mobile First (แนะนำ)</h3>
+<pre>
+                <code>
+/* Mobile (ปกติ) */
+.box { width: 100%; }
+
+/* แล้วค่อยขยายสำหรับ desktop */
+@media (min-width: 769px) {
+  .box { width: 25%; }
+}
+            </code>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="example">
+        <h2>ทำไมต้อง Mobile First?</h2>
+        <div class="reasons">
+          <div class="reason">
+            <h3>📱 Mobile ใช้มากกว่า</h3>
+            <p>คนส่วนใหญ่เข้าเว็บผ่าน mobile</p>
+          </div>
+          <div class="reason">
+            <h3>⚡ โหลดเร็วกว่า</h3>
+            <p>เริ่มจาก CSS น้อยๆ แล้วค่อยเพิ่ม</p>
+          </div>
+          <div class="reason">
+            <h3>✨ ออกแบบง่ายกว่า</h3>
+            <p>เริ่มจากแบบง่าย แล้วค่อยเพิ่มฟีเจอร์</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="example">
+        <h2>ตัวอย่าง: Typography</h2>
+        <div class="text-demo">
+          <h3>หัวข้อที่ปรับขนาดตามหน้าจอ</h3>
+          <p>ข้อความที่อ่านง่ายทั้ง mobile และ desktop</p>
+        </div>
+<pre>        <code>
+/* Mobile First */
+h3 {
+  font-size: 1.5rem; /* 24px */
+}
+
+p {
+  font-size: 1rem;   /* 16px */
+  line-height: 1.5;
+}
+
+/* Tablet ขึ้นไป */
+@media (min-width: 768px) {
+  h3 { font-size: 2rem; }   /* 32px */
+  p { font-size: 1.125rem; } /* 18px */
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  h3 { font-size: 2.5rem; }  /* 40px */
+  p { font-size: 1.25rem; }  /* 20px */
+}
+        </code></pre>
+      </div>
+
+      <div class="example">
+        <h2>ตัวอย่าง: Layout</h2>
+        <div class="layout-demo">
+          <div class="box">1</div>
+          <div class="box">2</div>
+          <div class="box">3</div>
+          <div class="box">4</div>
+        </div>
+<pre>
+            <code>
+/* Mobile: 1 column */
+.layout-demo {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+/* Tablet: 2 columns */
+@media (min-width: 768px) {
+  .layout-demo {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+}
+
+/* Desktop: 4 columns */
+@media (min-width: 1024px) {
+  .layout-demo {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+}
+        </code>
+</pre>
+      </div>
+
+      <div class="example">
+        <h2>ลำดับการเขียน Media Queries</h2>
+        <code>
+/* 1. Mobile (ไม่ต้องใส่ media query) */
+.container {
+  padding: 15px;
+}
+
+/* 2. Tablet */
+@media (min-width: 768px) {
+  .container {
+    padding: 30px;
+  }
+}
+
+/* 3. Desktop */
+@media (min-width: 1024px) {
+  .container {
+    padding: 50px;
+  }
+}
+
+/* 4. Large Desktop */
+@media (min-width: 1440px) {
+  .container {
+    padding: 80px;
+  }
+}
+        </code>
+        <p class="note">เรียงจากเล็กไปใหญ่ (min-width เพิ่มขึ้นเรื่อยๆ)</p>
+      </div>
+    </section>
+
+    <div class="note">
+      <h3>📝 สรุป Mobile First</h3>
+      <ul>
+        <li>เขียน CSS สำหรับ mobile ก่อน (ไม่ต้อง media query)</li>
+        <li>ใช้ <strong>min-width</strong> สำหรับหน้าจอใหญ่ขึ้น</li>
+        <li>เรียง media queries จากเล็กไปใหญ่</li>
+        <li>Breakpoints: 768px, 1024px, 1440px</li>
+      </ul>
+    </div>
+
+    <div class="navigation">
+      <a href="03-media-queries.html" class="back-link">← ก่อนหน้า: Media Queries</a>
+      <a href="05-responsive-images.html" class="next-link">ถัดไป: Responsive Images →</a>
+    </div>
+  </div>
+</body>
+</html>

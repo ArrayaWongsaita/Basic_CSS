@@ -1,0 +1,148 @@
+/* 04. Mobile First - Specific Styles */
+
+.comparison {
+  display: grid;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+@media (min-width: 768px) {
+  .comparison {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.method {
+  padding: 20px;
+  background: #f0f0f0;
+  border: 2px solid #333;
+  border-radius: 8px;
+}
+
+.method h3 {
+  margin: 0 0 15px 0;
+}
+
+.reasons {
+  display: grid;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+@media (min-width: 768px) {
+  .reasons {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.reason {
+  padding: 20px;
+  background: #f0f0f0;
+  border-left: 4px solid #4CAF50;
+  border-radius: 4px;
+}
+
+.reason h3 {
+  margin: 0 0 10px 0;
+  color: #4CAF50;
+}
+
+.reason p {
+  margin: 0;
+}
+
+.text-demo {
+  padding: 30px;
+  background: #f0f0f0;
+  border: 2px solid #333;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.text-demo h3 {
+  font-size: 1.5rem;
+  margin: 0 0 15px 0;
+  color: #2196F3;
+}
+
+@media (min-width: 768px) {
+  .text-demo h3 {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .text-demo h3 {
+    font-size: 2.5rem;
+  }
+}
+
+.text-demo p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .text-demo p {
+    font-size: 1.125rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .text-demo p {
+    font-size: 1.25rem;
+  }
+}
+
+.layout-demo {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+@media (min-width: 768px) {
+  .layout-demo {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .layout-demo {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+}
+
+.layout-demo .box {
+  padding: 40px;
+  background: #2196F3;
+  color: white;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 2px solid #ddd;
+}
+
+.next-link {
+  color: #333;
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 2px solid #333;
+  border-radius: 4px;
+}
+
+.next-link:hover {
+  background: #333;
+  color: white;
+}

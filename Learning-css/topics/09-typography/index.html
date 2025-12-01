@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Typography</title>
+  <link rel="stylesheet" href="../../global.css">
+</head>
+<body>
+  <div class="container">
+    <h1>CSS Typography</h1>
+    <p class="description">จัดการตัวอักษรและข้อความ</p>
+
+    <section>
+      <div class="example">
+        <h2>Font Properties</h2>
+        <p style="font-size: 24px;">font-size: 24px</p>
+        <p style="font-weight: bold;">font-weight: bold (700)</p>
+        <p style="font-style: italic;">font-style: italic</p>
+        <p style="font-family: 'Playfair Display', serif;">font-family: 'Playfair Display'</p>
+        <code>
+font-size: 24px;
+font-weight: 700;
+font-style: italic;
+font-family: 'Roboto', sans-serif;
+        </code>
+      </div>
+
+      <div class="example">
+        <h2>Text Properties</h2>
+        <p style="text-align: center;">text-align: center</p>
+        <p style="text-decoration: underline;">text-decoration: underline</p>
+        <p style="text-transform: uppercase;">text-transform: uppercase</p>
+        <p style="letter-spacing: 5px;">letter-spacing: 5px</p>
+        <p style="word-spacing: 20px;">word spacing: 20px</p>
+        <code>
+text-align: center | left | right | justify;
+text-decoration: underline | line-through | none;
+text-transform: uppercase | lowercase | capitalize;
+letter-spacing: 5px;
+word-spacing: 20px;
+        </code>
+      </div>
+
+      <div class="example">
+        <h2>Line Height</h2>
+        <div class="line-height-demo">
+          <p style="line-height: 1;">line-height: 1 - Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          <p style="line-height: 1.6;">line-height: 1.6 (แนะนำ) - Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          <p style="line-height: 2;">line-height: 2 - Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+        <code>line-height: 1.6; /* แนะนำสำหรับ readability */</code>
+      </div>
+    </section>
+
+    <div class="note">
+      <h3>📝 Typography Best Practices</h3>
+      <ul>
+        <li><strong>Font-size:</strong> ใช้ rem สำหรับ responsive</li>
+        <li><strong>Line-height:</strong> 1.5-1.8 สำหรับข้อความยาว</li>
+        <li><strong>Font pairing:</strong> Heading (serif) + Body (sans-serif)</li>
+        <li><strong>Web fonts:</strong> ใช้ Google Fonts หรือ local fonts</li>
+      </ul>
+    </div>
+
+    <a href="../../index.html" class="back-link">← กลับไปหน้าหลัก</a>
+  </div>
+</body>
+</html>

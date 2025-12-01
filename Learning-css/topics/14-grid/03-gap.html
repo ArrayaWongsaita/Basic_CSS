@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>03. Gap</title>
+  <link rel="stylesheet" href="../../global.css">
+  <link rel="stylesheet" href="03-styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>03. Gap</h1>
+    <p class="description">ระยะห่างระหว่าง grid items</p>
+
+    <section>
+      <div class="example">
+        <h2>ไม่มี gap</h2>
+        <div class="grid-box no-gap">
+          <div class="item">1</div>
+          <div class="item">2</div>
+          <div class="item">3</div>
+          <div class="item">4</div>
+        </div>
+        <code>/* ไม่ใส่ gap - items ติดกัน */</code>
+      </div>
+
+      <div class="example">
+        <h2>gap: 10px</h2>
+        <div class="grid-box gap-10">
+          <div class="item">1</div>
+          <div class="item">2</div>
+          <div class="item">3</div>
+          <div class="item">4</div>
+        </div>
+        <code>gap: 10px; /* ช่องว่าง 10px */</code>
+      </div>
+
+      <div class="example">
+        <h2>gap: 30px</h2>
+        <div class="grid-box gap-30">
+          <div class="item">1</div>
+          <div class="item">2</div>
+          <div class="item">3</div>
+          <div class="item">4</div>
+        </div>
+        <code>gap: 30px; /* ช่องว่าง 30px */</code>
+      </div>
+
+      <div class="example">
+        <h2>row-gap & column-gap แยกกัน</h2>
+        <div class="grid-box custom-gap">
+          <div class="item">1</div>
+          <div class="item">2</div>
+          <div class="item">3</div>
+          <div class="item">4</div>
+          <div class="item">5</div>
+          <div class="item">6</div>
+        </div>
+        <code>
+row-gap: 30px;    /* ระยะห่างแนวตั้ง */
+column-gap: 10px; /* ระยะห่างแนวนอน */
+        </code>
+      </div>
+    </section>
+
+    <div class="note">
+      <h3>📝 สรุป Gap</h3>
+      <ul>
+        <li><strong>gap: 20px</strong> - ระยะห่างทุกทิศทาง</li>
+        <li><strong>row-gap</strong> - ระยะห่างระหว่างแถว</li>
+        <li><strong>column-gap</strong> - ระยะห่างระหว่างคอลัมน์</li>
+        <li>ใช้แทน margin ทำให้โค้ดสะอาดขึ้น</li>
+      </ul>
+    </div>
+
+    <div class="navigation">
+      <a href="02-grid-template.html" class="back-link">← ก่อนหน้า: Grid Template</a>
+      <a href="04-grid-lines.html" class="next-link">ถัดไป: Grid Lines →</a>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>07. Container Queries</title>
+  <link rel="stylesheet" href="../../global.css">
+  <link rel="stylesheet" href="07-styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>07. Container Queries</h1>
+    <p class="description">Query ตามขนาด container แทนที่จะเป็นหน้าจอ (ใหม่!)</p>
+
+    <section>
+      <div class="example">
+        <h2>Media Query vs Container Query</h2>
+        <div class="comparison">
+          <div class="method">
+            <h3>Media Query</h3>
+            <p>Query ตามขนาดหน้าจอ</p>
+            <code>
+@media (max-width: 768px) {
+  .card { width: 100%; }
+}
+            </code>
+            <p class="note">ทุก .card เปลี่ยนพร้อมกัน</p>
+          </div>
+          <div class="method">
+            <h3>Container Query</h3>
+            <p>Query ตามขนาด container</p>
+            <code>
+@container (max-width: 400px) {
+  .card { width: 100%; }
+}
+            </code>
+            <p class="note">แต่ละ .card ปรับตาม container ของมันเอง</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="example">
+        <h2>วิธีใช้ Container Query</h2>
+        <code>
+/* 1. กำหนด container */
+.sidebar {
+  container-type: inline-size;
+  container-name: sidebar; /* optional */
+}
+
+/* 2. Query ตาม container */
+@container sidebar (min-width: 400px) {
+  .card {
+    grid-template-columns: 150px 1fr;
+  }
+}
+        </code>
+      </div>
+
+      <div class="example">
+        <h2>container-type</h2>
+        <code>
+container-type: inline-size; /* แนะนำ - query ความกว้าง */
+container-type: size;        /* query ทั้งกว้างและสูง */
+container-type: normal;      /* ปกติ (ไม่เป็น container) */
+        </code>
+        <p class="note"><strong>inline-size</strong> = ความกว้าง (ใช้บ่อยที่สุด)</p>
+      </div>
+
+      <div class="example">
+        <h2>ตัวอย่าง: Responsive Card</h2>
+        <div class="demo-grid">
+          <div class="card-container wide">
+            <div class="responsive-card">
+              <div class="card-image">IMAGE</div>
+              <div class="card-content">
+                <h4>Card Title</h4>
+                <p>This card changes layout based on container width.</p>
+              </div>
+            </div>
+          </div>
+          <div class="card-container narrow">
+            <div class="responsive-card">
+              <div class="card-image">IMAGE</div>
+              <div class="card-content">
+                <h4>Card Title</h4>
+                <p>Same card, different container.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <code>
+.card-container {
+  container-type: inline-size;
+}
+
+.responsive-card {
+  display: grid;
+  gap: 15px;
+}
+
+/* Container กว้าง: แนวนอน */
+@container (min-width: 400px) {
+  .responsive-card {
+    grid-template-columns: 150px 1fr;
+  }
+}
+
+/* Container แคบ: แนวตั้ง */
+@container (max-width: 399px) {
+  .responsive-card {
+    grid-template-columns: 1fr;
+  }
+}
+        </code>
+      </div>
+
+      <div class="example">
+        <h2>ตัวอย่าง: Sidebar Responsive</h2>
+        <div class="sidebar-demo">
+          <aside class="sidebar">
+            <div class="widget">
+              <h4>Widget</h4>
+              <p>Content adapts to sidebar width</p>
+            </div>
+          </aside>
+          <main class="main-content">
+            <p>Main content area</p>
+          </main>
+        </div>
+        <code>
+.sidebar {
+  container-type: inline-size;
+  container-name: sidebar;
+}
+
+/* Sidebar กว้าง: แสดงเต็ม */
+@container sidebar (min-width: 250px) {
+  .widget {
+    padding: 20px;
+  }
+  .widget p {
+    display: block;
+  }
+}
+
+/* Sidebar แคบ: ซ่อนข้อความ */
+@container sidebar (max-width: 249px) {
+  .widget {
+    padding: 10px;
+  }
+  .widget p {
+    display: none;
+  }
+}
+        </code>
+      </div>
+
+      <div class="example">
+        <h2>Container Query Units</h2>
+        <code>
+/* หน่วยพิเศษสำหรับ container queries */
+.card {
+  padding: 2cqw;  /* 2% ของความกว้าง container */
+  font-size: 3cqi; /* 3% ของ inline size */
+}
+        </code>
+        <div class="note">
+          <p><strong>cqw</strong> - container query width</p>
+          <p><strong>cqh</strong> - container query height</p>
+          <p><strong>cqi</strong> - container query inline-size</p>
+          <p><strong>cqb</strong> - container query block-size</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="note">
+      <h3>📝 สรุป Container Queries</h3>
+      <ul>
+        <li><strong>container-type: inline-size</strong> - กำหนดให้เป็น container</li>
+        <li><strong>@container</strong> - query ตามขนาด container</li>
+        <li>Component ปรับตามที่อยู่ ไม่ใช่ตามหน้าจอ</li>
+        <li>เหมาะสำหรับ reusable components</li>
+        <li>⚠️ รองรับ browser ใหม่ๆ (Chrome 105+, Safari 16+)</li>
+      </ul>
+    </div>
+
+    <div class="navigation">
+      <a href="06-responsive-typography.html" class="back-link">← ก่อนหน้า: Typography</a>
+      <a href="08-responsive-navigation.html" class="next-link">ถัดไป: Navigation →</a>
+    </div>
+  </div>
+</body>
+</html>

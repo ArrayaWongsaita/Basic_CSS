@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Box Model</title>
+    <link rel="stylesheet" href="../../global.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>CSS Box Model</h1>
+      <p class="description">เข้าใจโครงสร้างของ CSS Box Model</p>
+
+      <section class="box-model">
+        <h2>Box Model คืออะไร?</h2>
+        <p>
+          ทุก element ใน HTML ถูกมองเป็น "กล่อง" (Box) ที่ประกอบด้วย 4 ส่วน:
+        </p>
+
+        <div class="box-diagram">
+          <div class="margin-layer">
+            <div class="margin-label">Margin</div>
+            <div class="border-layer">
+              <div class="border-label">Border</div>
+              <div class="padding-layer">
+                <div class="padding-label">Padding</div>
+                <div class="content-layer">
+                  <div class="content-label">Content</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="example">
+          <h3>1. Content - เนื้อหา</h3>
+          <div class="demo-box content-only">Content</div>
+          <code>
+width: 200px;
+height: 100px;
+          </code>
+        </div>
+
+        <div class="example">
+          <h3>2. Padding - ช่องว่างภายใน</h3>
+          <div class="demo-box with-padding">Content with Padding</div>
+          <code>
+padding: 20px;
+/* หรือ */
+padding: 10px 20px 15px 25px; /* top right bottom left */
+          </code>
+        </div>
+
+        <div class="example">
+          <h3>3. Border - ขอบ</h3>
+          <div class="demo-box with-border">Content with Border</div>
+          <code>
+border: 4px solid #667eea;
+/* หรือ */
+border-width: 4px;
+border-style: solid;
+border-color: #667eea;
+          </code>
+        </div>
+
+        <div class="example">
+          <h3>4. Margin - ช่องว่างภายนอก</h3>
+          <div class="margin-container">
+            <div class="demo-box with-margin">Box 1</div>
+            <div class="demo-box with-margin">Box 2</div>
+          </div>
+          <code>
+margin: 20px;
+/* หรือ */
+margin: 10px 20px; /* vertical horizontal */
+          </code>
+        </div>
+
+        <div class="example">
+          <h3>Border Radius - มุมโค้ง</h3>
+          <div class="demo-box with-radius">Rounded Corners</div>
+          <code>
+border-radius: 15px;
+/* หรือ */
+border-radius: 10px 15px 20px 25px;
+          </code>
+        </div>
+
+        <div class="example">
+          <h3>Box Shadow - เงา</h3>
+          <div class="demo-box with-shadow">Box with Shadow</div>
+          <code>
+box-shadow: 2px 4px 20px rgba(0, 0, 0, 0.3);
+/* offset-x offset-y blur-radius color */
+          </code>
+        </div>
+
+        <div class="example">
+          <h3>Box Sizing</h3>
+          <div class="sizing-demo">
+            <div class="demo-box content-box">
+              <strong>content-box (default)</strong>
+              <p>Width = Content only</p>
+              <p>Total = 200px + 20px padding + 4px border = 224px</p>
+            </div>
+            <div class="demo-box border-box">
+              <strong>border-box</strong>
+              <p>Width = Content + Padding + Border</p>
+              <p>Total = 200px (แบบที่ต้องการ)</p>
+            </div>
+          </div>
+          <code>
+/* แนะนำใช้ */
+box-sizing: border-box;
+
+/* ทำให้ width/height รวม padding + border */
+          </code>
+        </div>
+      </section>
+
+      <div class="note">
+        <h3>📝 สรุป Box Model</h3>
+        <ul>
+          <li><strong>Content:</strong> พื้นที่เนื้อหา (text, images)</li>
+          <li><strong>Padding:</strong> ช่องว่างระหว่าง content กับ border</li>
+          <li><strong>Border:</strong> เส้นขอบรอบ element</li>
+          <li><strong>Margin:</strong> ช่องว่างภายนอก ห่างจาก elements อื่น</li>
+          <li><strong>box-sizing: border-box</strong> → แนะนำให้ใช้เสมอ!</li>
+        </ul>
+      </div>
+
+      <a href="../../index.html" class="back-link">← กลับไปหน้าหลัก</a>
+    </div>
+  </body>
+</html>

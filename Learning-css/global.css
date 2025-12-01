@@ -1,0 +1,105 @@
+/* Global Styles - ใช้ร่วมกันทุกหน้า */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1.6;
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+h2 {
+  color: #555;
+  margin: 30px 0 15px 0;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #ddd;
+}
+
+h3 {
+  color: #666;
+  margin: 20px 0 10px 0;
+}
+
+.description {
+  color: #777;
+  margin-bottom: 30px;
+}
+
+.example {
+  margin: 20px 0;
+  padding: 20px;
+  background: #fafafa;
+  border-left: 3px solid #333;
+  border-radius: 4px;
+}
+
+code {
+  display: block;
+  background: #2d2d2d;
+  color: #f8f8f2;
+  padding: 15px;
+  border-radius: 4px;
+  margin: 15px 0;
+}
+pre {
+  display: block;
+  background: #2d2d2d;
+  color: #f8f8f2;
+  padding: 15px;
+  border-radius: 4px;
+  margin: 15px 0;
+}
+
+.note {
+  background: #fffbea;
+  padding: 20px;
+  border-radius: 4px;
+  border-left: 3px solid #ffd700;
+  margin: 30px 0;
+}
+
+.note h3 {
+  color: #856404;
+  margin-bottom: 10px;
+}
+
+.note ul {
+  margin-left: 20px;
+}
+
+.note li {
+  color: #856404;
+  margin: 5px 0;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 10px 20px;
+  background: #333;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.back-link:hover {
+  background: #555;
+}

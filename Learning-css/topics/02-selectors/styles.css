@@ -1,0 +1,9 @@
+/* Selectors - Specific Styles */
+
+small.element { color: purple; }
+.by-class { color: teal; font-weight: bold; }
+#by-id { color: orange; font-weight: bold; }
+.descendant p { color: red; margin: 5px 0; }
+.child > p { color: blue; margin: 5px 0; }
+.sibling h4 + p { color: green; font-weight: bold; }
+.general-sibling h4 ~ p { color: green; margin: 5px 0; }

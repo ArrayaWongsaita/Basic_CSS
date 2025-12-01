@@ -1,0 +1,86 @@
+/* 08. Responsive - Specific Styles */
+
+.grid-auto-fit {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  padding: 20px;
+  background: #f0f0f0;
+  border: 2px solid #333;
+  margin: 15px 0;
+}
+
+.grid-auto-fill {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+  padding: 20px;
+  background: #fff3e0;
+  border: 2px solid #FF9800;
+  margin: 15px 0;
+}
+
+.grid-minmax {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  padding: 20px;
+  background: #f0f0f0;
+  border: 2px solid #333;
+  margin: 15px 0;
+}
+
+.item {
+  padding: 30px;
+  background: #4CAF50;
+  color: white;
+  border-radius: 4px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  background: #f0f0f0;
+  border: 2px solid #333;
+}
+
+.card {
+  padding: 20px;
+  background: white;
+  border: 2px solid #333;
+  border-radius: 8px;
+}
+
+.card h3 {
+  margin: 0 0 10px 0;
+}
+
+.card p {
+  margin: 0;
+  color: #666;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 2px solid #ddd;
+}
+
+.next-link {
+  color: #333;
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 2px solid #333;
+  border-radius: 4px;
+}
+
+.next-link:hover {
+  background: #333;
+  color: white;
+}

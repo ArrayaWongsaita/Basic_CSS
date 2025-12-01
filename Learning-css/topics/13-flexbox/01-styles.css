@@ -1,0 +1,99 @@
+/* 01. Flexbox Basics - Specific Styles */
+
+.flex-demo {
+  display: flex;
+  gap: 15px;
+  padding: 20px;
+  background: #f0f0f0;
+  border: 2px solid #333;
+}
+
+.item {
+  padding: 20px;
+  background: #4CAF50;
+  color: white;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.axis-demo {
+  padding: 20px;
+  background: #f0f0f0;
+  border: 2px solid #333;
+}
+
+.axes {
+  position: relative;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-axis {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-weight: bold;
+  color: #2196F3;
+  font-size: 1.2rem;
+}
+
+.cross-axis {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  writing-mode: vertical-rl;
+  font-weight: bold;
+  color: #FF9800;
+  font-size: 1.2rem;
+}
+
+.before {
+  display: block;
+  padding: 20px;
+  background: #ffebee;
+  border: 2px solid #f44336;
+  margin-bottom: 20px;
+}
+
+.after {
+  display: flex;
+  gap: 15px;
+  padding: 20px;
+  background: #e8f5e9;
+  border: 2px solid #4CAF50;
+}
+
+.box {
+  padding: 20px;
+  background: white;
+  border: 2px solid #333;
+  text-align: center;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 2px solid #ddd;
+}
+
+.next-link {
+  color: #333;
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 2px solid #333;
+  border-radius: 4px;
+}
+
+.next-link:hover {
+  background: #333;
+  color: white;
+}

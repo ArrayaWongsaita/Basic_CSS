@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Resume - Complete Demo</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f0f0;
+      color: #333;
+      line-height: 1.6;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 60px 40px;
+      text-align: center;
+      border-radius: 12px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    header .title {
+      font-size: 1.3rem;
+      opacity: 0.9;
+      margin-bottom: 20px;
+    }
+
+    header .contact {
+      font-size: 0.95rem;
+      opacity: 0.85;
+    }
+
+    header .contact span {
+      margin: 0 15px;
+    }
+
+    /* Sections */
+    section {
+      background: white;
+      padding: 30px;
+      margin-bottom: 25px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    section h2 {
+      color: #667eea;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 3px solid #667eea;
+      font-size: 1.5rem;
+    }
+
+    /* About */
+    .about p {
+      font-size: 1.05rem;
+      color: #555;
+    }
+
+    /* Skills */
+    .skill-item {
+      margin-bottom: 20px;
+    }
+
+    .skill-name {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    .skill-bar {
+      background-color: #e0e0e0;
+      height: 10px;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    .skill-progress {
+      height: 100%;
+      background: linear-gradient(90deg, #667eea, #764ba2);
+      border-radius: 5px;
+      transition: width 0.3s ease;
+    }
+
+    /* Experience & Education */
+    .experience-item,
+    .education-item {
+      margin-bottom: 25px;
+      padding-left: 20px;
+      border-left: 3px solid #667eea;
+    }
+
+    .experience-item h3,
+    .education-item h3 {
+      color: #333;
+      margin-bottom: 5px;
+    }
+
+    .date {
+      color: #666;
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+    }
+
+    .experience-item ul,
+    .education-item ul {
+      margin-left: 20px;
+      margin-top: 10px;
+    }
+
+    .experience-item li,
+    .education-item li {
+      margin-bottom: 5px;
+      color: #555;
+    }
+
+    /* Contact */
+    .contact-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .contact-item {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .contact-item strong {
+      color: #667eea;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .contact-item a {
+      color: #764ba2;
+      text-decoration: none;
+    }
+
+    .contact-item a:hover {
+      text-decoration: underline;
+    }
+
+    /* Back Link */
+    .back-link {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 24px;
+      background: #667eea;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+
+    .back-link:hover {
+      background: #5568d3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <h1>สมชาย ใจดี</h1>
+      <div class="title">Full Stack Developer</div>
+      <div class="contact">
+        <span>📧 somchai@email.com</span>
+        <span>📱 081-234-5678</span>
+        <span>📍 Bangkok, Thailand</span>
+      </div>
+    </header>
+
+    <!-- About Me -->
+    <section class="about">
+      <h2>👤 About Me</h2>
+      <p>
+        ผมเป็น Full Stack Developer ที่มีประสบการณ์มากกว่า 3 ปีในการพัฒนา Web Applications 
+        มีความชำนาญในการใช้ JavaScript, React, Node.js และ CSS ชอบเรียนรู้เทคโนโลยีใหม่ๆ 
+        และสนุกกับการแก้ปัญหาที่ท้าทาย มีทักษะการทำงานเป็นทีมและสามารถทำงานภายใต้แรงกดดันได้ดี
+      </p>
+    </section>
+
+    <!-- Skills -->
+    <section class="skills">
+      <h2>💼 Skills</h2>
+      
+      <div class="skill-item">
+        <div class="skill-name">
+          <span>HTML & CSS</span>
+          <span>90%</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-progress" style="width: 90%;"></div>
+        </div>
+      </div>
+
+      <div class="skill-item">
+        <div class="skill-name">
+          <span>JavaScript</span>
+          <span>85%</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-progress" style="width: 85%;"></div>
+        </div>
+      </div>
+
+      <div class="skill-item">
+        <div class="skill-name">
+          <span>React</span>
+          <span>80%</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-progress" style="width: 80%;"></div>
+        </div>
+      </div>
+
+      <div class="skill-item">
+        <div class="skill-name">
+          <span>Node.js</span>
+          <span>75%</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-progress" style="width: 75%;"></div>
+        </div>
+      </div>
+
+      <div class="skill-item">
+        <div class="skill-name">
+          <span>SQL / MongoDB</span>
+          <span>70%</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-progress" style="width: 70%;"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="experience">
+      <h2>💼 Work Experience</h2>
+      
+      <div class="experience-item">
+        <h3>Full Stack Developer</h3>
+        <div class="date">บริษัท ABC Technology | 2022 - ปัจจุบัน</div>
+        <ul>
+          <li>พัฒนาและดูแล E-commerce Platform ที่มีผู้ใช้มากกว่า 10,000 คน</li>
+          <li>ใช้ React, Node.js, และ PostgreSQL ในการพัฒนา</li>
+          <li>ปรับปรุงประสิทธิภาพเว็บไซต์ให้เร็วขึ้น 40%</li>
+          <li>ทำงานร่วมกับทีม UX/UI เพื่อปรับปรุง User Experience</li>
+        </ul>
+      </div>
+
+      <div class="experience-item">
+        <h3>Junior Web Developer</h3>
+        <div class="date">บริษัท XYZ Solutions | 2021 - 2022</div>
+        <ul>
+          <li>พัฒนาเว็บไซต์สำหรับลูกค้ามากกว่า 15 โปรเจกต์</li>
+          <li>ใช้ HTML, CSS, JavaScript และ WordPress</li>
+          <li>ดูแลและแก้ไขปัญหาเว็บไซต์ที่มีอยู่</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section class="education">
+      <h2>🎓 Education</h2>
+      
+      <div class="education-item">
+        <h3>ปริญญาตรี วิทยาการคอมพิวเตอร์</h3>
+        <div class="date">มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี | 2017 - 2021</div>
+        <ul>
+          <li>เกรดเฉลี่ย: 3.45</li>
+          <li>โปรเจกต์จบ: ระบบจัดการคลังสินค้าด้วย IoT</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact">
+      <h2>📞 Contact</h2>
+      <div class="contact-grid">
+        <div class="contact-item">
+          <strong>Email</strong>
+          <a href="mailto:somchai@email.com">somchai@email.com</a>
+        </div>
+        <div class="contact-item">
+          <strong>Phone</strong>
+          081-234-5678
+        </div>
+        <div class="contact-item">
+          <strong>LinkedIn</strong>
+          <a href="#">linkedin.com/in/somchai</a>
+        </div>
+        <div class="contact-item">
+          <strong>GitHub</strong>
+          <a href="#">github.com/somchai</a>
+        </div>
+      </div>
+    </section>
+
+    <a href="index.html" class="back-link">← กลับหน้า Workshop</a>
+  </div>
+</body>
+</html>

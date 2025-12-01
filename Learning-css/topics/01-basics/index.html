@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Basics - Methods</title>
+    <link rel="stylesheet" href="../../global.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .internal {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>CSS Basics - Methods</h1>
+      <p class="description">
+        3 วิธีในการเขียน CSS: Inline, Internal, และ External
+      </p>
+
+      <section class="basic">
+        <h2>1. Inline CSS</h2>
+        <p style="color: red; font-weight: bold">
+          นี่คือ Inline CSS - เขียนใน attribute style=""
+        </p>
+        <code> &lt;p style="color: red;"&gt;ข้อความ&lt;/p&gt; </code>
+      </section>
+
+      <section class="basic">
+        <h2>2. Internal CSS</h2>
+        <p class="internal">
+          นี่คือ Internal CSS - เขียนใน &lt;style&gt; tag ใน &lt;head&gt;
+        </p>
+        <pre>
+&lt;style&gt;
+    .internal {
+    color: blue;
+    }
+&lt;/style&gt;
+</pre
+        >
+      </section>
+
+      <section class="basic">
+        <h2>3. External CSS</h2>
+        <p class="external">
+          นี่คือ External CSS - เขียนในไฟล์ .css แยกต่างหาก
+        </p>
+<pre> &lt;link rel="stylesheet" href="styles.css"&gt; 
+
+.external {
+    color: green;
+}
+</pre>
+      </section>
+
+      <div class="note">
+        <h3>📝 หมายเหตุ</h3>
+        <ul>
+          <li>
+            <strong>Inline:</strong> มี specificity สูงสุด แต่ยาก maintain
+          </li>
+          <li><strong>Internal:</strong> ใช้สำหรับ style เฉพาะหน้านั้นๆ</li>
+          <li>
+            <strong>External:</strong> แนะนำที่สุด - แยกโครงสร้างและการแสดงผล
+          </li>
+        </ul>
+      </div>
+
+      <a href="../../index.html" class="back-link">← กลับไปหน้าหลัก</a>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+/* 02. Grid Template - Specific Styles */
+
+.grid-box {
+  display: grid;
+  gap: 10px;
+  padding: 20px;
+  background: #f0f0f0;
+  border: 2px solid #333;
+  margin: 15px 0;
+}
+
+.equal {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.different {
+  grid-template-columns: 2fr 1fr 1fr;
+}
+
+.mixed {
+  grid-template-columns: 200px 1fr;
+}
+
+.repeat-demo {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.rows-demo {
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 100px 150px;
+}
+
+.minmax-demo {
+  grid-template-columns: repeat(3, minmax(100px, 1fr));
+}
+
+.item {
+  padding: 20px;
+  background: #FF9800;
+  color: white;
+  border-radius: 4px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 2px solid #ddd;
+}
+
+.next-link {
+  color: #333;
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 2px solid #333;
+  border-radius: 4px;
+}
+
+.next-link:hover {
+  background: #333;
+  color: white;
+}

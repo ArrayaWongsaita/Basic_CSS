@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>04. Pricing Table - Practice</title>
+  <link rel="stylesheet" href="../../global.css">
+  <style>
+    .pricing-container {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 40px 0;
+    }
+
+    .price-card {
+      width: 300px;
+      padding: 40px 30px;
+      background: white;
+      border: 2px solid #ddd;
+      border-radius: 12px;
+      text-align: center;
+      transition: all 0.3s;
+    }
+
+    .price-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .price-card.featured {
+      border-color: #2196F3;
+      box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1);
+    }
+
+    .price-badge {
+      display: inline-block;
+      padding: 5px 15px;
+      background: #2196F3;
+      color: white;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      margin-bottom: 15px;
+    }
+
+    .price-name {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin: 0 0 20px 0;
+      color: #333;
+    }
+
+    .price-amount {
+      font-size: 3rem;
+      font-weight: 800;
+      color: #2196F3;
+      margin: 0;
+    }
+
+    .price-period {
+      color: #666;
+      font-size: 1rem;
+      margin-bottom: 30px;
+    }
+
+    .price-features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 30px 0;
+    }
+
+    .price-features li {
+      padding: 12px 0;
+      border-bottom: 1px solid #f0f0f0;
+      color: #666;
+    }
+
+    .price-features li:last-child {
+      border-bottom: none;
+    }
+
+    .price-btn {
+      width: 100%;
+      padding: 14px;
+      background: white;
+      color: #2196F3;
+      border: 2px solid #2196F3;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .price-btn:hover {
+      background: #2196F3;
+      color: white;
+    }
+
+    .featured .price-btn {
+      background: #2196F3;
+      color: white;
+    }
+
+    .featured .price-btn:hover {
+      background: #1976D2;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>04. Pricing Table</h1>
+    <p class="description">ฝึกทำตารางราคาด้วย Display + Box Model</p>
+
+    <section>
+      <div class="example">
+        <h2>✅ Pricing Table 3 แพ็คเกจ</h2>
+        <div class="pricing-container">
+          <div class="price-card">
+            <h3 class="price-name">Basic</h3>
+            <div class="price-amount">$9</div>
+            <div class="price-period">/month</div>
+            <ul class="price-features">
+              <li>✓ 10 Projects</li>
+              <li>✓ 5 GB Storage</li>
+              <li>✓ Email Support</li>
+              <li>✗ Priority Support</li>
+            </ul>
+            <button class="price-btn">Get Started</button>
+          </div>
+
+          <div class="price-card featured">
+            <span class="price-badge">Most Popular</span>
+            <h3 class="price-name">Pro</h3>
+            <div class="price-amount">$29</div>
+            <div class="price-period">/month</div>
+            <ul class="price-features">
+              <li>✓ Unlimited Projects</li>
+              <li>✓ 50 GB Storage</li>
+              <li>✓ Email Support</li>
+              <li>✓ Priority Support</li>
+            </ul>
+            <button class="price-btn">Get Started</button>
+          </div>
+
+          <div class="price-card">
+            <h3 class="price-name">Enterprise</h3>
+            <div class="price-amount">$99</div>
+            <div class="price-period">/month</div>
+            <ul class="price-features">
+              <li>✓ Unlimited Everything</li>
+              <li>✓ 500 GB Storage</li>
+              <li>✓ 24/7 Support</li>
+              <li>✓ Custom Features</li>
+            </ul>
+            <button class="price-btn">Contact Us</button>
+          </div>
+        </div>
+
+        <code>
+.pricing-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.price-card {
+  width: 300px;
+  padding: 40px 30px;
+  border: 2px solid #ddd;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.price-card.featured {
+  border-color: #2196F3;
+  box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1);
+}
+
+.price-amount {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #2196F3;
+}
+        </code>
+      </div>
+
+      <div class="example">
+        <h2>📝 แบบฝึกหัด</h2>
+        <div class="note">
+          <p><strong>โจทย์:</strong></p>
+          <ul>
+            <li>ลองเปลี่ยนสีของ featured card</li>
+            <li>เพิ่มฟีเจอร์ในแต่ละแพ็คเกจ</li>
+            <li>ทำ toggle ระหว่าง Monthly/Yearly</li>
+            <li>เพิ่ม discount badge</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="note">
+      <h3>📚 Pricing Table Techniques</h3>
+      <ul>
+        <li><strong>Flexbox</strong> - จัดเรียง 3 การ์ด</li>
+        <li><strong>text-align: center</strong> - จัดกลาง</li>
+        <li><strong>border + box-shadow</strong> - highlight featured</li>
+        <li><strong>transform: translateY</strong> - hover effect</li>
+      </ul>
+    </div>
+
+    <a href="index.html" class="back-link">← กลับหน้า Practice</a>
+  </div>
+</body>
+</html>

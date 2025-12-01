@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Overflow</title>
+    <link rel="stylesheet" href="../../global.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>CSS Overflow</h1>
+      <p class="description">ควบคุมการแสดงผลเมื่อ content มากเกินขนาดของ box</p>
+
+      <section>
+        <div class="example">
+          <h2>overflow: visible (default)</h2>
+          <p>Content ล้นออกมานอก box</p>
+          <div class="box visible">
+            <div class="content">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+              Quisquam voluptas, quod, quia, voluptates quae voluptatum 
+              quidem quibusdam natus nemo doloribus quas. Quisquam, quae.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </div>
+          </div>
+          <code>overflow: visible;</code>
+        </div>
+
+        <div class="example">
+          <h2>overflow: hidden</h2>
+          <p>Content ที่ล้นออกมาจะถูกตัดทิ้ง (ซ่อน)</p>
+          <div class="box hidden">
+            <div class="content">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+              Quisquam voluptas, quod, quia, voluptates quae voluptatum 
+              quidem quibusdam natus nemo doloribus quas. Quisquam, quae.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </div>
+          </div>
+          <code>overflow: hidden;</code>
+        </div>
+
+        <div class="example">
+          <h2>overflow: scroll</h2>
+          <p>แสดง scrollbar เสมอ (แนวตั้งและแนวนอน)</p>
+          <div class="box scroll">
+            <div class="content">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+              Quisquam voluptas, quod, quia, voluptates quae voluptatum 
+              quidem quibusdam natus nemo doloribus quas. Quisquam, quae.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </div>
+          </div>
+          <code>overflow: scroll;</code>
+        </div>
+
+        <div class="example">
+          <h2>overflow: auto</h2>
+          <p>แสดง scrollbar เฉพาะเมื่อจำเป็น (แนะนำ)</p>
+          <div class="box auto">
+            <div class="content">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+              Quisquam voluptas, quod, quia, voluptates quae voluptatum 
+              quidem quibusdam natus nemo doloribus quas. Quisquam, quae.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </div>
+          </div>
+          <code>overflow: auto;</code>
+        </div>
+
+        <div class="example">
+          <h2>overflow-x & overflow-y</h2>
+          <p>ควบคุมแยกแนวนอนและแนวตั้ง</p>
+          <div class="box overflow-xy">
+            <div class="wide-content">
+              This is a very long line of text that will overflow horizontally.
+              This is a very long line of text that will overflow horizontally.
+              <br><br>
+              More content here...<br>
+              More content here...<br>
+              More content here...<br>
+              More content here...<br>
+            </div>
+          </div>
+          <code>
+overflow-x: scroll;  /* แนวนอน */
+overflow-y: hidden;  /* แนวตั้ง */
+          </code>
+        </div>
+      </section>
+
+      <div class="note">
+        <h3>📝 สรุป Overflow</h3>
+        <ul>
+          <li><strong>visible:</strong> (default) content ล้นออกมา</li>
+          <li><strong>hidden:</strong> ตัด content ที่ล้น</li>
+          <li><strong>scroll:</strong> แสดง scrollbar เสมอ</li>
+          <li><strong>auto:</strong> แสดง scrollbar เมื่อจำเป็น (แนะนำ)</li>
+          <li><strong>overflow-x/y:</strong> ควบคุมแต่ละแกน</li>
+        </ul>
+      </div>
+
+      <a href="../../index.html" class="back-link">← กลับไปหน้าหลัก</a>
+    </div>
+  </body>
+</html>

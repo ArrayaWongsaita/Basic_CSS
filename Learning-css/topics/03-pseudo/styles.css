@@ -1,0 +1,17 @@
+/* Pseudo - Specific Styles */
+
+.hover-demo { padding: 15px; background: #eee; cursor: pointer; }
+.hover-demo:hover { background: #ffebee; color: red; }
+.child-demo p { padding: 10px; margin: 5px 0; border: 1px solid #ddd; }
+.child-demo p:first-child { color: blue; font-weight: bold; }
+.child-demo p:last-child { color: green; font-weight: bold; }
+.child-demo p:nth-child(3) { color: orange; font-weight: bold; }
+.child-demo p:nth-child(odd) { background: #f0f0f0; }
+.focus-demo { width: 100%; padding: 10px; border: 2px solid #ddd; }
+.focus-demo:focus { border-color: #333; outline: none; }
+.text-demo::first-letter { font-size: 2em; color: #333; }
+.text-demo::first-line { background: bisque; }
+.before-after-demo { padding: 15px; background: #f0f0f0; }
+.before-after-demo::before { content: "👉 "; }
+.before-after-demo::after { content: " ⭐"; }
+.selection-demo::selection { background: yellow; color: black; }

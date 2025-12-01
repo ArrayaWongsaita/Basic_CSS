@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>08. Responsive Grid</title>
+  <link rel="stylesheet" href="../../global.css">
+  <link rel="stylesheet" href="08-styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>08. Responsive Grid</h1>
+    <p class="description">สร้าง Grid ที่ปรับตามขนาดหน้าจออัตโนมัติ</p>
+
+    <section>
+      <div class="example">
+        <h2>auto-fit: ปรับจำนวนคอลัมน์อัตโนมัติ</h2>
+        <div class="grid-auto-fit">
+          <div class="item">1</div>
+          <div class="item">2</div>
+          <div class="item">3</div>
+          <div class="item">4</div>
+        </div>
+        <code>
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+/* ปรับจำนวนคอลัมน์ตามพื้นที่ */
+        </code>
+      </div>
+
+      <div class="example">
+        <h2>auto-fill vs auto-fit</h2>
+        <h3>auto-fill (สร้างคอลัมน์ว่างถ้ามีพื้นที่)</h3>
+        <div class="grid-auto-fill">
+          <div class="item">1</div>
+          <div class="item">2</div>
+        </div>
+        <h3>auto-fit (ไม่สร้างคอลัมน์ว่าง ขยาย item)</h3>
+        <div class="grid-auto-fit">
+          <div class="item">1</div>
+          <div class="item">2</div>
+        </div>
+        <code>
+/* auto-fill - มีคอลัมน์ว่าง */
+repeat(auto-fill, minmax(200px, 1fr))
+
+/* auto-fit - ไม่มีคอลัมน์ว่าง items ขยาย */
+repeat(auto-fit, minmax(200px, 1fr))
+        </code>
+      </div>
+
+      <div class="example">
+        <h2>minmax() สำหรับ responsive</h2>
+        <div class="grid-minmax">
+          <div class="item">Item 1</div>
+          <div class="item">Item 2</div>
+          <div class="item">Item 3</div>
+          <div class="item">Item 4</div>
+          <div class="item">Item 5</div>
+          <div class="item">Item 6</div>
+        </div>
+        <code>
+grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+/* ขั้นต่ำ 150px, สูงสุดยืดเต็ม */
+        </code>
+      </div>
+
+      <div class="example">
+        <h2>Responsive Card Grid</h2>
+        <div class="card-grid">
+          <div class="card">
+            <h3>Card 1</h3>
+            <p>Content here</p>
+          </div>
+          <div class="card">
+            <h3>Card 2</h3>
+            <p>Content here</p>
+          </div>
+          <div class="card">
+            <h3>Card 3</h3>
+            <p>Content here</p>
+          </div>
+          <div class="card">
+            <h3>Card 4</h3>
+            <p>Content here</p>
+          </div>
+        </div>
+        <code>
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+        </code>
+      </div>
+    </section>
+
+    <div class="note">
+      <h3>📝 สรุป Responsive Grid</h3>
+      <ul>
+        <li><strong>auto-fit</strong> - ปรับจำนวนคอลัมน์ ไม่มีคอลัมน์ว่าง</li>
+        <li><strong>auto-fill</strong> - ปรับจำนวนคอลัมน์ มีคอลัมน์ว่างได้</li>
+        <li><strong>minmax(min, max)</strong> - กำหนดขนาดขั้นต่ำและสูงสุด</li>
+        <li><strong>repeat(auto-fit, minmax())</strong> - responsive ง่ายๆ ไม่ต้อง media query</li>
+      </ul>
+    </div>
+
+    <div class="navigation">
+      <a href="07-auto-flow.html" class="back-link">← ก่อนหน้า: Auto Flow</a>
+      <a href="09-common-patterns.html" class="next-link">ถัดไป: Common Patterns →</a>
+    </div>
+  </div>
+</body>
+</html>

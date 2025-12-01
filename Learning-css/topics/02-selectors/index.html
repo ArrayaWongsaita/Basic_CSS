@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Selectors & Combinators</title>
+    <link rel="stylesheet" href="../../global.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>CSS Selectors & Combinators</h1>
+      <p class="description">เรียนรู้การเลือก elements ด้วย selectors ต่างๆ</p>
+
+      <section class="selector">
+        <h2>Basic Selectors</h2>
+        
+        <div class="example">
+          <h3>Element Selector</h3>
+          <small class="element">นี่คือ element selector (small)</small>
+          <code>small { color: purple; }</code>
+        </div>
+
+        <div class="example">
+          <h3>Class Selector</h3>
+          <p class="by-class">นี่คือ class selector (.by-class)</p>
+          <code>.by-class { color: teal; }</code>
+        </div>
+
+        <div class="example">
+          <h3>ID Selector</h3>
+          <p id="by-id">นี่คือ ID selector (#by-id)</p>
+          <code>#by-id { color: orange; }</code>
+        </div>
+      </section>
+
+      <section class="combination">
+        <h2>CSS Combinators</h2>
+
+        <div class="example">
+          <h3>1. Descendant Selector (space)</h3>
+          <div class="descendant">
+            <p>Descendant - direct child</p>
+            <div>
+              <p>Descendant - nested child</p>
+            </div>
+          </div>
+          <code>.descendant p { color: red; }</code>
+        </div>
+
+        <div class="example">
+          <h3>2. Child Selector (>)</h3>
+          <div class="child">
+            <p>Child - direct only</p>
+            <div>
+              <p>Not selected</p>
+            </div>
+          </div>
+          <code>.child > p { color: blue; }</code>
+        </div>
+
+        <div class="example">
+          <h3>3. Adjacent Sibling (+)</h3>
+          <div class="sibling">
+            <h4>Heading</h4>
+            <p>Selected - next sibling</p>
+            <span>Span</span>
+            <p>Not selected</p>
+          </div>
+          <code>.sibling h4 + p { color: green; }</code>
+        </div>
+
+        <div class="example">
+          <h3>4. General Sibling (~)</h3>
+          <div class="general-sibling">
+            <h4>Heading</h4>
+            <p>Selected</p>
+            <span>Span</span>
+            <p>Also selected</p>
+          </div>
+          <code>.general-sibling h4 ~ p { color: green; }</code>
+        </div>
+      </section>
+
+      <div class="note">
+        <h3>📝 สรุป Selectors</h3>
+        <ul>
+          <li><strong>element:</strong> เลือกทุก element ประเภทนั้น</li>
+          <li><strong>.class:</strong> เลือก element ที่มี class นั้น</li>
+          <li><strong>#id:</strong> เลือก element ที่มี id นั้น (unique)</li>
+          <li><strong>A B:</strong> เลือก B ที่อยู่ใน A (ทุกระดับ)</li>
+          <li><strong>A > B:</strong> เลือก B ที่เป็นลูกโดยตรงของ A</li>
+          <li><strong>A + B:</strong> เลือก B ที่อยู่ถัดจาก A</li>
+          <li><strong>A ~ B:</strong> เลือก B ทุกตัวที่อยู่หลัง A (พี่น้องเดียวกัน)</li>
+        </ul>
+      </div>
+
+      <a href="../../index.html" class="back-link">← กลับไปหน้าหลัก</a>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Units</title>
+    <link rel="stylesheet" href="../../global.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>CSS Units</h1>
+      <p class="description">หน่วยวัดต่างๆ ใน CSS</p>
+
+      <section>
+        <div class="example">
+          <h2>Absolute Units - หน่วยสัมบูรณ์</h2>
+          <div class="unit-demo px">50px - Pixels (แนะนำสำหรับ border)</div>
+          <code>width: 50px;</code>
+        </div>
+
+        <div class="example">
+          <h2>Relative Units - หน่วยสัมพันธ์</h2>
+          
+          <h3>Percentage (%)</h3>
+          <div class="unit-demo percent">50% ของ parent</div>
+          <code>width: 50%;</code>
+
+          <h3>em - สัมพันธ์กับ font-size</h3>
+          <div class="unit-demo em">3em (3 × font-size ของ element นี้)</div>
+          <code>
+font-size: 16px;
+width: 3em; /* = 48px */
+          </code>
+
+          <h3>rem - สัมพันธ์กับ root font-size</h3>
+          <div class="unit-demo rem">3rem (3 × root font-size)</div>
+          <code>
+html { font-size: 16px; }
+width: 3rem; /* = 48px */
+          </code>
+
+          <h3>Viewport Units</h3>
+          <div class="unit-demo vw">50vw (50% ของความกว้างหน้าจอ)</div>
+          <div class="unit-demo vh">10vh (10% ของความสูงหน้าจอ)</div>
+          <code>
+width: 50vw;  /* 50% viewport width */
+height: 10vh; /* 10% viewport height */
+          </code>
+
+          <h3>ch - ความกว้างของอักษร "0"</h3>
+          <div class="unit-demo ch">0000000000 (10ch)</div>
+          <code>width: 10ch; /* พอดี 10 ตัวอักษร */</code>
+        </div>
+
+        <div class="example">
+          <h2>Modern Functions</h2>
+          
+          <h3>min() - เลือกค่าน้อยที่สุด</h3>
+          <div class="unit-demo min-demo">min(50%, 300px)</div>
+          <code>width: min(50%, 300px);</code>
+
+          <h3>max() - เลือกค่ามากที่สุด</h3>
+          <div class="unit-demo max-demo">max(50%, 300px)</div>
+          <code>width: max(50%, 300px);</code>
+
+          <h3>clamp() - จำกัดค่าระหว่าง min-max</h3>
+          <div class="unit-demo clamp-demo">clamp(200px, 50%, 400px)</div>
+          <code>
+width: clamp(200px, 50%, 400px);
+/* min: 200px, preferred: 50%, max: 400px */
+          </code>
+
+          <h3>calc() - คำนวณ</h3>
+          <div class="unit-demo calc-demo">calc(100% - 40px)</div>
+          <code>width: calc(100% - 40px);</code>
+        </div>
+      </section>
+
+      <div class="note">
+        <h3>📝 แนะนำการใช้งาน</h3>
+        <ul>
+          <li><strong>px:</strong> border, shadows</li>
+          <li><strong>%:</strong> layout widths</li>
+          <li><strong>em:</strong> padding, margin ที่สัมพันธ์กับ font-size</li>
+          <li><strong>rem:</strong> font-size, spacing (แนะนำ!)</li>
+          <li><strong>vw/vh:</strong> full-screen layouts</li>
+          <li><strong>clamp():</strong> responsive typography</li>
+        </ul>
+      </div>
+
+      <a href="../../index.html" class="back-link">← กลับไปหน้าหลัก</a>
+    </div>
+  </body>
+</html>

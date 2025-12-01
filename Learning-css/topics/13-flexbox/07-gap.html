@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>07. Gap</title>
+  <link rel="stylesheet" href="../../global.css">
+  <link rel="stylesheet" href="07-styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>07. Gap</h1>
+    <p class="description">ระยะห่างระหว่าง flex items แบบง่าย</p>
+
+    <section>
+      <div class="example">
+        <h2>ไม่มี gap</h2>
+        <div class="flex-box no-gap">
+          <div class="item">1</div>
+          <div class="item">2</div>
+          <div class="item">3</div>
+          <div class="item">4</div>
+        </div>
+        <code>/* ไม่ใส่ gap items ติดกัน */</code>
+      </div>
+
+      <div class="example">
+        <h2>gap: 10px</h2>
+        <div class="flex-box gap-10">
+          <div class="item">1</div>
+          <div class="item">2</div>
+          <div class="item">3</div>
+          <div class="item">4</div>
+        </div>
+        <code>gap: 10px; /* ระยะห่าง 10px */</code>
+      </div>
+
+      <div class="example">
+        <h2>gap: 30px</h2>
+        <div class="flex-box gap-30">
+          <div class="item">1</div>
+          <div class="item">2</div>
+          <div class="item">3</div>
+          <div class="item">4</div>
+        </div>
+        <code>gap: 30px; /* ระยะห่าง 30px */</code>
+      </div>
+
+      <div class="example">
+        <h2>row-gap & column-gap แยกกัน</h2>
+        <div class="flex-box custom-gap">
+          <div class="item">1</div>
+          <div class="item">2</div>
+          <div class="item">3</div>
+          <div class="item">4</div>
+          <div class="item">5</div>
+          <div class="item">6</div>
+        </div>
+        <code>
+row-gap: 20px;    /* ระยะห่างแนวตั้ง */
+column-gap: 40px; /* ระยะห่างแนวนอน */
+        </code>
+      </div>
+    </section>
+
+    <div class="note">
+      <h3>📝 สรุป Gap</h3>
+      <ul>
+        <li><strong>gap: 20px</strong> - ระยะห่างทุกทิศทาง</li>
+        <li><strong>row-gap</strong> - ระยะห่างแนวตั้ง</li>
+        <li><strong>column-gap</strong> - ระยะห่างแนวนอน</li>
+        <li>ใช้แทนการใส่ margin ทำให้เขียนโค้ดง่ายขึ้น</li>
+      </ul>
+    </div>
+
+    <div class="navigation">
+      <a href="06-align-content.html" class="back-link">← ก่อนหน้า: Align Content</a>
+      <a href="08-flex-items.html" class="next-link">ถัดไป: Flex Items →</a>
+    </div>
+  </div>
+</body>
+</html>

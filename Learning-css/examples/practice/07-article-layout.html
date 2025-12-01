@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>07. Article Layout - Practice</title>
+  <link rel="stylesheet" href="../../global.css">
+  <style>
+    /* Article Layout */
+    .article {
+      max-width: 700px;
+      margin: 30px auto;
+      padding: 40px;
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      line-height: 1.6;
+    }
+
+    .article-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #333;
+      margin: 0 0 10px 0;
+      line-height: 1.2;
+    }
+
+    .article-meta {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 30px;
+      padding-bottom: 20px;
+      border-bottom: 2px solid #f0f0f0;
+    }
+
+    .article-content h2 {
+      font-size: 1.8rem;
+      color: #2196F3;
+      margin: 30px 0 15px 0;
+    }
+
+    .article-content p {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+      text-align: justify;
+    }
+
+    .article-content p:first-of-type::first-letter {
+      font-size: 3.5rem;
+      font-weight: bold;
+      float: left;
+      line-height: 1;
+      margin: 0 10px 0 0;
+      color: #2196F3;
+    }
+
+    .article-quote {
+      margin: 30px 0;
+      padding: 20px 30px;
+      background: #f0f0f0;
+      border-left: 4px solid #2196F3;
+      font-style: italic;
+      font-size: 1.15rem;
+    }
+
+    /* Exercise */
+    .article-exercise {
+      max-width: 700px;
+      margin: 30px auto;
+      background: #f9f9f9;
+      border: 2px solid #4CAF50;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>07. Article Layout</h1>
+    <p class="description">ฝึกทำบทความด้วย rem, em, line-height</p>
+
+    <section>
+      <div class="example">
+        <h2>✅ ตัวอย่าง: Article Layout</h2>
+        <article class="article">
+          <h1 class="article-title">The Art of Web Typography</h1>
+          <div class="article-meta">
+            By John Doe • Published on Dec 1, 2025 • 5 min read
+          </div>
+
+          <div class="article-content">
+            <p>Typography is the art and technique of arranging type to make written language legible, readable, and appealing when displayed. The arrangement of type involves selecting typefaces, point sizes, line lengths, line-spacing, and letter-spacing.</p>
+
+            <h2>Why Typography Matters</h2>
+            <p>Good typography establishes a strong visual hierarchy, provides a graphic balance to the website, and sets the product's overall tone. Typography should guide and inform your users, optimize readability and accessibility, and ensure an excellent user experience.</p>
+
+            <div class="article-quote">
+              "Typography is what language looks like." — Ellen Lupton
+            </div>
+
+            <h2>Best Practices</h2>
+            <p>When working with web typography, it's essential to consider line height, letter spacing, and font size. A good rule of thumb is to use 1.5 to 1.6 line-height for body text and limit line length to 45-75 characters for optimal readability.</p>
+          </div>
+        </article>
+
+        <code>
+.article {
+  max-width: 700px;
+  padding: 40px;
+  line-height: 1.6;  /* ระยะห่างบรรทัด */
+}
+
+.article-title {
+  font-size: 2.5rem;
+  line-height: 1.2;  /* หัวข้อแน่นกว่า */
+}
+
+.article-content p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+/* Drop Cap - ตัวอักษรแรกใหญ่ */
+.article-content p:first-of-type::first-letter {
+  font-size: 3.5rem;
+  float: left;
+  margin: 0 10px 0 0;
+}
+        </code>
+      </div>
+
+      <div class="example">
+        <h2>📝 แบบฝึกหัด: ทำ Article</h2>
+        <article class="article-exercise">
+          <h1 class="article-title" style="padding: 40px 40px 0;">Learning CSS</h1>
+          <div class="article-meta" style="padding: 0 40px;">Your Name • Today</div>
+
+          <div class="article-content" style="padding: 0 40px 40px;">
+            <p>CSS is a powerful tool for styling web pages. It allows you to control colors, fonts, layouts, and much more.</p>
+
+            <h2>Getting Started</h2>
+            <p>Start by learning the basics: selectors, properties, and values. Then move on to more advanced topics like flexbox and grid.</p>
+          </div>
+        </article>
+
+        <div class="note">
+          <p><strong>โจทย์:</strong></p>
+          <ul>
+            <li>เพิ่ม padding ให้ article-exercise</li>
+            <li>ปรับ line-height ให้อ่านง่าย</li>
+            <li>เพิ่ม quote box</li>
+            <li>ทำ drop cap ตัวอักษรแรก</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="example">
+        <h2>🎯 Challenge</h2>
+        <div class="note">
+          <p><strong>ลองทำเพิ่ม:</strong></p>
+          <ul>
+            <li>เพิ่มรูปภาพในบทความ</li>
+            <li>ทำ table of contents</li>
+            <li>เพิ่ม code block สำหรับแสดงโค้ด</li>
+            <li>ทำ reading progress bar</li>
+            <li>ใช้ clamp() ทำ responsive font</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="note">
+      <h3>📚 Typography Tips for Articles</h3>
+      <ul>
+        <li><strong>max-width</strong> - จำกัดความกว้าง 600-800px</li>
+        <li><strong>line-height</strong> - 1.5-1.6 สำหรับ body text</li>
+        <li><strong>line-length</strong> - 45-75 ตัวอักษรต่อบรรทัด</li>
+        <li><strong>text-align: justify</strong> - จัดชิดสองข้าง (ระวังช่องว่าง)</li>
+        <li><strong>::first-letter</strong> - drop cap ตัวแรกใหญ่</li>
+      </ul>
+    </div>
+
+    <a href="index.html" class="back-link">← กลับหน้า Practice</a>
+  </div>
+</body>
+</html>

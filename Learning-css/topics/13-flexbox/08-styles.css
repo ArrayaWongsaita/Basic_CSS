@@ -1,0 +1,108 @@
+/* 08. Flex Items - Specific Styles */
+
+.flex-box {
+  display: flex;
+  gap: 10px;
+  padding: 20px;
+  background: #f0f0f0;
+  border: 2px solid #333;
+  margin: 15px 0;
+}
+
+.flex-box.tall {
+  min-height: 150px;
+}
+
+.item {
+  padding: 20px;
+  background: #3F51B5;
+  color: white;
+  border-radius: 4px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.grow-2 {
+  flex-grow: 2;
+  background: #FF5722;
+}
+
+.wide {
+  min-width: 200px;
+}
+
+.shrink-0 {
+  flex-shrink: 0;
+  background: #FF5722;
+}
+
+.basis-100 {
+  flex-basis: 100px;
+  background: #FF9800;
+}
+
+.basis-200 {
+  flex-basis: 200px;
+  background: #4CAF50;
+}
+
+.flex-1 {
+  flex: 1;
+  background: #00BCD4;
+}
+
+.flex-2 {
+  flex: 2;
+  background: #FF5722;
+}
+
+.order-1 {
+  order: 1;
+  background: #4CAF50;
+}
+
+.order-2 {
+  order: 2;
+  background: #FF9800;
+}
+
+.order-3 {
+  order: 3;
+  background: #f44336;
+}
+
+.self-start {
+  align-self: flex-start;
+  background: #4CAF50;
+}
+
+.self-center {
+  align-self: center;
+  background: #FF9800;
+}
+
+.self-end {
+  align-self: flex-end;
+  background: #f44336;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 2px solid #ddd;
+}
+
+.next-link {
+  color: #333;
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 2px solid #333;
+  border-radius: 4px;
+}
+
+.next-link:hover {
+  background: #333;
+  color: white;
+}

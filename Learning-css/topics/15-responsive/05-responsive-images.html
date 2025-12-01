@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>05. Responsive Images</title>
+  <link rel="stylesheet" href="../../global.css">
+  <link rel="stylesheet" href="05-styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>05. Responsive Images</h1>
+    <p class="description">รูปภาพที่ปรับขนาดตามหน้าจอ</p>
+
+    <section>
+      <div class="example">
+        <h2>max-width: 100% - พื้นฐาน</h2>
+        <div class="img-container">
+          <div class="placeholder-img fixed">รูปขนาดคงที่ 800px</div>
+          <div class="placeholder-img responsive">รูปปรับขนาด max-width: 100%</div>
+        </div>
+        <code>
+img {
+  max-width: 100%; /* ไม่เกินขนาด container */
+  height: auto;    /* รักษาสัดส่วน */
+}
+        </code>
+      </div>
+
+      <div class="example">
+        <h2>width: 100% - เต็มพื้นที่</h2>
+        <div class="img-container">
+          <div class="placeholder-img full">width: 100%</div>
+        </div>
+        <code>
+img {
+  width: 100%;  /* เต็มความกว้าง */
+  height: auto;
+}
+        </code>
+        <p class="note">ใช้เมื่อต้องการให้รูปเต็มพื้นที่เสมอ</p>
+      </div>
+
+      <div class="example">
+        <h2>object-fit - ควบคุมการแสดงผล</h2>
+        <div class="object-fit-grid">
+          <div class="fit-box">
+            <div class="placeholder-img fit-cover">cover</div>
+            <p>เต็มพื้นที่ ตัดส่วนเกิน</p>
+          </div>
+          <div class="fit-box">
+            <div class="placeholder-img fit-contain">contain</div>
+            <p>เห็นทั้งหมด มี space</p>
+          </div>
+          <div class="fit-box">
+            <div class="placeholder-img fit-fill">fill</div>
+            <p>ยืด-หดตาม box</p>
+          </div>
+        </div>
+        <code>
+img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover; /* cover | contain | fill */
+}
+        </code>
+      </div>
+
+      <div class="example">
+        <h2>srcset - รูปหลายขนาด</h2>
+        <code>
+&lt;img src="small.jpg"
+     srcset="small.jpg 400w,
+             medium.jpg 800w,
+             large.jpg 1200w"
+     sizes="(max-width: 600px) 100vw,
+            (max-width: 1000px) 50vw,
+            33vw"
+     alt="Responsive Image"&gt;
+        </code>
+        <div class="note">
+          <p><strong>srcset:</strong> กำหนดรูปหลายขนาด (w = width)</p>
+          <p><strong>sizes:</strong> บอก browser ว่าจะแสดงขนาดเท่าไร</p>
+          <p>→ Browser เลือกรูปที่เหมาะสมเอง</p>
+        </div>
+      </div>
+
+      <div class="example">
+        <h2>&lt;picture&gt; - เปลี่ยนรูปตามเงื่อนไข</h2>
+        <code>
+&lt;picture&gt;
+  &lt;source media="(min-width: 1024px)" srcset="desktop.jpg"&gt;
+  &lt;source media="(min-width: 768px)" srcset="tablet.jpg"&gt;
+  &lt;img src="mobile.jpg" alt="Responsive"&gt;
+&lt;/picture&gt;
+        </code>
+        <div class="note">
+          <p>ใช้เมื่อต้องการ:</p>
+          <ul>
+            <li>รูปคนละสัดส่วนสำหรับ mobile/desktop</li>
+            <li>รูปคนละรูปแบบ (WebP, AVIF)</li>
+            <li>Art direction (โฟกัสต่างกัน)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="example">
+        <h2>ตัวอย่าง: Responsive Gallery</h2>
+        <div class="gallery">
+          <div class="placeholder-img">1</div>
+          <div class="placeholder-img">2</div>
+          <div class="placeholder-img">3</div>
+          <div class="placeholder-img">4</div>
+          <div class="placeholder-img">5</div>
+          <div class="placeholder-img">6</div>
+        </div>
+        <code>
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+        </code>
+      </div>
+    </section>
+
+    <div class="note">
+      <h3>📝 สรุป Responsive Images</h3>
+      <ul>
+        <li><strong>max-width: 100%</strong> - รูปไม่เกิน container (พื้นฐาน)</li>
+        <li><strong>width: 100%</strong> - รูปเต็มพื้นที่</li>
+        <li><strong>object-fit</strong> - ควบคุมการแสดงผล (cover, contain)</li>
+        <li><strong>srcset</strong> - โหลดรูปขนาดที่เหมาะสม</li>
+        <li><strong>&lt;picture&gt;</strong> - เปลี่ยนรูปตาม media query</li>
+      </ul>
+    </div>
+
+    <div class="navigation">
+      <a href="04-mobile-first.html" class="back-link">← ก่อนหน้า: Mobile First</a>
+      <a href="06-responsive-typography.html" class="next-link">ถัดไป: Typography →</a>
+    </div>
+  </div>
+</body>
+</html>

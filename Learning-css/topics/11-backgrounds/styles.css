@@ -1,0 +1,8 @@
+/* Backgrounds - Specific Styles */
+
+.bg-demo { width: 100%; height: 200px; border: 3px solid #333; margin: 15px 0; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; }
+.bg-color { background-color: lightblue; color: #333; }
+.bg-image { background-image: url('https://picsum.photos/400/300'); background-size: cover; background-position: center; }
+.linear-gradient { background: linear-gradient(to right, red, yellow, green); }
+.radial-gradient { background: radial-gradient(circle, red, yellow, green); }
+.conic-gradient { background: conic-gradient(red, yellow, green, blue, red); }

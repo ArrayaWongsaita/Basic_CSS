@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Display Properties</title>
+    <link rel="stylesheet" href="../../global.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>CSS Display Properties</h1>
+      <p class="description">เรียนรู้การควบคุมการแสดงผลของ elements</p>
+
+      <section>
+        <div class="example">
+          <h2>display: block</h2>
+          <p>Element จะเริ่มบรรทัดใหม่และกินความกว้างเต็ม</p>
+          <div class="block-demo">
+            <div>Block 1</div>
+            <div>Block 2</div>
+          </div>
+          <code>
+div { 
+  display: block;
+  /* กำหนด width, height ได้ */
+  /* margin, padding ทุกทิศทางทำงาน */
+}
+          </code>
+        </div>
+
+        <div class="example">
+          <h2>display: inline</h2>
+          <p>Element อยู่ในบรรทัดเดียวกัน กินความกว้างเท่าที่จำเป็น</p>
+          <div class="inline-demo">
+            <span>Inline 1</span>
+            <span>Inline 2</span>
+            <span>Inline 3</span>
+          </div>
+          <code>
+span { 
+  display: inline;
+  /* width, height ไม่มีผล */
+  /* margin, padding แนวนอนทำงาน แนวตั้งไม่ทำงาน */
+}
+          </code>
+        </div>
+
+        <div class="example">
+          <h2>display: inline-block</h2>
+          <p>รวมข้อดีของทั้ง inline และ block</p>
+          <div class="inline-block-demo">
+            <div>IB 1</div>
+            <div>IB 2</div>
+            <div>IB 3</div>
+          </div>
+          <code>
+div { 
+  display: inline-block;
+  /* อยู่ในบรรทัดเดียวกัน + กำหนด width, height ได้ */
+  /* margin, padding ทุกทิศทางทำงาน */
+}
+          </code>
+        </div>
+
+        <div class="example">
+          <h2>display: none</h2>
+          <p>ซ่อน element (ไม่ใช้พื้นที่)</p>
+          <div class="none-demo">
+            <div class="visible">Visible</div>
+            <div class="hidden">Hidden (display: none)</div>
+            <div class="visible">Visible</div>
+          </div>
+          <code>
+.hidden { 
+  display: none;
+  /* element หายไปทั้งหมด ไม่ใช้พื้นที่ */
+}
+
+/* เปรียบเทียบกับ */
+.invisible {
+  visibility: hidden;
+  /* element ยังใช้พื้นที่อยู่ แต่มองไม่เห็น */
+}
+          </code>
+        </div>
+      </section>
+
+      <div class="note">
+        <h3>📝 สรุป Display</h3>
+        <ul>
+          <li><strong>block:</strong> เริ่มบรรทัดใหม่, กินความกว้างเต็ม, กำหนดขนาดได้</li>
+          <li><strong>inline:</strong> ในบรรทัดเดียวกัน, ขนาดตาม content, ไม่สามารถกำหนด w/h</li>
+          <li><strong>inline-block:</strong> ในบรรทัดเดียวกัน + กำหนดขนาดได้</li>
+          <li><strong>none:</strong> ซ่อนและไม่ใช้พื้นที่</li>
+        </ul>
+      </div>
+
+      <a href="../../index.html" class="back-link">← กลับไปหน้าหลัก</a>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>01. Grid Basics</title>
+  <link rel="stylesheet" href="../../global.css">
+  <link rel="stylesheet" href="01-styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>01. Grid Basics</h1>
+    <p class="description">รู้จักกับ CSS Grid และแนวคิดพื้นฐาน</p>
+
+    <section>
+      <div class="example">
+        <h2>Grid คืออะไร?</h2>
+        <p>Grid เป็นระบบ layout แบบ 2 มิติ สำหรับจัดวาง elements ทั้งแถว (rows) และคอลัมน์ (columns)</p>
+        <div class="note">
+          <p><strong>Grid Container:</strong> element ที่มี display: grid</p>
+          <p><strong>Grid Items:</strong> children โดยตรงของ grid container</p>
+          <p><strong>Grid Lines:</strong> เส้นแบ่งระหว่าง columns และ rows</p>
+          <p><strong>Grid Cells:</strong> ช่องแต่ละช่อง</p>
+        </div>
+      </div>
+
+      <div class="example">
+        <h2>display: grid</h2>
+        <div class="grid-demo">
+          <div class="item">1</div>
+          <div class="item">2</div>
+          <div class="item">3</div>
+          <div class="item">4</div>
+          <div class="item">5</div>
+          <div class="item">6</div>
+        </div>
+        <code>
+.grid-demo {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* 3 คอลัมน์ */
+  gap: 10px;
+}
+        </code>
+      </div>
+
+      <div class="example">
+        <h2>Grid vs Flexbox</h2>
+        <h3>Flexbox (1 มิติ)</h3>
+        <div class="flex-compare">
+          <div class="box">1</div>
+          <div class="box">2</div>
+          <div class="box">3</div>
+          <div class="box">4</div>
+        </div>
+        <h3>Grid (2 มิติ)</h3>
+        <div class="grid-compare">
+          <div class="box">1</div>
+          <div class="box">2</div>
+          <div class="box">3</div>
+          <div class="box">4</div>
+        </div>
+        <code>
+/* Flexbox - จัดแนวเดียว */
+.flex-compare { display: flex; gap: 10px; }
+
+/* Grid - จัดทั้งแถวและคอลัมน์ */
+.grid-compare { 
+  display: grid; 
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+        </code>
+      </div>
+
+      <div class="example">
+        <h2>Grid Lines</h2>
+        <div class="grid-lines">
+          <div class="item">Item 1</div>
+          <div class="item">Item 2</div>
+          <div class="item">Item 3</div>
+          <div class="item">Item 4</div>
+        </div>
+        <p class="note">Grid Lines เริ่มนับจาก 1 (ไม่ใช่ 0) และมีทั้งแนวตั้งและแนวนอน</p>
+      </div>
+    </section>
+
+    <div class="note">
+      <h3>📝 สรุป Grid Basics</h3>
+      <ul>
+        <li><strong>display: grid</strong> - สร้าง grid container</li>
+        <li><strong>Grid Items</strong> - children ของ grid container</li>
+        <li><strong>2D Layout</strong> - ควบคุมได้ทั้งแถวและคอลัมน์</li>
+        <li><strong>Grid Lines</strong> - เส้นแบ่งเริ่มนับจาก 1</li>
+      </ul>
+    </div>
+
+    <div class="navigation">
+      <a href="index.html" class="back-link">← กลับไปหน้า Grid</a>
+      <a href="02-grid-template.html" class="next-link">ถัดไป: Grid Template →</a>
+    </div>
+  </div>
+</body>
+</html>

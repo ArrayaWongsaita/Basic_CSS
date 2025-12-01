@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>04. Align Items</title>
+  <link rel="stylesheet" href="../../global.css">
+  <link rel="stylesheet" href="04-styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>04. Align Items</h1>
+    <p class="description">จัดเรียง items บน Cross Axis (แนวตั้ง)</p>
+
+    <section>
+      <div class="example">
+        <h2>align-items: stretch (default)</h2>
+        <div class="flex-box stretch">
+          <div class="item">1</div>
+          <div class="item tall">2<br>Tall</div>
+          <div class="item">3</div>
+        </div>
+        <code>align-items: stretch; /* ยืดเต็มความสูง */</code>
+      </div>
+
+      <div class="example">
+        <h2>align-items: flex-start</h2>
+        <div class="flex-box flex-start">
+          <div class="item">1</div>
+          <div class="item tall">2<br>Tall</div>
+          <div class="item">3</div>
+        </div>
+        <code>align-items: flex-start; /* ชิดบน */</code>
+      </div>
+
+      <div class="example">
+        <h2>align-items: center</h2>
+        <div class="flex-box center">
+          <div class="item">1</div>
+          <div class="item tall">2<br>Tall</div>
+          <div class="item">3</div>
+        </div>
+        <code>align-items: center; /* อยู่กลาง */</code>
+      </div>
+
+      <div class="example">
+        <h2>align-items: flex-end</h2>
+        <div class="flex-box flex-end">
+          <div class="item">1</div>
+          <div class="item tall">2<br>Tall</div>
+          <div class="item">3</div>
+        </div>
+        <code>align-items: flex-end; /* ชิดล่าง */</code>
+      </div>
+
+      <div class="example">
+        <h2>align-items: baseline</h2>
+        <div class="flex-box baseline">
+          <div class="item">1</div>
+          <div class="item tall">2<br>Tall</div>
+          <div class="item">3</div>
+        </div>
+        <code>align-items: baseline; /* จัดตาม baseline ของ text */</code>
+      </div>
+    </section>
+
+    <div class="note">
+      <h3>📝 สรุป Align Items</h3>
+      <ul>
+        <li><strong>stretch</strong> - ยืดเต็มความสูง (default)</li>
+        <li><strong>flex-start</strong> - ชิดบน</li>
+        <li><strong>center</strong> - กึ่งกลาง</li>
+        <li><strong>flex-end</strong> - ชิดล่าง</li>
+        <li><strong>baseline</strong> - จัดตาม baseline ของข้อความ</li>
+      </ul>
+    </div>
+
+    <div class="navigation">
+      <a href="03-justify-content.html" class="back-link">← ก่อนหน้า: Justify Content</a>
+      <a href="05-flex-wrap.html" class="next-link">ถัดไป: Flex Wrap →</a>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pseudo-classes & Pseudo-elements</title>
+    <link rel="stylesheet" href="../../global.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Pseudo-classes & Pseudo-elements</h1>
+      <p class="description">State selectors และ content generators</p>
+
+      <section class="pseudo-class">
+        <h2>Pseudo-classes (:)</h2>
+        <p class="info">เลือก element ตาม state หรือตำแหน่ง</p>
+
+        <div class="example">
+          <h3>:hover - เมื่อเมาส์ชี้</h3>
+          <p class="hover-demo">ลองชี้เมาส์มาที่ข้อความนี้</p>
+          <pre>p:hover { color: red; }</pre>
+        </div>
+
+        <div class="example">
+          <h3>:first-child, :last-child, :nth-child()</h3>
+          <div class="child-demo">
+            <p>First child</p>
+            <p>Second child</p>
+            <p>Third child</p>
+            <p>Fourth child</p>
+            <p>Last child</p>
+          </div>
+          <pre>
+p:first-child { color: blue; }
+p:last-child { color: green; }
+p:nth-child(3) { color: orange; }
+p:nth-child(odd) { background: #ddd; }
+          </pre>
+        </div>
+
+        <div class="example">
+          <h3>:focus - เมื่อ element ถูก focus</h3>
+          <input type="text" placeholder="คลิกที่นี่เพื่อ focus" class="focus-demo">
+          <pre>input:focus { border-color: blue; }</pre>
+        </div>
+      </section>
+
+      <section class="pseudo-element">
+        <h2>Pseudo-elements (::)</h2>
+        <p class="info">สร้างหรือเลือกส่วนหนึ่งของ element</p>
+
+        <div class="example">
+          <h3>::first-letter & ::first-line</h3>
+          <p class="text-demo">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            In exercitationem praesentium, cupiditate non odit atque, 
+            veniam illo laudantium iusto sequi est itaque omnis deleniti. 
+            Vero voluptatem magnam harum quasi commodi.
+          </p>
+          <pre>
+p::first-letter { font-size: 2em; color: aqua; }
+p::first-line { background: bisque; }
+          </pre>
+        </div>
+
+        <div class="example">
+          <h3>::before & ::after</h3>
+          <p class="before-after-demo">Content with decorations</p>
+          <pre>
+p::before { content: "👉 "; }
+p::after { content: " ⭐"; }
+          </pre>
+        </div>
+
+        <div class="example">
+          <h3>::selection</h3>
+          <p class="selection-demo">ลองลากเลือกข้อความนี้ดูสิ!</p>
+          <pre>
+p::selection { 
+  background: yellow; 
+  color: black; 
+}
+          </pre>
+        </div>
+      </section>
+
+      <div class="note">
+        <h3>📝 สรุป</h3>
+        <ul>
+          <li><strong>Pseudo-classes (:)</strong> - เลือกตาม state: :hover, :focus, :first-child, :nth-child()</li>
+          <li><strong>Pseudo-elements (::)</strong> - จัดการส่วนของ content: ::before, ::after, ::first-letter</li>
+          <li>Pseudo-classes ใช้ colon เดียว (:) แต่ pseudo-elements ใช้ double colon (::)</li>
+        </ul>
+      </div>
+
+      <a href="../../index.html" class="back-link">← กลับไปหน้าหลัก</a>
+    </div>
+  </body>
+</html>

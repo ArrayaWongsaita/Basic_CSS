@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>01. Flexbox Basics</title>
+  <link rel="stylesheet" href="../../global.css">
+  <link rel="stylesheet" href="01-styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>01. Flexbox Basics</h1>
+    <p class="description">รู้จักกับ Flexbox และแนวคิดพื้นฐาน</p>
+
+    <section>
+      <div class="example">
+        <h2>Flexbox คืออะไร?</h2>
+        <p>Flexbox เป็นระบบ layout แบบ 1 มิติ สำหรับจัดวาง elements ในแนวนอนหรือแนวตั้ง</p>
+        <div class="note">
+          <p><strong>Flex Container:</strong> element ที่มี display: flex</p>
+          <p><strong>Flex Items:</strong> children โดยตรงของ flex container</p>
+        </div>
+      </div>
+
+      <div class="example">
+        <h2>display: flex</h2>
+        <div class="flex-demo">
+          <div class="item">Item 1</div>
+          <div class="item">Item 2</div>
+          <div class="item">Item 3</div>
+        </div>
+        <code>
+.flex-demo {
+  display: flex;
+}
+        </code>
+      </div>
+
+      <div class="example">
+        <h2>Main Axis & Cross Axis</h2>
+        <div class="axis-demo">
+          <div class="axes">
+            <div class="main-axis">Main Axis →</div>
+            <div class="cross-axis">Cross Axis ↓</div>
+          </div>
+        </div>
+        <div class="note">
+          <p><strong>Main Axis:</strong> แกนหลัก (ตาม flex-direction)</p>
+          <p><strong>Cross Axis:</strong> แกนตั้งฉากกับ Main Axis</p>
+        </div>
+      </div>
+
+      <div class="example">
+        <h2>ก่อนใช้ Flexbox vs หลังใช้ Flexbox</h2>
+        <h3>ก่อน (Block Layout)</h3>
+        <div class="before">
+          <div class="box">Box 1</div>
+          <div class="box">Box 2</div>
+          <div class="box">Box 3</div>
+        </div>
+        <h3>หลัง (Flexbox)</h3>
+        <div class="after">
+          <div class="box">Box 1</div>
+          <div class="box">Box 2</div>
+          <div class="box">Box 3</div>
+        </div>
+        <code>
+/* ก่อน - boxes เรียงตามแนวตั้ง */
+.before { display: block; }
+
+/* หลัง - boxes เรียงแนวนอนโดยอัตโนมัติ */
+.after { display: flex; }
+        </code>
+      </div>
+    </section>
+
+    <div class="note">
+      <h3>📝 สรุป Flexbox Basics</h3>
+      <ul>
+        <li><strong>display: flex</strong> - สร้าง flex container</li>
+        <li><strong>Flex Items</strong> - children ของ flex container</li>
+        <li><strong>Main Axis</strong> - แกนหลัก (default: แนวนอน)</li>
+        <li><strong>Cross Axis</strong> - แกนตั้งฉาก (default: แนวตั้ง)</li>
+      </ul>
+    </div>
+
+    <div class="navigation">
+      <a href="index.html" class="back-link">← กลับไปหน้า Flexbox</a>
+      <a href="02-flex-direction.html" class="next-link">ถัดไป: Flex Direction →</a>
+    </div>
+  </div>
+</body>
+</html>

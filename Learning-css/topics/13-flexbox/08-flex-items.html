@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>08. Flex Items Properties</title>
+    <link rel="stylesheet" href="../../global.css" />
+    <link rel="stylesheet" href="08-styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>08. Flex Items Properties</h1>
+      <p class="description">Properties สำหรับควบคุม flex items แต่ละตัว</p>
+
+      <section>
+        <div class="example">
+          <h2>flex-grow: การขยายตัว</h2>
+          <div class="flex-box">
+            <div class="item">Normal</div>
+            <div class="item grow-2">flex-grow: 2</div>
+            <div class="item">Normal</div>
+          </div>
+          <code>flex-grow: 2; /* ขยายเป็น 2 เท่าของปกติ */</code>
+        </div>
+
+        <div class="example">
+          <h2>flex-shrink: การหดตัว</h2>
+          <div class="flex-box">
+            <div class="item wide">Wide Item</div>
+            <div class="item wide shrink-0">No Shrink (flex-shrink: 0)</div>
+            <div class="item wide">Wide Item</div>
+          </div>
+          <code>flex-shrink: 0; /* ไม่หดตัว */</code>
+        </div>
+
+        <div class="example">
+          <h2>flex-basis: ขนาดเริ่มต้น</h2>
+          <div class="flex-box">
+            <div class="item basis-100">basis: 100px</div>
+            <div class="item basis-200">basis: 200px</div>
+            <div class="item">Auto</div>
+          </div>
+          <code>
+            flex-basis: 100px; /* ตั้งขนาดเริ่มต้น */ flex-basis: 200px;
+          </code>
+        </div>
+
+        <div class="example">
+          <h2>flex: shorthand</h2>
+          <div class="flex-box">
+            <div class="item flex-1">flex: 1</div>
+            <div class="item flex-2">flex: 2</div>
+            <div class="item flex-1">flex: 1</div>
+          </div>
+          <code>
+            <pre>
+flex: 1; /* grow: 1, shrink: 1, basis: 0 */
+flex: 2; /* grow: 2, shrink: 1, basis: 0 */
+</pre
+            >
+          </code>
+        </div>
+
+        <div class="example">
+          <h2>order: เปลี่ยนลำดับ</h2>
+          <div class="flex-box">
+            <div class="item order-3">1 (order: 3)</div>
+            <div class="item order-1">2 (order: 1)</div>
+            <div class="item order-2">3 (order: 2)</div>
+          </div>
+          <code>
+            order: 1; /* แสดงลำดับที่ 1 */ order: 2; /* แสดงลำดับที่ 2 */ order:
+            3; /* แสดงลำดับที่ 3 */
+          </code>
+        </div>
+
+        <div class="example">
+          <h2>align-self: จัดตำแหน่งแต่ละ item</h2>
+          <div class="flex-box tall">
+            <div class="item">Normal</div>
+            <div class="item self-start">align-self: flex-start</div>
+            <div class="item self-center">align-self: center</div>
+            <div class="item self-end">align-self: flex-end</div>
+          </div>
+          <code>
+            <pre>
+align-self: flex-start; /* ชิดบน */ 
+align-self: center; /* กลาง */
+align-self: flex-end; /* ชิดล่าง */ </pre>
+          </code>
+        </div>
+      </section>
+
+      <div class="note">
+        <h3>📝 สรุป Flex Items Properties</h3>
+        <ul>
+          <li><strong>flex-grow</strong> - กำหนดการขยายตัว (default: 0)</li>
+          <li><strong>flex-shrink</strong> - กำหนดการหดตัว (default: 1)</li>
+          <li><strong>flex-basis</strong> - ขนาดเริ่มต้น (default: auto)</li>
+          <li><strong>flex</strong> - shorthand (grow shrink basis)</li>
+          <li><strong>order</strong> - เปลี่ยนลำดับการแสดง</li>
+          <li><strong>align-self</strong> - จัดตำแหน่งแต่ละ item</li>
+        </ul>
+      </div>
+
+      <div class="navigation">
+        <a href="07-gap.html" class="back-link">← ก่อนหน้า: Gap</a>
+        <a href="09-common-patterns.html" class="next-link"
+          >ถัดไป: Common Patterns →</a
+        >
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>01. Transition Basics</title>
+  <link rel="stylesheet" href="../../global.css">
+  <style>
+    .demo-box {
+      width: 150px;
+      height: 150px;
+      background: #3498db;
+      margin: 20px auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    /* ตัวอย่างที่ 1: ไม่มี transition */
+    .no-transition {
+      background: #e74c3c;
+    }
+
+    .no-transition:hover {
+      transform: scale(1.2);
+      background: #c0392b;
+    }
+
+    /* ตัวอย่างที่ 2: มี transition */
+    .with-transition {
+      background: #2ecc71;
+      transition: all 0.3s;
+    }
+
+    .with-transition:hover {
+      transform: scale(1.2);
+      background: #27ae60;
+    }
+
+    /* ตัวอย่างที่ 3: transition แบบช้า */
+    .slow-transition {
+      background: #9b59b6;
+      transition: all 1s;
+    }
+
+    .slow-transition:hover {
+      transform: scale(1.2) rotate(15deg);
+      background: #8e44ad;
+      border-radius: 50%;
+    }
+
+    /* ตัวอย่างที่ 4: เฉพาะ property บางตัว */
+    .specific-transition {
+      background: #f39c12;
+      transition: transform 0.3s, background-color 0.5s;
+    }
+
+    .specific-transition:hover {
+      transform: translateY(-10px);
+      background: #e67e22;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>01. Transition Basics</h1>
+    <p class="description">เรียนรู้พื้นฐานการใช้ CSS Transition เพื่อทำ smooth animations</p>
+
+    <section>
+      <h2>🎯 Transition คืออะไร?</h2>
+      <div class="note">
+        <p><strong>CSS Transition</strong> เป็นวิธีสร้างการเปลี่ยนแปลงแบบค่อยเป็นค่อยไป (smooth) ระหว่าง 2 สถานะของ element</p>
+        <ul>
+          <li>ใช้กับ hover, focus, active states</li>
+          <li>ทำให้การเปลี่ยนแปลงดูนุ่มนวลขึ้น</li>
+          <li>เพิ่ม user experience</li>
+          <li>ง่ายกว่า @keyframes animation</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>🔴 ตัวอย่างที่ 1: ไม่มี Transition</h2>
+      <div class="example">
+        <p>👆 Hover ที่กล่อง - การเปลี่ยนแปลงทันที (กระตุก)</p>
+        <div class="demo-box no-transition">No Transition</div>
+        <code>
+.no-transition {
+  background: #e74c3c;
+}
+
+.no-transition:hover {
+  transform: scale(1.2);
+  background: #c0392b;
+}
+        </code>
+        <p class="note">⚠️ การเปลี่ยนแปลงเกิดขึ้นทันที ไม่มีการเคลื่อนไหว</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>🟢 ตัวอย่างที่ 2: มี Transition</h2>
+      <div class="example">
+        <p>👆 Hover ที่กล่อง - การเปลี่ยนแปลงนุ่มนวล</p>
+        <div class="demo-box with-transition">With Transition</div>
+        <code>
+.with-transition {
+  background: #2ecc71;
+  transition: all 0.3s;  /* ✨ เพิ่มบรรทัดนี้ */
+}
+
+.with-transition:hover {
+  transform: scale(1.2);
+  background: #27ae60;
+}
+        </code>
+        <p class="note">✅ การเปลี่ยนแปลงเกิดขึ้นแบบ smooth ใช้เวลา 0.3 วินาที</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>🟣 ตัวอย่างที่ 3: Transition แบบช้า</h2>
+      <div class="example">
+        <p>👆 Hover ที่กล่อง - transition ใช้เวลา 1 วินาที</p>
+        <div class="demo-box slow-transition">Slow Transition</div>
+        <code>
+.slow-transition {
+  background: #9b59b6;
+  transition: all 1s;  /* ช้าลง */
+}
+
+.slow-transition:hover {
+  transform: scale(1.2) rotate(15deg);
+  background: #8e44ad;
+  border-radius: 50%;  /* เปลี่ยนเป็นวงกลม */
+}
+        </code>
+      </div>
+    </section>
+
+    <section>
+      <h2>🟠 ตัวอย่างที่ 4: Transition เฉพาะ Property</h2>
+      <div class="example">
+        <p>👆 Hover ที่กล่อง - transform เร็ว, สีช้ากว่า</p>
+        <div class="demo-box specific-transition">Specific Properties</div>
+        <code>
+.specific-transition {
+  background: #f39c12;
+  /* ระบุ property และเวลาแยกกัน */
+  transition: transform 0.3s, background-color 0.5s;
+}
+
+.specific-transition:hover {
+  transform: translateY(-10px);
+  background: #e67e22;
+}
+        </code>
+        <p class="note">💡 สังเกตว่า transform เปลี่ยนเร็ว แต่สีเปลี่ยนช้ากว่า</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>📝 Syntax พื้นฐาน</h2>
+      <code>
+/* แบบสั้น - ทุก property */
+transition: all 0.3s;
+
+/* แบบระบุ property */
+transition: background-color 0.3s;
+
+/* แบบหลาย properties */
+transition: transform 0.3s, opacity 0.5s, background 0.4s;
+      </code>
+    </section>
+
+    <section>
+      <h2>🎨 Properties ที่นิยมใช้กับ Transition</h2>
+      <div class="note">
+        <ul>
+          <li><code>transform</code> - การเคลื่อนที่, scale, rotate</li>
+          <li><code>opacity</code> - ความโปร่งใส</li>
+          <li><code>background-color</code> - สีพื้นหลัง</li>
+          <li><code>color</code> - สีข้อความ</li>
+          <li><code>width / height</code> - ขนาด</li>
+          <li><code>border-radius</code> - มุมโค้ง</li>
+          <li><code>box-shadow</code> - เงา</li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="note">
+      <h3>💡 Best Practices</h3>
+      <ul>
+        <li><strong>ใช้เวลา 0.2-0.5s</strong> สำหรับ interaction ทั่วไป</li>
+        <li><strong>หลีกเลี่ยง transition: all</strong> ในโปรเจกต์ใหญ่ (ประสิทธิภาพ)</li>
+        <li><strong>ระบุ property ที่ต้องการ</strong> เพื่อควบคุมได้ดีกว่า</li>
+        <li><strong>ใช้ transform และ opacity</strong> สำหรับประสิทธิภาพสูงสุด</li>
+      </ul>
+    </div>
+
+    <div style="margin-top: 40px; display: flex; justify-content: space-between;">
+      <a href="index.html" class="back-link">← กลับหน้า Animations</a>
+      <a href="02-transition-properties.html" class="back-link" style="background: #2ecc71;">บทถัดไป: Transition Properties →</a>
+    </div>
+  </div>
+</body>
+</html>

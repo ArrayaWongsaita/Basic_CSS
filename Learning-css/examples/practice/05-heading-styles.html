@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>05. Heading Styles - Practice</title>
+  <link rel="stylesheet" href="../../global.css">
+  <style>
+    /* Heading แบบต่างๆ */
+    .heading-simple {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #333;
+      margin: 20px 0;
+    }
+
+    .heading-underline {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #2196F3;
+      margin: 20px 0;
+      padding-bottom: 10px;
+      border-bottom: 3px solid #2196F3;
+    }
+
+    .heading-gradient {
+      font-size: 3rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin: 20px 0;
+    }
+
+    .heading-shadow {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #FF5722;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+      margin: 20px 0;
+    }
+
+    .heading-spaced {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: #4CAF50;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin: 20px 0;
+    }
+
+    /* Exercise */
+    .heading-exercise {
+      /* TODO: เพิ่ม font-size, font-weight, color */
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>05. Heading Styles</h1>
+    <p class="description">ฝึกตกแต่งหัวข้อด้วย Typography properties</p>
+
+    <section>
+      <div class="example">
+        <h2>✅ Heading แบบง่าย</h2>
+        <div class="heading-simple">Simple Bold Heading</div>
+        <code>
+.heading-simple {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+}
+        </code>
+      </div>
+
+      <div class="example">
+        <h2>✅ Heading มีขีดเส้นใต้</h2>
+        <div class="heading-underline">Underlined Heading</div>
+        <code>
+.heading-underline {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2196F3;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #2196F3;
+}
+        </code>
+      </div>
+
+      <div class="example">
+        <h2>✅ Gradient Heading</h2>
+        <div class="heading-gradient">Gradient Text</div>
+        <code>
+.heading-gradient {
+  font-size: 3rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+        </code>
+        <p class="note">ใช้ background gradient แล้ว clip เป็นข้อความ</p>
+      </div>
+
+      <div class="example">
+        <h2>✅ Heading มีเงา</h2>
+        <div class="heading-shadow">Shadow Heading</div>
+        <code>
+.heading-shadow {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #FF5722;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+        </code>
+      </div>
+
+      <div class="example">
+        <h2>✅ Heading เว้นระยะตัวอักษร</h2>
+        <div class="heading-spaced">Spaced Heading</div>
+        <code>
+.heading-spaced {
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+        </code>
+      </div>
+
+      <div class="example">
+        <h2>📝 แบบฝึกหัด: ทำ Heading</h2>
+        <div class="heading-exercise">Your Heading Here</div>
+        <div class="note">
+          <p><strong>โจทย์:</strong></p>
+          <ul>
+            <li>ให้ font-size: 2.2rem</li>
+            <li>ให้ font-weight: 700</li>
+            <li>ให้ color: #9C27B0</li>
+            <li>ลองเพิ่ม text-shadow</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="example">
+        <h2>🎯 Challenge</h2>
+        <div class="note">
+          <p><strong>ลองทำ:</strong></p>
+          <ul>
+            <li>Heading ที่มี gradient + shadow พร้อมกัน</li>
+            <li>Heading ที่มี icon ข้างหน้า (ใช้ ::before)</li>
+            <li>Heading แบบ outline (เส้นขอบตัวอักษร)</li>
+            <li>Heading แบบ 3D effect</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="note">
+      <h3>📚 Typography Properties</h3>
+      <ul>
+        <li><strong>font-size</strong> - ขนาดตัวอักษร (px, rem, em)</li>
+        <li><strong>font-weight</strong> - ความหนา (normal, bold, 100-900)</li>
+        <li><strong>letter-spacing</strong> - ระยะห่างระหว่างตัวอักษร</li>
+        <li><strong>text-transform</strong> - uppercase, lowercase, capitalize</li>
+        <li><strong>text-shadow</strong> - เงาข้อความ (x y blur color)</li>
+      </ul>
+    </div>
+
+    <a href="index.html" class="back-link">← กลับหน้า Practice</a>
+  </div>
+</body>
+</html>

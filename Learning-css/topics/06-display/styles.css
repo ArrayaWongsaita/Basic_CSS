@@ -1,0 +1,8 @@
+/* Display - Specific Styles */
+
+.block-demo div { display: block; background: #4CAF50; color: white; margin: 10px 0; padding: 15px; width: 200px; }
+.inline-demo { background: #e3f2fd; padding: 15px; }
+.inline-demo span { display: inline; background: #2196F3; color: white; margin: 5px; padding: 10px; }
+.inline-block-demo { background: #fff3e0; padding: 15px; }
+.inline-block-demo div { display: inline-block; background: #FF9800; color: white; margin: 5px; padding: 15px; width: 100px; }
+.none-demo .hidden { display: none; }

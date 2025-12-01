@@ -1,0 +1,79 @@
+/* 01. Grid Basics - Specific Styles */
+
+.grid-demo {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  padding: 20px;
+  background: #f0f0f0;
+  border: 2px solid #333;
+}
+
+.item {
+  padding: 30px;
+  background: #2196F3;
+  color: white;
+  border-radius: 4px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.flex-compare {
+  display: flex;
+  gap: 10px;
+  padding: 20px;
+  background: #fff3e0;
+  border: 2px solid #FF9800;
+  margin: 15px 0;
+}
+
+.grid-compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  padding: 20px;
+  background: #e8f5e9;
+  border: 2px solid #4CAF50;
+  margin: 15px 0;
+}
+
+.box {
+  padding: 30px;
+  background: white;
+  border: 2px solid #333;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.grid-lines {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  padding: 20px;
+  background: #f0f0f0;
+  border: 2px solid #333;
+  position: relative;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 2px solid #ddd;
+}
+
+.next-link {
+  color: #333;
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 2px solid #333;
+  border-radius: 4px;
+}
+
+.next-link:hover {
+  background: #333;
+  color: white;
+}

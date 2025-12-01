@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>02. Responsive Units</title>
+  <link rel="stylesheet" href="../../global.css">
+  <link rel="stylesheet" href="02-styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>02. Responsive Units</h1>
+    <p class="description">หน่วยวัดที่ปรับตามขนาดหน้าจอ</p>
+
+    <section>
+      <div class="example">
+        <h2>% (Percent) - ตามขนาด parent</h2>
+        <div class="parent-box">
+          Parent (400px)
+          <div class="child-percent">50% = 200px</div>
+        </div>
+        <code>
+.child {
+  width: 50%; /* 50% ของ parent */
+}
+        </code>
+      </div>
+
+      <div class="example">
+        <h2>vw (Viewport Width) - ตามความกว้างหน้าจอ</h2>
+        <div class="vw-demo">50vw</div>
+        <code>
+width: 50vw; /* 50% ของความกว้างหน้าจอ */
+        </code>
+        <p class="note">1vw = 1% ของความกว้างหน้าจอ</p>
+      </div>
+
+      <div class="example">
+        <h2>vh (Viewport Height) - ตามความสูงหน้าจอ</h2>
+        <div class="vh-demo">20vh</div>
+        <code>
+height: 20vh; /* 20% ของความสูงหน้าจอ */
+        </code>
+        <p class="note">1vh = 1% ของความสูงหน้าจอ</p>
+      </div>
+
+      <div class="example">
+        <h2>rem - ตามขนาด root font-size</h2>
+        <div class="rem-demo">
+          <p class="text-1rem">1rem</p>
+          <p class="text-2rem">2rem</p>
+          <p class="text-3rem">3rem</p>
+        </div>
+        <code>
+html { font-size: 16px; } /* root */
+.text { font-size: 2rem; }  /* 2 × 16px = 32px */
+        </code>
+      </div>
+
+      <div class="example">
+        <h2>em - ตามขนาด parent font-size</h2>
+        <div class="em-demo">
+          Parent (20px)
+          <p class="text-em">2em = 40px</p>
+        </div>
+        <code>
+.parent { font-size: 20px; }
+.child { font-size: 2em; } /* 2 × 20px = 40px */
+        </code>
+      </div>
+
+      <div class="example">
+        <h2>เปรียบเทียบ: px vs responsive units</h2>
+        <div class="compare">
+          <div class="box-px">300px<br>(คงที่)</div>
+          <div class="box-percent">50%<br>(ปรับตาม parent)</div>
+          <div class="box-vw">30vw<br>(ปรับตามหน้าจอ)</div>
+        </div>
+        <p class="note">ลองย่อ-ขยายหน้าต่าง browser ดูความต่าง!</p>
+      </div>
+    </section>
+
+    <div class="note">
+      <h3>📝 สรุป Responsive Units</h3>
+      <ul>
+        <li><strong>%</strong> - ตามขนาด parent</li>
+        <li><strong>vw/vh</strong> - ตามขนาดหน้าจอ (viewport)</li>
+        <li><strong>rem</strong> - ตาม root font-size (แนะนำสำหรับ font)</li>
+        <li><strong>em</strong> - ตาม parent font-size</li>
+        <li><strong>px</strong> - ขนาดคงที่ (ใช้เมื่อต้องการขนาดแน่นอน)</li>
+      </ul>
+    </div>
+
+    <div class="navigation">
+      <a href="01-viewport-meta.html" class="back-link">← ก่อนหน้า: Viewport</a>
+      <a href="03-media-queries.html" class="next-link">ถัดไป: Media Queries →</a>
+    </div>
+  </div>
+</body>
+</html>

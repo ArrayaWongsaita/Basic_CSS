@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Backgrounds</title>
+  <link rel="stylesheet" href="../../global.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>CSS Backgrounds</h1>
+    <p class="description">Background properties และ gradients</p>
+
+    <section>
+      <div class="example">
+        <h2>Background Color</h2>
+        <div class="bg-demo bg-color">Background Color</div>
+        <code>background-color: lightblue;</code>
+      </div>
+
+      <div class="example">
+        <h2>Background Image</h2>
+        <div class="bg-demo bg-image"></div>
+        <code>
+background-image: url('image.jpg');
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+        </code>
+      </div>
+
+      <div class="example">
+        <h2>Linear Gradient</h2>
+        <div class="bg-demo linear-gradient">Linear Gradient</div>
+        <code>background: linear-gradient(to right, red, yellow, green);</code>
+      </div>
+
+      <div class="example">
+        <h2>Radial Gradient</h2>
+        <div class="bg-demo radial-gradient">Radial Gradient</div>
+        <code>background: radial-gradient(circle, red, yellow, green);</code>
+      </div>
+
+      <div class="example">
+        <h2>Conic Gradient</h2>
+        <div class="bg-demo conic-gradient">Conic Gradient</div>
+        <code>background: conic-gradient(red, yellow, green, red);</code>
+      </div>
+    </section>
+
+    <div class="note">
+      <h3>📝 สรุป Backgrounds</h3>
+      <ul>
+        <li><strong>background-color:</strong> สีพื้นหลัง</li>
+        <li><strong>background-image:</strong> รูปภาพพื้นหลัง</li>
+        <li><strong>background-size:</strong> cover | contain | ขนาด</li>
+        <li><strong>Gradients:</strong> linear, radial, conic</li>
+      </ul>
+    </div>
+
+    <a href="../../index.html" class="back-link">← กลับไปหน้าหลัก</a>
+  </div>
+</body>
+</html>

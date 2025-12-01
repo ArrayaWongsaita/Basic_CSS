@@ -1,0 +1,172 @@
+/* 06. Responsive Typography - Specific Styles */
+
+.rem-demo {
+  padding: 30px;
+  background: #f0f0f0;
+  border: 2px solid #333;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.rem-demo h3 {
+  font-size: 2rem;
+  margin: 0 0 15px 0;
+}
+
+.rem-demo p {
+  font-size: 1rem;
+  margin: 0 0 10px 0;
+}
+
+.rem-demo small {
+  font-size: 0.875rem;
+}
+
+.vw-demo {
+  padding: 40px;
+  background: #2196F3;
+  color: white;
+  text-align: center;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.vw-demo h3 {
+  font-size: 4vw;
+  margin: 0;
+  color: white;
+}
+
+.clamp-demo {
+  padding: 40px;
+  background: #4CAF50;
+  color: white;
+  text-align: center;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.clamp-demo h3 {
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  margin: 0 0 10px 0;
+  color: white;
+}
+
+.clamp-demo p {
+  margin: 0;
+}
+
+.scale-demo {
+  padding: 30px;
+  background: #f0f0f0;
+  border: 2px solid #333;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.scale-demo h1 {
+  font-size: 2rem;
+  margin: 0 0 10px 0;
+}
+
+.scale-demo h2 {
+  font-size: 1.5rem;
+  margin: 0 0 10px 0;
+}
+
+.scale-demo h3 {
+  font-size: 1.25rem;
+  margin: 0 0 10px 0;
+}
+
+.scale-demo p {
+  font-size: 1rem;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1024px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+.line-height-demo {
+  padding: 20px;
+  background: #f0f0f0;
+  border: 2px solid #333;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.tight {
+  line-height: 1.2;
+  padding: 10px;
+  background: #ffebee;
+  margin-bottom: 10px;
+}
+
+.normal {
+  line-height: 1.5;
+  padding: 10px;
+  background: #e8f5e9;
+  margin-bottom: 10px;
+}
+
+.loose {
+  line-height: 2;
+  padding: 10px;
+  background: #fff3e0;
+  margin-bottom: 0;
+}
+
+.article {
+  max-width: 65ch;
+  padding: 30px;
+  background: white;
+  border: 2px solid #333;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.article h3 {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  line-height: 1.2;
+  margin: 0 0 20px 0;
+}
+
+.article p {
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.article p:last-child {
+  margin-bottom: 0;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 2px solid #ddd;
+}
+
+.next-link {
+  color: #333;
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 2px solid #333;
+  border-radius: 4px;
+}
+
+.next-link:hover {
+  background: #333;
+  color: white;
+}

@@ -1,0 +1,11 @@
+/* Specificity - Specific Styles */
+
+.calc-table { border: 2px solid #333; border-radius: 4px; overflow: hidden; }
+.calc-row { display: grid; grid-template-columns: repeat(5, 1fr); text-align: center; }
+.calc-row span { padding: 10px; border-right: 1px solid #ddd; border-bottom: 1px solid #ddd; }
+.calc-row.header { background: #333; color: white; font-weight: bold; }
+#specificity .text { color: green; }
+#specificity #content { color: blue; }
+#specificity p#content { color: yellow; }
+#specificity p#content.text { color: orange; font-weight: bold; }
+.important-demo { color: red !important; font-weight: bold; }

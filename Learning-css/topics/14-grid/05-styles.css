@@ -1,0 +1,168 @@
+/* 05. Grid Areas - Specific Styles */
+
+.layout-areas {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  grid-template-areas:
+    "header header"
+    "sidebar content"
+    "footer footer";
+  gap: 10px;
+  padding: 20px;
+  background: #f0f0f0;
+  border: 2px solid #333;
+  min-height: 300px;
+}
+
+.header {
+  grid-area: header;
+  padding: 20px;
+  background: #2196F3;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  padding: 20px;
+  background: #FF9800;
+  color: white;
+  font-weight: bold;
+}
+
+.content {
+  grid-area: content;
+  padding: 20px;
+  background: #4CAF50;
+  color: white;
+  font-weight: bold;
+}
+
+.footer {
+  grid-area: footer;
+  padding: 20px;
+  background: #333;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+}
+
+.three-col {
+  display: grid;
+  grid-template-columns: 150px 1fr 150px;
+  grid-template-areas:
+    "header header header"
+    "sidebar content ads"
+    "footer footer footer";
+  gap: 10px;
+  padding: 20px;
+  background: #f0f0f0;
+  border: 2px solid #333;
+  min-height: 300px;
+}
+
+.ads {
+  grid-area: ads;
+  padding: 20px;
+  background: #E91E63;
+  color: white;
+  font-weight: bold;
+}
+
+.with-empty {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas:
+    "box1 box1 ."
+    ". box2 box2";
+  gap: 10px;
+  padding: 20px;
+  background: #f0f0f0;
+  border: 2px solid #333;
+}
+
+.box1 {
+  grid-area: box1;
+  padding: 30px;
+  background: #9C27B0;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+}
+
+.box2 {
+  grid-area: box2;
+  padding: 30px;
+  background: #00BCD4;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: 100px repeat(3, 1fr);
+  grid-template-rows: repeat(3, 80px);
+  grid-template-areas:
+    "nav main main info"
+    "nav main main info"
+    "nav stats stats stats";
+  gap: 10px;
+  padding: 20px;
+  background: #f0f0f0;
+  border: 2px solid #333;
+}
+
+.nav {
+  grid-area: nav;
+  padding: 20px;
+  background: #333;
+  color: white;
+  font-weight: bold;
+}
+
+.main {
+  grid-area: main;
+  padding: 20px;
+  background: #4CAF50;
+  color: white;
+  font-weight: bold;
+}
+
+.sidebar-right {
+  grid-area: info;
+  padding: 20px;
+  background: #FF9800;
+  color: white;
+  font-weight: bold;
+}
+
+.stats {
+  grid-area: stats;
+  padding: 20px;
+  background: #2196F3;
+  color: white;
+  font-weight: bold;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 2px solid #ddd;
+}
+
+.next-link {
+  color: #333;
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 2px solid #333;
+  border-radius: 4px;
+}
+
+.next-link:hover {
+  background: #333;
+  color: white;
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>02. Flex Direction</title>
+  <link rel="stylesheet" href="../../global.css">
+  <link rel="stylesheet" href="02-styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>02. Flex Direction</h1>
+    <p class="description">ควบคุมทิศทางการเรียงของ flex items</p>
+
+    <section>
+      <div class="example">
+        <h2>flex-direction: row (default)</h2>
+        <div class="flex-box row">
+          <div class="item">1</div>
+          <div class="item">2</div>
+          <div class="item">3</div>
+        </div>
+        <code>flex-direction: row; /* แนวนอน ซ้าย→ขวา */</code>
+      </div>
+
+      <div class="example">
+        <h2>flex-direction: row-reverse</h2>
+        <div class="flex-box row-reverse">
+          <div class="item">1</div>
+          <div class="item">2</div>
+          <div class="item">3</div>
+        </div>
+        <code>flex-direction: row-reverse; /* แนวนอน ขวา→ซ้าย */</code>
+      </div>
+
+      <div class="example">
+        <h2>flex-direction: column</h2>
+        <div class="flex-box column">
+          <div class="item">1</div>
+          <div class="item">2</div>
+          <div class="item">3</div>
+        </div>
+        <code>flex-direction: column; /* แนวตั้ง บน→ล่าง */</code>
+      </div>
+
+      <div class="example">
+        <h2>flex-direction: column-reverse</h2>
+        <div class="flex-box column-reverse">
+          <div class="item">1</div>
+          <div class="item">2</div>
+          <div class="item">3</div>
+        </div>
+        <code>flex-direction: column-reverse; /* แนวตั้ง ล่าง→บน */</code>
+      </div>
+    </section>
+
+    <div class="note">
+      <h3>📝 สรุป Flex Direction</h3>
+      <ul>
+        <li><strong>row</strong> - แนวนอน ซ้าย→ขวา (default)</li>
+        <li><strong>row-reverse</strong> - แนวนอน ขวา→ซ้าย</li>
+        <li><strong>column</strong> - แนวตั้ง บน→ล่าง</li>
+        <li><strong>column-reverse</strong> - แนวตั้ง ล่าง→บน</li>
+      </ul>
+    </div>
+
+    <div class="navigation">
+      <a href="01-flexbox-basics.html" class="back-link">← ก่อนหน้า: Flexbox Basics</a>
+      <a href="03-justify-content.html" class="next-link">ถัดไป: Justify Content →</a>
+    </div>
+  </div>
+</body>
+</html>
