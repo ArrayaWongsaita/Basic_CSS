@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>07. Animation Properties</title>
+  <link rel="stylesheet" href="../../global.css">
+  <style>
+    @keyframes slideRotate {
+      from {
+        transform: translateX(-50px) rotate(0deg);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0) rotate(360deg);
+        opacity: 1;
+      }
+    }
+
+    /* Duration demos */
+    .duration-fast {
+      animation: slideRotate 0.5s;
+    }
+
+    .duration-normal {
+      animation: slideRotate 2s;
+    }
+
+    .duration-slow {
+      animation: slideRotate 5s;
+    }
+
+    /* Delay demos */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .delay-box {
+      width: 120px;
+      height: 80px;
+      background: #3498db;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      border-radius: 6px;
+      margin: 10px;
+      animation: fadeIn 0.6s;
+    }
+
+    .delay-0 { animation-delay: 0s; }
+    .delay-1 { animation-delay: 0.3s; }
+    .delay-2 { animation-delay: 0.6s; }
+    .delay-3 { animation-delay: 0.9s; }
+
+    /* Iteration count */
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-30px); }
+    }
+
+    .iter-once {
+      animation: bounce 1s ease-in-out 1;
+    }
+
+    .iter-three {
+      animation: bounce 1s ease-in-out 3;
+    }
+
+    .iter-infinite {
+      animation: bounce 1s ease-in-out infinite;
+    }
+
+    /* Direction */
+    @keyframes slideColor {
+      from { transform: translateX(0); background: #3498db; }
+      to { transform: translateX(100px); background: #e74c3c; }
+    }
+
+    .dir-normal {
+      animation: slideColor 2s infinite;
+    }
+
+    .dir-reverse {
+      animation: slideColor 2s infinite reverse;
+    }
+
+    .dir-alternate {
+      animation: slideColor 2s infinite alternate;
+    }
+
+    .dir-alternate-reverse {
+      animation: slideColor 2s infinite alternate-reverse;
+    }
+
+    /* Fill mode */
+    @keyframes grow {
+      from { transform: scale(0); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .fill-demo {
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      background: #9b59b6;
+      margin: 20px;
+      border-radius: 8px;
+      color: white;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      text-align: center;
+      font-size: 0.85rem;
+    }
+
+    .fill-none {
+      animation: grow 2s 1s none;
+    }
+
+    .fill-forwards {
+      animation: grow 2s 1s forwards;
+    }
+
+    .fill-backwards {
+      animation: grow 2s 1s backwards;
+    }
+
+    .fill-both {
+      animation: grow 2s 1s both;
+    }
+
+    /* Shorthand demo */
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .shorthand-box {
+      width: 120px;
+      height: 120px;
+      background: #2ecc71;
+      margin: 30px auto;
+      border-radius: 8px;
+      animation: spin 2s ease-in-out 0.5s infinite alternate both;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>07. Animation Properties</h1>
+    <p class="description">เจาะลึก properties ที่ควบคุม animations</p>
+
+    <section>
+      <h2>📋 Animation Properties ทั้งหมด</h2>
+      <div class="note">
+        <ol>
+          <li><code>animation-name</code> - ชื่อ keyframes</li>
+          <li><code>animation-duration</code> - ระยะเวลา</li>
+          <li><code>animation-timing-function</code> - timing function</li>
+          <li><code>animation-delay</code> - เวลาหน่วง</li>
+          <li><code>animation-iteration-count</code> - จำนวนรอบ</li>
+          <li><code>animation-direction</code> - ทิศทาง</li>
+          <li><code>animation-fill-mode</code> - สถานะก่อน/หลัง</li>
+          <li><code>animation-play-state</code> - play/pause</li>
+        </ol>
+      </div>
+    </section>
+
+    <section>
+      <h2>1️⃣ animation-duration</h2>
+      <p>ระยะเวลาที่ animation จะทำงาน (s หรือ ms)</p>
+      
+      <div class="example">
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+          <div>
+            <div class="demo-box duration-fast" style="background: #3498db;">0.5s</div>
+            <code style="font-size: 0.8rem;">animation-duration: 0.5s;</code>
+          </div>
+          <div>
+            <div class="demo-box duration-normal" style="background: #e74c3c;">2s</div>
+            <code style="font-size: 0.8rem;">animation-duration: 2s;</code>
+          </div>
+          <div>
+            <div class="demo-box duration-slow" style="background: #2ecc71;">5s</div>
+            <code style="font-size: 0.8rem;">animation-duration: 5s;</code>
+          </div>
+        </div>
+        <p class="note">💡 Refresh หน้าเพื่อดู animation ใหม่</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>2️⃣ animation-delay</h2>
+      <p>เวลาหน่วงก่อน animation จะเริ่ม</p>
+      
+      <div class="example">
+        <p>Refresh หน้าเพื่อดูการหน่วงเวลา</p>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center;">
+          <div class="delay-box delay-0">0s</div>
+          <div class="delay-box delay-1">0.3s</div>
+          <div class="delay-box delay-2">0.6s</div>
+          <div class="delay-box delay-3">0.9s</div>
+        </div>
+        <code>
+animation-delay: 0s;
+animation-delay: 0.3s;
+animation-delay: 0.6s;
+animation-delay: 0.9s;
+
+/* ค่าติดลบ = เริ่มจากกลาง animation */
+animation-delay: -1s;  /* เริ่มที่ 1 วินาที */
+        </code>
+      </div>
+    </section>
+
+    <section>
+      <h2>3️⃣ animation-iteration-count</h2>
+      <p>จำนวนครั้งที่ animation จะทำซ้ำ</p>
+      
+      <div class="example">
+        <p>Refresh หน้าเพื่อดู animations</p>
+        <div class="demo-grid">
+          <div style="text-align: center;">
+            <h4>1 ครั้ง</h4>
+            <div class="demo-box iter-once" style="background: #3498db;"></div>
+            <code style="font-size: 0.85rem;">
+iteration-count: 1;
+            </code>
+          </div>
+
+          <div style="text-align: center;">
+            <h4>3 ครั้ง</h4>
+            <div class="demo-box iter-three" style="background: #e74c3c;"></div>
+            <code style="font-size: 0.85rem;">
+iteration-count: 3;
+            </code>
+          </div>
+
+          <div style="text-align: center;">
+            <h4>ไม่รู้จบ</h4>
+            <div class="demo-box iter-infinite" style="background: #2ecc71;"></div>
+            <code style="font-size: 0.85rem;">
+iteration-count: infinite;
+            </code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>4️⃣ animation-direction</h2>
+      <p>ควบคุมทิศทางการทำงานของ animation</p>
+      
+      <div class="example">
+        <div style="display: grid; gap: 30px;">
+          <div>
+            <h4>normal (default)</h4>
+            <div class="demo-box dir-normal" style="width: 100px; height: 80px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">→</div>
+            <code style="font-size: 0.85rem;">
+animation-direction: normal;
+/* ทำปกติทุกรอบ: → → → */
+            </code>
+          </div>
+
+          <div>
+            <h4>reverse</h4>
+            <div class="demo-box dir-reverse" style="width: 100px; height: 80px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">←</div>
+            <code style="font-size: 0.85rem;">
+animation-direction: reverse;
+/* ทำย้อนกลับทุกรอบ: ← ← ← */
+            </code>
+          </div>
+
+          <div>
+            <h4>alternate</h4>
+            <div class="demo-box dir-alternate" style="width: 100px; height: 80px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">⇄</div>
+            <code style="font-size: 0.85rem;">
+animation-direction: alternate;
+/* สลับไป-กลับ: → ← → ← */
+            </code>
+          </div>
+
+          <div>
+            <h4>alternate-reverse</h4>
+            <div class="demo-box dir-alternate-reverse" style="width: 100px; height: 80px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">⇄</div>
+            <code style="font-size: 0.85rem;">
+animation-direction: alternate-reverse;
+/* สลับ กลับ-ไป: ← → ← → */
+            </code>
+          </div>
+        </div>
+      </div>
+
+      <div class="note">
+        <h4>💡 ใช้ alternate กับ infinite:</h4>
+        <code>
+animation: bounce 1s infinite alternate;
+/* จะ bounce ไป-กลับเรื่อยๆ อย่างนุ่มนวล */
+        </code>
+      </div>
+    </section>
+
+    <section>
+      <h2>5️⃣ animation-fill-mode</h2>
+      <p>กำหนดสไตล์ก่อนและหลัง animation</p>
+      
+      <div class="example">
+        <p>Refresh หน้าเพื่อดู fill-mode (delay 1s)</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px;">
+          <div style="text-align: center;">
+            <div class="fill-demo fill-none">none</div>
+            <code style="font-size: 0.75rem;">
+fill-mode: none;
+/* ไม่เอาสไตล์
+ก่อน/หลัง */
+            </code>
+          </div>
+
+          <div style="text-align: center;">
+            <div class="fill-demo fill-forwards">forwards</div>
+            <code style="font-size: 0.75rem;">
+fill-mode: forwards;
+/* เก็บสไตล์
+ท้ายสุด */
+            </code>
+          </div>
+
+          <div style="text-align: center;">
+            <div class="fill-demo fill-backwards">backwards</div>
+            <code style="font-size: 0.75rem;">
+fill-mode: backwards;
+/* ใช้สไตล์
+แรกตอน delay */
+            </code>
+          </div>
+
+          <div style="text-align: center;">
+            <div class="fill-demo fill-both">both</div>
+            <code style="font-size: 0.75rem;">
+fill-mode: both;
+/* ทั้งก่อน
+และหลัง */
+            </code>
+          </div>
+        </div>
+      </div>
+
+      <div class="note">
+        <h4>💡 animation-fill-mode:</h4>
+        <ul>
+          <li><strong>none:</strong> default, ไม่เอาสไตล์ก่อน/หลัง</li>
+          <li><strong>forwards:</strong> เก็บสไตล์สุดท้าย (100%) หลังจบ</li>
+          <li><strong>backwards:</strong> ใช้สไตล์แรก (0%) ตอน delay</li>
+          <li><strong>both:</strong> ใช้ทั้งก่อนและหลัง (นิยมที่สุด)</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>6️⃣ animation-timing-function</h2>
+      <div class="note">
+        <p>เหมือนกับ <code>transition-timing-function</code></p>
+        <code>
+animation-timing-function: ease;
+animation-timing-function: linear;
+animation-timing-function: ease-in;
+animation-timing-function: ease-out;
+animation-timing-function: ease-in-out;
+animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        </code>
+        <p>🔗 ดูรายละเอียดใน <a href="03-timing-functions.html">บทที่ 3</a></p>
+      </div>
+    </section>
+
+    <section>
+      <h2>✏️ Shorthand Syntax</h2>
+      <p>เขียนแบบย่อในบรรทัดเดียว</p>
+      
+      <div class="example">
+        <div class="shorthand-box"></div>
+        <code>
+/* Syntax: name duration timing-function delay iteration-count direction fill-mode */
+animation: spin 2s ease-in-out 0.5s infinite alternate both;
+
+/* เทียบกับแบบเต็ม */
+animation-name: spin;
+animation-duration: 2s;
+animation-timing-function: ease-in-out;
+animation-delay: 0.5s;
+animation-iteration-count: infinite;
+animation-direction: alternate;
+animation-fill-mode: both;
+        </code>
+      </div>
+
+      <div class="note">
+        <h4>💡 Shorthand ลำดับ:</h4>
+        <code>
+animation: [name] [duration] [timing-function] [delay] 
+           [iteration-count] [direction] [fill-mode];
+
+/* ต้องมี: name, duration */
+/* Optional: ที่เหลือ */
+
+/* Multiple animations */
+animation: 
+  spin 2s infinite,
+  fade 1s ease-out;
+        </code>
+      </div>
+    </section>
+
+    <div class="note">
+      <h3>📚 สรุป Animation Properties</h3>
+      <table style="width: 100%; border-collapse: collapse;">
+        <tr style="background: #f0f0f0;">
+          <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">Property</th>
+          <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">ค่าที่ใช้บ่อย</th>
+        </tr>
+        <tr>
+          <td style="padding: 10px; border: 1px solid #ddd;"><code>animation-name</code></td>
+          <td style="padding: 10px; border: 1px solid #ddd;">ชื่อ keyframes</td>
+        </tr>
+        <tr>
+          <td style="padding: 10px; border: 1px solid #ddd;"><code>animation-duration</code></td>
+          <td style="padding: 10px; border: 1px solid #ddd;">1s, 2s, 500ms</td>
+        </tr>
+        <tr>
+          <td style="padding: 10px; border: 1px solid #ddd;"><code>animation-timing-function</code></td>
+          <td style="padding: 10px; border: 1px solid #ddd;">ease, linear, ease-in-out</td>
+        </tr>
+        <tr>
+          <td style="padding: 10px; border: 1px solid #ddd;"><code>animation-delay</code></td>
+          <td style="padding: 10px; border: 1px solid #ddd;">0s, 0.5s, -1s</td>
+        </tr>
+        <tr>
+          <td style="padding: 10px; border: 1px solid #ddd;"><code>animation-iteration-count</code></td>
+          <td style="padding: 10px; border: 1px solid #ddd;">1, 3, infinite</td>
+        </tr>
+        <tr>
+          <td style="padding: 10px; border: 1px solid #ddd;"><code>animation-direction</code></td>
+          <td style="padding: 10px; border: 1px solid #ddd;">normal, alternate</td>
+        </tr>
+        <tr>
+          <td style="padding: 10px; border: 1px solid #ddd;"><code>animation-fill-mode</code></td>
+          <td style="padding: 10px; border: 1px solid #ddd;">none, forwards, both</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="note">
+      <h3>💡 Best Practices</h3>
+      <ul>
+        <li><strong>fill-mode: both</strong> - ใช้บ่อยที่สุด</li>
+        <li><strong>alternate + infinite</strong> - สำหรับ animation ต่อเนื่อง</li>
+        <li><strong>delay ติดลบ</strong> - เริ่ม animation จากกลางๆ</li>
+        <li><strong>shorthand</strong> - สะดวกแต่อ่านยาก อธิบายด้วยคอมเมนต์</li>
+      </ul>
+    </div>
+
+    <div style="margin-top: 40px; display: flex; justify-content: space-between;">
+      <a href="06-keyframes-basics.html" class="back-link">← บทที่แล้ว</a>
+      <a href="08-common-animations.html" class="back-link" style="background: #2ecc71;">บทถัดไป: Common Animations →</a>
+    </div>
+  </div>
+</body>
+</html>

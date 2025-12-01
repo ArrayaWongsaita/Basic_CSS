@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>04. Transform Basics</title>
+  <link rel="stylesheet" href="../../global.css">
+  <style>
+    .transform-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 30px;
+      margin: 30px 0;
+    }
+
+    .transform-box {
+      width: 120px;
+      height: 120px;
+      background: #3498db;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      margin: 40px auto;
+      cursor: pointer;
+      transition: transform 0.3s;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    /* Translate */
+    .translate-x:hover {
+      transform: translateX(50px);
+    }
+
+    .translate-y:hover {
+      transform: translateY(-50px);
+    }
+
+    .translate-both:hover {
+      transform: translate(30px, -30px);
+    }
+
+    /* Scale */
+    .scale-up:hover {
+      transform: scale(1.3);
+    }
+
+    .scale-down:hover {
+      transform: scale(0.7);
+    }
+
+    .scale-axis:hover {
+      transform: scaleX(1.5);
+    }
+
+    /* Rotate */
+    .rotate-45:hover {
+      transform: rotate(45deg);
+    }
+
+    .rotate-180:hover {
+      transform: rotate(180deg);
+    }
+
+    .rotate-360:hover {
+      transform: rotate(360deg);
+    }
+
+    /* Skew */
+    .skew-x:hover {
+      transform: skewX(20deg);
+    }
+
+    .skew-y:hover {
+      transform: skewY(20deg);
+    }
+
+    .skew-both:hover {
+      transform: skew(15deg, 10deg);
+    }
+
+    /* Combined */
+    .combined-1:hover {
+      transform: translate(20px, -20px) rotate(15deg);
+    }
+
+    .combined-2:hover {
+      transform: scale(1.2) rotate(-10deg);
+    }
+
+    .combined-3:hover {
+      transform: translateY(-30px) scale(1.3) rotate(45deg);
+    }
+
+    /* Transform origin demo */
+    .origin-demo-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin: 30px 0;
+    }
+
+    .origin-box {
+      width: 100px;
+      height: 100px;
+      background: #e74c3c;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.5s;
+      margin: 30px auto;
+    }
+
+    .origin-center {
+      transform-origin: center;
+    }
+
+    .origin-center:hover {
+      transform: rotate(90deg);
+    }
+
+    .origin-top-left {
+      transform-origin: top left;
+    }
+
+    .origin-top-left:hover {
+      transform: rotate(90deg);
+    }
+
+    .origin-bottom-right {
+      transform-origin: bottom right;
+    }
+
+    .origin-bottom-right:hover {
+      transform: rotate(90deg);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>04. Transform Basics</h1>
+    <p class="description">เรียนรู้การใช้ transform เพื่อเคลื่อนย้าย, ปรับขนาด, หมุน และบิด elements</p>
+
+    <section>
+      <h2>🎯 Transform คืออะไร?</h2>
+      <div class="note">
+        <p><strong>CSS Transform</strong> ช่วยให้เราเปลี่ยนแปลงรูปร่าง ตำแหน่ง และขนาดของ element โดยไม่กระทบต่อ layout</p>
+        <ul>
+          <li><strong>ไม่กระทบ layout</strong> - element อื่นไม่เลื่อน</li>
+          <li><strong>Performance ดี</strong> - ใช้ GPU ช่วยประมวลผล</li>
+          <li><strong>ใช้กับ transition</strong> - ทำ animation ได้นุ่มนวล</li>
+          <li><strong>4 functions หลัก:</strong> translate, scale, rotate, skew</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>1️⃣ translate() - เคลื่อนที่</h2>
+      <p>ย้าย element ไปตำแหน่งใหม่โดยไม่กระทบ layout</p>
+
+      <div class="example">
+        <div class="transform-grid">
+          <div>
+            <h4 style="text-align: center;">translateX()</h4>
+            <div class="transform-box translate-x">Hover me</div>
+            <code style="font-size: 0.85rem;">
+transform: translateX(50px);
+/* ขยับขวา 50px */
+            </code>
+          </div>
+
+          <div>
+            <h4 style="text-align: center;">translateY()</h4>
+            <div class="transform-box translate-y">Hover me</div>
+            <code style="font-size: 0.85rem;">
+transform: translateY(-50px);
+/* ขยับขึ้น 50px */
+            </code>
+          </div>
+
+          <div>
+            <h4 style="text-align: center;">translate()</h4>
+            <div class="transform-box translate-both">Hover me</div>
+            <code style="font-size: 0.85rem;">
+transform: translate(30px, -30px);
+/* ขวา 30px, ขึ้น 30px */
+            </code>
+          </div>
+        </div>
+      </div>
+
+      <div class="note">
+        <h4>💡 Syntax:</h4>
+        <code>
+translateX(value)    /* แกน X (ซ้าย-ขวา) */
+translateY(value)    /* แกน Y (บน-ล่าง) */
+translate(x, y)      /* ทั้ง 2 แกน */
+
+/* ค่าที่ใช้ได้: px, %, em, rem */
+        </code>
+      </div>
+    </section>
+
+    <section>
+      <h2>2️⃣ scale() - ปรับขนาด</h2>
+      <p>ขยายหรือย่อขนาด element</p>
+
+      <div class="example">
+        <div class="transform-grid">
+          <div>
+            <h4 style="text-align: center;">scale() ขยาย</h4>
+            <div class="transform-box scale-up">Hover me</div>
+            <code style="font-size: 0.85rem;">
+transform: scale(1.3);
+/* ขยาย 130% */
+            </code>
+          </div>
+
+          <div>
+            <h4 style="text-align: center;">scale() ย่อ</h4>
+            <div class="transform-box scale-down">Hover me</div>
+            <code style="font-size: 0.85rem;">
+transform: scale(0.7);
+/* ย่อเหลือ 70% */
+            </code>
+          </div>
+
+          <div>
+            <h4 style="text-align: center;">scaleX()</h4>
+            <div class="transform-box scale-axis">Hover me</div>
+            <code style="font-size: 0.85rem;">
+transform: scaleX(1.5);
+/* ขยายแกน X */
+            </code>
+          </div>
+        </div>
+      </div>
+
+      <div class="note">
+        <h4>💡 Syntax:</h4>
+        <code>
+scale(value)         /* ทั้ง 2 แกนเท่ากัน */
+scale(x, y)          /* แยกแกน X และ Y */
+scaleX(value)        /* แกน X เท่านั้น */
+scaleY(value)        /* แกน Y เท่านั้น */
+
+/* ค่า: 1 = 100%, 0.5 = 50%, 2 = 200% */
+        </code>
+      </div>
+    </section>
+
+    <section>
+      <h2>3️⃣ rotate() - หมุน</h2>
+      <p>หมุน element ตามมุมที่กำหนด</p>
+
+      <div class="example">
+        <div class="transform-grid">
+          <div>
+            <h4 style="text-align: center;">45 degrees</h4>
+            <div class="transform-box rotate-45">Hover me</div>
+            <code style="font-size: 0.85rem;">
+transform: rotate(45deg);
+            </code>
+          </div>
+
+          <div>
+            <h4 style="text-align: center;">180 degrees</h4>
+            <div class="transform-box rotate-180">Hover me</div>
+            <code style="font-size: 0.85rem;">
+transform: rotate(180deg);
+            </code>
+          </div>
+
+          <div>
+            <h4 style="text-align: center;">360 degrees</h4>
+            <div class="transform-box rotate-360">Hover me</div>
+            <code style="font-size: 0.85rem;">
+transform: rotate(360deg);
+            </code>
+          </div>
+        </div>
+      </div>
+
+      <div class="note">
+        <h4>💡 Syntax:</h4>
+        <code>
+rotate(angle)        /* หมุนตามเข็มนาฬิกา */
+
+/* หน่วยมุม: */
+deg   (degrees)      /* 360deg = 1 รอบ */
+rad   (radians)      /* 6.28rad = 1 รอบ */
+turn                 /* 1turn = 1 รอบ */
+
+/* ตัวอย่าง: */
+rotate(45deg)
+rotate(-90deg)       /* หมุนทวนเข็ม */
+rotate(0.5turn)      /* ครึ่งรอบ */
+        </code>
+      </div>
+    </section>
+
+    <section>
+      <h2>4️⃣ skew() - บิด/เอียง</h2>
+      <p>บิด element ตามแกน X หรือ Y</p>
+
+      <div class="example">
+        <div class="transform-grid">
+          <div>
+            <h4 style="text-align: center;">skewX()</h4>
+            <div class="transform-box skew-x">Hover me</div>
+            <code style="font-size: 0.85rem;">
+transform: skewX(20deg);
+/* บิดแกน X */
+            </code>
+          </div>
+
+          <div>
+            <h4 style="text-align: center;">skewY()</h4>
+            <div class="transform-box skew-y">Hover me</div>
+            <code style="font-size: 0.85rem;">
+transform: skewY(20deg);
+/* บิดแกน Y */
+            </code>
+          </div>
+
+          <div>
+            <h4 style="text-align: center;">skew()</h4>
+            <div class="transform-box skew-both">Hover me</div>
+            <code style="font-size: 0.85rem;">
+transform: skew(15deg, 10deg);
+/* บิดทั้ง X และ Y */
+            </code>
+          </div>
+        </div>
+      </div>
+
+      <div class="note">
+        <h4>💡 Syntax:</h4>
+        <code>
+skewX(angle)         /* บิดแกน X */
+skewY(angle)         /* บิดแกน Y */
+skew(x, y)           /* บิดทั้ง 2 แกน */
+        </code>
+      </div>
+    </section>
+
+    <section>
+      <h2>🎨 รวม Transform หลายตัว</h2>
+      <p>ใช้ transform หลายตัวร่วมกันด้วยเว้นวรรค</p>
+
+      <div class="example">
+        <div class="transform-grid">
+          <div>
+            <h4 style="text-align: center;">Translate + Rotate</h4>
+            <div class="transform-box combined-1">Hover me</div>
+            <code style="font-size: 0.85rem;">
+transform: 
+  translate(20px, -20px) 
+  rotate(15deg);
+            </code>
+          </div>
+
+          <div>
+            <h4 style="text-align: center;">Scale + Rotate</h4>
+            <div class="transform-box combined-2">Hover me</div>
+            <code style="font-size: 0.85rem;">
+transform: 
+  scale(1.2) 
+  rotate(-10deg);
+            </code>
+          </div>
+
+          <div>
+            <h4 style="text-align: center;">ทั้งหมด</h4>
+            <div class="transform-box combined-3">Hover me</div>
+            <code style="font-size: 0.85rem;">
+transform: 
+  translateY(-30px) 
+  scale(1.3) 
+  rotate(45deg);
+            </code>
+          </div>
+        </div>
+      </div>
+
+      <div class="note" style="background: #FFE4E1; border-color: #FF6B6B;">
+        <h4>⚠️ ลำดับสำคัญ!</h4>
+        <p>Transform จะทำงานจาก<strong>ซ้ายไปขวา</strong> ลำดับต่างกันผลลัพธ์ต่างกัน</p>
+        <code>
+/* ผลลัพธ์ต่างกัน! */
+transform: translate(50px, 0) rotate(45deg);
+transform: rotate(45deg) translate(50px, 0);
+        </code>
+      </div>
+    </section>
+
+    <section>
+      <h2>📍 transform-origin</h2>
+      <p>กำหนดจุดศูนย์กลางสำหรับการ transform</p>
+
+      <div class="example">
+        <h4>👆 Hover เพื่อดูการหมุนจากจุดต่างกัน</h4>
+        <div class="origin-demo-container">
+          <div>
+            <div class="origin-box origin-center">Center<br>(default)</div>
+            <code style="font-size: 0.8rem;">
+transform-origin: center;
+            </code>
+          </div>
+
+          <div>
+            <div class="origin-box origin-top-left">Top Left</div>
+            <code style="font-size: 0.8rem;">
+transform-origin: top left;
+            </code>
+          </div>
+
+          <div>
+            <div class="origin-box origin-bottom-right">Bottom<br>Right</div>
+            <code style="font-size: 0.8rem;">
+transform-origin: bottom right;
+            </code>
+          </div>
+        </div>
+      </div>
+
+      <div class="note">
+        <h4>💡 transform-origin values:</h4>
+        <code>
+/* Keywords */
+center, top, bottom, left, right
+top left, top right, bottom left, bottom right
+
+/* Exact values */
+transform-origin: 50% 50%;    /* center */
+transform-origin: 0 0;        /* top left */
+transform-origin: 100% 100%;  /* bottom right */
+transform-origin: 50px 20px;  /* จุดเฉพาะ */
+        </code>
+      </div>
+    </section>
+
+    <div class="note">
+      <h3>💡 Best Practices</h3>
+      <ul>
+        <li><strong>ใช้กับ transition</strong> - เพื่อ smooth animation</li>
+        <li><strong>Performance</strong> - transform ใช้ GPU, เร็วกว่า top/left</li>
+        <li><strong>Centering</strong> - ใช้ translate(-50%, -50%) จัดกลาง</li>
+        <li><strong>ลำดับ</strong> - ระวังลำดับการเขียน transform</li>
+        <li><strong>transform-origin</strong> - ใช้เมื่อต้องการหมุน/scale จากจุดเฉพาะ</li>
+      </ul>
+    </div>
+
+    <div class="note" style="background: #E8F5E9; border-color: #4CAF50;">
+      <h3>📚 สรุป Transform Functions</h3>
+      <table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+        <tr style="background: #f0f0f0;">
+          <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">Function</th>
+          <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">ความหมาย</th>
+          <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">ตัวอย่าง</th>
+        </tr>
+        <tr>
+          <td style="padding: 10px; border: 1px solid #ddd;"><code>translate()</code></td>
+          <td style="padding: 10px; border: 1px solid #ddd;">เคลื่อนที่</td>
+          <td style="padding: 10px; border: 1px solid #ddd;"><code>translate(20px, 30px)</code></td>
+        </tr>
+        <tr>
+          <td style="padding: 10px; border: 1px solid #ddd;"><code>scale()</code></td>
+          <td style="padding: 10px; border: 1px solid #ddd;">ปรับขนาด</td>
+          <td style="padding: 10px; border: 1px solid #ddd;"><code>scale(1.5)</code></td>
+        </tr>
+        <tr>
+          <td style="padding: 10px; border: 1px solid #ddd;"><code>rotate()</code></td>
+          <td style="padding: 10px; border: 1px solid #ddd;">หมุน</td>
+          <td style="padding: 10px; border: 1px solid #ddd;"><code>rotate(45deg)</code></td>
+        </tr>
+        <tr>
+          <td style="padding: 10px; border: 1px solid #ddd;"><code>skew()</code></td>
+          <td style="padding: 10px; border: 1px solid #ddd;">บิด/เอียง</td>
+          <td style="padding: 10px; border: 1px solid #ddd;"><code>skew(15deg, 10deg)</code></td>
+        </tr>
+      </table>
+    </div>
+
+    <div style="margin-top: 40px; display: flex; justify-content: space-between;">
+      <a href="03-timing-functions.html" class="back-link">← บทที่แล้ว</a>
+      <a href="05-transform-3d.html" class="back-link" style="background: #2ecc71;">บทถัดไป: 3D Transforms →</a>
+    </div>
+  </div>
+</body>
+</html>

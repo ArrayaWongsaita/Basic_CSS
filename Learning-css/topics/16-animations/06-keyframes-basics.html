@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>06. @keyframes Basics</title>
+  <link rel="stylesheet" href="../../global.css">
+  <style>
+    /* Basic keyframes */
+    @keyframes slideIn {
+      from {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    .slide-box {
+      width: 200px;
+      height: 100px;
+      background: #3498db;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      border-radius: 8px;
+      animation: slideIn 1s ease-out;
+    }
+
+    /* Percentage keyframes */
+    @keyframes colorChange {
+      0% {
+        background: #3498db;
+        transform: scale(1);
+      }
+      50% {
+        background: #e74c3c;
+        transform: scale(1.2);
+      }
+      100% {
+        background: #2ecc71;
+        transform: scale(1);
+      }
+    }
+
+    .color-box {
+      width: 150px;
+      height: 150px;
+      margin: 30px auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      border-radius: 8px;
+      animation: colorChange 3s infinite;
+    }
+
+    /* Bounce */
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-50px);
+      }
+    }
+
+    .bounce-box {
+      width: 100px;
+      height: 100px;
+      background: #9b59b6;
+      border-radius: 50%;
+      margin: 80px auto 40px;
+      animation: bounce 1s ease-in-out infinite;
+    }
+
+    /* Rotate */
+    @keyframes rotate {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .rotate-box {
+      width: 100px;
+      height: 100px;
+      background: #f39c12;
+      margin: 40px auto;
+      animation: rotate 2s linear infinite;
+    }
+
+    /* Pulse */
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+      50% {
+        transform: scale(1.1);
+        opacity: 0.7;
+      }
+    }
+
+    .pulse-box {
+      width: 150px;
+      height: 150px;
+      background: #e74c3c;
+      border-radius: 50%;
+      margin: 40px auto;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    /* Shake */
+    @keyframes shake {
+      0%, 100% {
+        transform: translateX(0);
+      }
+      10%, 30%, 50%, 70%, 90% {
+        transform: translateX(-10px);
+      }
+      20%, 40%, 60%, 80% {
+        transform: translateX(10px);
+      }
+    }
+
+    .shake-box {
+      width: 150px;
+      height: 100px;
+      background: #1abc9c;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      border-radius: 8px;
+      margin: 40px auto;
+      animation: shake 0.5s ease-in-out infinite;
+    }
+
+    /* Multiple animations */
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes changeColor {
+      0% { background: #3498db; }
+      33% { background: #e74c3c; }
+      66% { background: #2ecc71; }
+      100% { background: #3498db; }
+    }
+
+    .multi-box {
+      width: 120px;
+      height: 120px;
+      margin: 40px auto;
+      border-radius: 8px;
+      animation: 
+        spin 3s linear infinite,
+        changeColor 6s ease-in-out infinite;
+    }
+
+    /* Control buttons */
+    .control-demo {
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .animated-element {
+      width: 150px;
+      height: 150px;
+      background: #9b59b6;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      border-radius: 8px;
+      margin: 30px auto;
+    }
+
+    .paused {
+      animation-play-state: paused !important;
+    }
+
+    .running {
+      animation: bounce 1s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>06. @keyframes Basics</h1>
+    <p class="description">เรียนรู้การสร้าง animations ด้วย @keyframes</p>
+
+    <section>
+      <h2>🎯 @keyframes คืออะไร?</h2>
+      <div class="note">
+        <p><strong>@keyframes</strong> ใช้สร้าง animations ที่ซับซ้อนได้ โดยกำหนดสถานะต่างๆ ตลอดการ animation</p>
+        <ul>
+          <li><strong>Transitions:</strong> จาก A → B (2 สถานะ)</li>
+          <li><strong>Keyframes:</strong> A → B → C → D... (หลายสถานะ)</li>
+          <li>ควบคุมได้มากกว่า transitions</li>
+          <li>ทำ animation วนซ้ำได้</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>📝 Syntax พื้นฐาน</h2>
+      
+      <code>
+/* สร้าง keyframes */
+@keyframes animationName {
+  from {
+    /* สถานะเริ่มต้น */
+  }
+  to {
+    /* สถานะสุดท้าย */
+  }
+}
+
+/* หรือใช้ percentage */
+@keyframes animationName {
+  0% {
+    /* สถานะเริ่มต้น */
+  }
+  50% {
+    /* สถานะตอนกลาง */
+  }
+  100% {
+    /* สถานะสุดท้าย */
+  }
+}
+
+/* ใช้งาน */
+.element {
+  animation: animationName 2s;
+}
+      </code>
+    </section>
+
+    <section>
+      <h2>✨ ตัวอย่างที่ 1: Slide In (from/to)</h2>
+      <div class="example">
+        <div class="slide-box">Slide In Animation</div>
+        <code>
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-box {
+  animation: slideIn 1s ease-out;
+}
+        </code>
+      </div>
+    </section>
+
+    <section>
+      <h2>📊 ตัวอย่างที่ 2: Color Change (percentage)</h2>
+      <div class="example">
+        <div class="color-box">Watch Me!</div>
+        <code>
+@keyframes colorChange {
+  0% {
+    background: #3498db;
+    transform: scale(1);
+  }
+  50% {
+    background: #e74c3c;
+    transform: scale(1.2);
+  }
+  100% {
+    background: #2ecc71;
+    transform: scale(1);
+  }
+}
+
+.color-box {
+  animation: colorChange 3s infinite;
+}
+        </code>
+      </div>
+    </section>
+
+    <section>
+      <h2>🎨 Keyframes แบบต่างๆ</h2>
+
+      <div class="example">
+        <h3>🎾 Bounce</h3>
+        <div class="bounce-box"></div>
+        <code>
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-50px);
+  }
+}
+
+.bounce-box {
+  animation: bounce 1s ease-in-out infinite;
+}
+        </code>
+      </div>
+
+      <div class="example">
+        <h3>🔄 Rotate</h3>
+        <div class="rotate-box"></div>
+        <code>
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.rotate-box {
+  animation: rotate 2s linear infinite;
+}
+        </code>
+      </div>
+
+      <div class="example">
+        <h3>💓 Pulse</h3>
+        <div class="pulse-box"></div>
+        <code>
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.7;
+  }
+}
+
+.pulse-box {
+  animation: pulse 2s ease-in-out infinite;
+}
+        </code>
+      </div>
+
+      <div class="example">
+        <h3>📳 Shake</h3>
+        <div class="shake-box">ERROR!</div>
+        <code>
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-10px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(10px);
+  }
+}
+
+.shake-box {
+  animation: shake 0.5s ease-in-out infinite;
+}
+        </code>
+      </div>
+    </section>
+
+    <section>
+      <h2>🎭 Multiple Animations</h2>
+      <p>ใช้หลาย animations พร้อมกัน</p>
+      
+      <div class="example">
+        <div class="multi-box"></div>
+        <code>
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes changeColor {
+  0% { background: #3498db; }
+  33% { background: #e74c3c; }
+  66% { background: #2ecc71; }
+  100% { background: #3498db; }
+}
+
+.multi-box {
+  animation: 
+    spin 3s linear infinite,
+    changeColor 6s ease-in-out infinite;
+}
+        </code>
+      </div>
+    </section>
+
+    <section>
+      <h2>⏯️ animation-play-state</h2>
+      <div class="example">
+        <div class="control-demo">
+          <div class="animated-element running" id="demoBox">Animating</div>
+          <button class="btn" onclick="toggleAnimation()">▶️ Play / ⏸️ Pause</button>
+        </div>
+        <code>
+/* CSS */
+.paused {
+  animation-play-state: paused;
+}
+
+.running {
+  animation-play-state: running; /* default */
+}
+
+/* JavaScript */
+function toggleAnimation() {
+  element.classList.toggle('paused');
+}
+        </code>
+      </div>
+
+      <script>
+        function toggleAnimation() {
+          const box = document.getElementById('demoBox');
+          box.classList.toggle('paused');
+        }
+      </script>
+    </section>
+
+    <section>
+      <h2>💡 from/to vs Percentage</h2>
+      <div class="note">
+        <h4>เมื่อไหร่ใช้อะไร?</h4>
+        <table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+          <tr style="background: #f0f0f0;">
+            <th style="padding: 10px; border: 1px solid #ddd;">รูปแบบ</th>
+            <th style="padding: 10px; border: 1px solid #ddd;">ใช้เมื่อ</th>
+          </tr>
+          <tr>
+            <td style="padding: 10px; border: 1px solid #ddd;"><code>from/to</code></td>
+            <td style="padding: 10px; border: 1px solid #ddd;">Animation แบบง่าย 2 สถานะ</td>
+          </tr>
+          <tr>
+            <td style="padding: 10px; border: 1px solid #ddd;"><code>0%, 100%</code></td>
+            <td style="padding: 10px; border: 1px solid #ddd;">Animation ซับซ้อน หลายสถานะ</td>
+          </tr>
+        </table>
+        <br>
+        <code>
+/* เหมือนกัน */
+@keyframes example {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes example {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+        </code>
+      </div>
+    </section>
+
+    <div class="note">
+      <h3>📚 การตั้งชื่อ Keyframes</h3>
+      <ul>
+        <li><strong>ใช้ชื่อที่บอกความหมาย:</strong> fadeIn, slideUp, bounce</li>
+        <li><strong>camelCase หรือ kebab-case:</strong> slideIn หรือ slide-in</li>
+        <li><strong>หลีกเลี่ยง:</strong> animation1, anim2 (ไม่บอกความหมาย)</li>
+      </ul>
+    </div>
+
+    <div class="note">
+      <h3>💡 Best Practices</h3>
+      <ul>
+        <li><strong>0% และ 100%</strong> - ควรระบุทั้งสองเสมอ</li>
+        <li><strong>Properties</strong> - ใช้ transform และ opacity สำหรับ performance</li>
+        <li><strong>Naming</strong> - ตั้งชื่อให้สื่อความหมาย</li>
+        <li><strong>Reusable</strong> - สร้าง keyframes ที่ใช้ซ้ำได้</li>
+        <li><strong>Browser prefix</strong> - @-webkit-keyframes สำหรับ Safari เก่า</li>
+      </ul>
+    </div>
+
+    <div class="note" style="background: #E8F5E9; border-color: #4CAF50;">
+      <h3>🎯 สรุป</h3>
+      <ul>
+        <li><strong>@keyframes</strong> - สร้าง animation ที่ซับซ้อนได้</li>
+        <li><strong>from/to</strong> - สำหรับ 2 สถานะ</li>
+        <li><strong>percentage</strong> - สำหรับหลายสถานะ</li>
+        <li><strong>Multiple animations</strong> - ใช้หลาย animations พร้อมกัน</li>
+        <li><strong>animation-play-state</strong> - ควบคุม play/pause</li>
+      </ul>
+    </div>
+
+    <div style="margin-top: 40px; display: flex; justify-content: space-between;">
+      <a href="05-transform-3d.html" class="back-link">← บทที่แล้ว</a>
+      <a href="07-animation-properties.html" class="back-link" style="background: #2ecc71;">บทถัดไป: Animation Properties →</a>
+    </div>
+  </div>
+</body>
+</html>

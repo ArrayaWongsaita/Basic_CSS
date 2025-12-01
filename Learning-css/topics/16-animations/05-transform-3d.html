@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>05. 3D Transforms</title>
+  <link rel="stylesheet" href="../../global.css">
+  <style>
+    .scene {
+      width: 200px;
+      height: 200px;
+      perspective: 600px;
+      margin: 40px auto;
+    }
+
+    .box-3d {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 1s;
+      cursor: pointer;
+    }
+
+    .box-3d:hover {
+      transform: rotateY(180deg);
+    }
+
+    .box-face {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      font-weight: bold;
+      color: white;
+      border: 2px solid rgba(255,255,255,0.3);
+    }
+
+    .box-front {
+      background: rgba(52, 152, 219, 0.9);
+      transform: rotateY(0deg) translateZ(100px);
+    }
+
+    .box-back {
+      background: rgba(231, 76, 60, 0.9);
+      transform: rotateY(180deg) translateZ(100px);
+    }
+
+    /* Rotate demos */
+    .rotate-demo {
+      width: 150px;
+      height: 150px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      margin: 40px auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.6s;
+    }
+
+    .rotate-x:hover {
+      transform: perspective(400px) rotateX(45deg);
+    }
+
+    .rotate-y:hover {
+      transform: perspective(400px) rotateY(45deg);
+    }
+
+    .rotate-z:hover {
+      transform: perspective(400px) rotateZ(45deg);
+    }
+
+    /* Perspective comparison */
+    .perspective-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+      margin: 40px 0;
+    }
+
+    .perspective-item {
+      text-align: center;
+    }
+
+    .perspective-box {
+      width: 150px;
+      height: 150px;
+      background: #e74c3c;
+      margin: 20px auto;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.5s;
+    }
+
+    .persp-200 {
+      perspective: 200px;
+    }
+
+    .persp-500 {
+      perspective: 500px;
+    }
+
+    .persp-1000 {
+      perspective: 1000px;
+    }
+
+    .perspective-box:hover {
+      transform: rotateY(45deg);
+    }
+
+    /* Card flip */
+    .card-container {
+      width: 300px;
+      height: 200px;
+      perspective: 1000px;
+      margin: 40px auto;
+      cursor: pointer;
+    }
+
+    .card {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.6s;
+    }
+
+    .card-container:hover .card {
+      transform: rotateY(180deg);
+    }
+
+    .card-side {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .card-front {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+    }
+
+    .card-back {
+      background: linear-gradient(135deg, #f093fb, #f5576c);
+      color: white;
+      transform: rotateY(180deg);
+    }
+
+    /* Cube */
+    .cube-scene {
+      width: 200px;
+      height: 200px;
+      perspective: 800px;
+      margin: 60px auto;
+    }
+
+    .cube {
+      width: 200px;
+      height: 200px;
+      position: relative;
+      transform-style: preserve-3d;
+      animation: rotateCube 10s infinite linear;
+    }
+
+    @keyframes rotateCube {
+      from {
+        transform: rotateX(0deg) rotateY(0deg);
+      }
+      to {
+        transform: rotateX(360deg) rotateY(360deg);
+      }
+    }
+
+    .cube-face {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      font-weight: bold;
+      color: white;
+      border: 2px solid rgba(255,255,255,0.3);
+      opacity: 0.9;
+    }
+
+    .cube-front  { background: #3498db; transform: rotateY(0deg) translateZ(100px); }
+    .cube-back   { background: #e74c3c; transform: rotateY(180deg) translateZ(100px); }
+    .cube-right  { background: #2ecc71; transform: rotateY(90deg) translateZ(100px); }
+    .cube-left   { background: #f39c12; transform: rotateY(-90deg) translateZ(100px); }
+    .cube-top    { background: #9b59b6; transform: rotateX(90deg) translateZ(100px); }
+    .cube-bottom { background: #1abc9c; transform: rotateX(-90deg) translateZ(100px); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>05. 3D Transforms</h1>
+    <p class="description">เรียนรู้การสร้าง 3D effects ด้วย CSS Transform</p>
+
+    <section>
+      <h2>🎯 3D Transform คืออะไร?</h2>
+      <div class="note">
+        <p><strong>3D Transforms</strong> เพิ่มมิติความลึก (Z-axis) ให้กับ element</p>
+        <ul>
+          <li><strong>perspective</strong> - กำหนดมุมมอง 3D</li>
+          <li><strong>rotateX, rotateY, rotateZ</strong> - หมุนใน 3 แกน</li>
+          <li><strong>translateZ</strong> - เคลื่อนที่ในแกน Z</li>
+          <li><strong>transform-style: preserve-3d</strong> - รักษา 3D space</li>
+          <li><strong>backface-visibility</strong> - ซ่อนด้านหลัง</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>📐 perspective - มุมมอง 3D</h2>
+      <p>กำหนดระยะห่างจากผู้ชมถึง element (ยิ่งน้อยยิ่งเห็นเด่นชัด)</p>
+
+      <div class="example">
+        <h4>เปรียบเทียบ perspective ต่างกัน</h4>
+        <div class="perspective-grid">
+          <div class="perspective-item">
+            <h4>200px (ใกล้)</h4>
+            <div class="persp-200">
+              <div class="perspective-box">Hover me</div>
+            </div>
+            <code style="font-size: 0.85rem;">
+perspective: 200px;
+            </code>
+          </div>
+
+          <div class="perspective-item">
+            <h4>500px (กลาง)</h4>
+            <div class="persp-500">
+              <div class="perspective-box">Hover me</div>
+            </div>
+            <code style="font-size: 0.85rem;">
+perspective: 500px;
+            </code>
+          </div>
+
+          <div class="perspective-item">
+            <h4>1000px (ไกล)</h4>
+            <div class="persp-1000">
+              <div class="perspective-box">Hover me</div>
+            </div>
+            <code style="font-size: 0.85rem;">
+perspective: 1000px;
+            </code>
+          </div>
+        </div>
+      </div>
+
+      <div class="note">
+        <h4>💡 Perspective:</h4>
+        <ul>
+          <li><strong>ค่าน้อย (100-400px)</strong> - มุมมองแบบเกินจริง, dramatic</li>
+          <li><strong>ค่ากลาง (500-800px)</strong> - สมดุล, realistic</li>
+          <li><strong>ค่ามาก (1000px+)</strong> - มุมมองไกล, subtle</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>🔄 rotateX, rotateY, rotateZ</h2>
+      <p>หมุนตามแกน X, Y, Z</p>
+
+      <div class="example">
+        <div class="demo-grid">
+          <div style="text-align: center;">
+            <h4>rotateX (แกนนอน)</h4>
+            <div class="rotate-demo rotate-x">Hover</div>
+            <code style="font-size: 0.85rem;">
+transform: 
+  perspective(400px) 
+  rotateX(45deg);
+            </code>
+          </div>
+
+          <div style="text-align: center;">
+            <h4>rotateY (แกนตั้ง)</h4>
+            <div class="rotate-demo rotate-y">Hover</div>
+            <code style="font-size: 0.85rem;">
+transform: 
+  perspective(400px) 
+  rotateY(45deg);
+            </code>
+          </div>
+
+          <div style="text-align: center;">
+            <h4>rotateZ (แกนลึก)</h4>
+            <div class="rotate-demo rotate-z">Hover</div>
+            <code style="font-size: 0.85rem;">
+transform: 
+  perspective(400px) 
+  rotateZ(45deg);
+/* เหมือน rotate() ปกติ */
+            </code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>🎴 Card Flip Effect</h2>
+      <p>👆 Hover เพื่อพลิกการ์ด</p>
+
+      <div class="card-container">
+        <div class="card">
+          <div class="card-side card-front">
+            FRONT
+          </div>
+          <div class="card-side card-back">
+            BACK
+          </div>
+        </div>
+      </div>
+
+      <code>
+/* Container */
+.card-container {
+  perspective: 1000px;
+}
+
+/* Card */
+.card {
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.card-container:hover .card {
+  transform: rotateY(180deg);
+}
+
+/* Sides */
+.card-side {
+  backface-visibility: hidden;  /* ซ่อนด้านหลัง */
+}
+
+.card-back {
+  transform: rotateY(180deg);   /* วางหลังไว้ด้านหลัง */
+}
+      </code>
+    </section>
+
+    <section>
+      <h2>📦 3D Cube</h2>
+      <p>สร้าง 3D cube ด้วย 6 หน้า</p>
+
+      <div class="cube-scene">
+        <div class="cube">
+          <div class="cube-face cube-front">1</div>
+          <div class="cube-face cube-back">2</div>
+          <div class="cube-face cube-right">3</div>
+          <div class="cube-face cube-left">4</div>
+          <div class="cube-face cube-top">5</div>
+          <div class="cube-face cube-bottom">6</div>
+        </div>
+      </div>
+
+      <code>
+/* Scene */
+.cube-scene {
+  perspective: 800px;
+}
+
+/* Cube container */
+.cube {
+  transform-style: preserve-3d;
+  animation: rotateCube 10s infinite linear;
+}
+
+/* Each face */
+.cube-front  { transform: rotateY(0deg) translateZ(100px); }
+.cube-back   { transform: rotateY(180deg) translateZ(100px); }
+.cube-right  { transform: rotateY(90deg) translateZ(100px); }
+.cube-left   { transform: rotateY(-90deg) translateZ(100px); }
+.cube-top    { transform: rotateX(90deg) translateZ(100px); }
+.cube-bottom { transform: rotateX(-90deg) translateZ(100px); }
+
+@keyframes rotateCube {
+  from { transform: rotateX(0) rotateY(0); }
+  to { transform: rotateX(360deg) rotateY(360deg); }
+}
+      </code>
+    </section>
+
+    <section>
+      <h2>🎯 transform-style</h2>
+      <div class="note">
+        <h4>transform-style: preserve-3d</h4>
+        <p>บอกให้ child elements รักษา 3D space</p>
+        <code>
+/* Parent ต้องมี */
+.parent {
+  transform-style: preserve-3d;
+}
+
+/* ค่าที่ใช้ได้ */
+transform-style: flat;         /* default - 2D */
+transform-style: preserve-3d;  /* รักษา 3D */
+        </code>
+      </div>
+    </section>
+
+    <section>
+      <h2>👁️ backface-visibility</h2>
+      <div class="note">
+        <h4>ควบคุมการมองเห็นด้านหลัง</h4>
+        <code>
+/* ซ่อนด้านหลังเมื่อหันหลัง */
+backface-visibility: hidden;
+
+/* แสดงด้านหลัง (default) */
+backface-visibility: visible;
+        </code>
+        <p>💡 ใช้บ่อยกับ card flip effects</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>📝 translateZ()</h2>
+      <div class="note">
+        <h4>เคลื่อนที่ในแกน Z</h4>
+        <code>
+/* ขยับเข้าหาผู้ชม */
+transform: perspective(500px) translateZ(100px);
+
+/* ขยับออกจากผู้ชม */
+transform: perspective(500px) translateZ(-100px);
+
+/* ใช้กับ 3D space */
+transform: 
+  perspective(500px) 
+  rotateY(45deg) 
+  translateZ(50px);
+        </code>
+      </div>
+    </section>
+
+    <div class="note">
+      <h3>💡 Best Practices</h3>
+      <ul>
+        <li><strong>perspective</strong> - ใส่ที่ parent element</li>
+        <li><strong>preserve-3d</strong> - ต้องมีถ้าต้องการ child เป็น 3D</li>
+        <li><strong>backface-visibility</strong> - ใช้กับ flip effects</li>
+        <li><strong>Performance</strong> - 3D ใช้ทรัพยากรมากกว่า 2D</li>
+        <li><strong>Browser support</strong> - ใส่ -webkit- prefix สำหรับ Safari เก่า</li>
+      </ul>
+    </div>
+
+    <div class="note" style="background: #E8F5E9; border-color: #4CAF50;">
+      <h3>📚 สรุป 3D Properties</h3>
+      <table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+        <tr style="background: #f0f0f0;">
+          <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">Property</th>
+          <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">ความหมาย</th>
+        </tr>
+        <tr>
+          <td style="padding: 10px; border: 1px solid #ddd;"><code>perspective</code></td>
+          <td style="padding: 10px; border: 1px solid #ddd;">กำหนดมุมมอง 3D</td>
+        </tr>
+        <tr>
+          <td style="padding: 10px; border: 1px solid #ddd;"><code>transform-style</code></td>
+          <td style="padding: 10px; border: 1px solid #ddd;">รักษา 3D space สำหรับ children</td>
+        </tr>
+        <tr>
+          <td style="padding: 10px; border: 1px solid #ddd;"><code>backface-visibility</code></td>
+          <td style="padding: 10px; border: 1px solid #ddd;">ซ่อน/แสดง ด้านหลัง</td>
+        </tr>
+        <tr>
+          <td style="padding: 10px; border: 1px solid #ddd;"><code>rotateX/Y/Z</code></td>
+          <td style="padding: 10px; border: 1px solid #ddd;">หมุนตามแกน 3D</td>
+        </tr>
+        <tr>
+          <td style="padding: 10px; border: 1px solid #ddd;"><code>translateZ</code></td>
+          <td style="padding: 10px; border: 1px solid #ddd;">เคลื่อนที่ในแกน Z</td>
+        </tr>
+      </table>
+    </div>
+
+    <div style="margin-top: 40px; display: flex; justify-content: space-between;">
+      <a href="04-transform-basics.html" class="back-link">← บทที่แล้ว</a>
+      <a href="06-keyframes-basics.html" class="back-link" style="background: #2ecc71;">บทถัดไป: @keyframes Basics →</a>
+    </div>
+  </div>
+</body>
+</html>
