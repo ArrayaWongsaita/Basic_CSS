@@ -6,6 +6,16 @@
     <title>CSS Basics - Methods</title>
     <link rel="stylesheet" href="../../global.css" />
     <link rel="stylesheet" href="styles.css" />
+
+    <!-- Highlight.js -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>
+      hljs.highlightAll();
+    </script>
     <style>
       .internal {
         color: blue;
@@ -24,7 +34,11 @@
         <p style="color: red; font-weight: bold">
           นี่คือ Inline CSS - เขียนใน attribute style=""
         </p>
-        <code> &lt;p style="color: red;"&gt;ข้อความ&lt;/p&gt; </code>
+        <pre>
+         <code >
+&lt;p style="color: red;"&gt;ข้อความ&lt;/p&gt;
+        </code>
+       </pre>
       </section>
 
       <section class="basic">
@@ -33,11 +47,11 @@
           นี่คือ Internal CSS - เขียนใน &lt;style&gt; tag ใน &lt;head&gt;
         </p>
         <pre>
-&lt;style&gt;
+<code>&lt;style&gt;
     .internal {
-    color: blue;
+        color: blue;
     }
-&lt;/style&gt;
+&lt;/style&gt;</code>
 </pre
         >
       </section>
@@ -47,11 +61,11 @@
         <p class="external">
           นี่คือ External CSS - เขียนในไฟล์ .css แยกต่างหาก
         </p>
-<pre> &lt;link rel="stylesheet" href="styles.css"&gt; 
-
-.external {
+        <pre> 
+<code>&lt;link rel="stylesheet" href="styles.css"&gt; </code>
+<code >.external {
     color: green;
-}
+}</code>
 </pre>
       </section>
 
